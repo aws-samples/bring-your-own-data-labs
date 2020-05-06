@@ -1,0 +1,6 @@
+labs/visualization_and_reporting/temp
+site/*
+.local/*
+.DS_Store
+
+.unotes/*
