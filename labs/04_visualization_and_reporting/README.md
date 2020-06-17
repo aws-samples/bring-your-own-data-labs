@@ -1,19 +1,19 @@
-[0-Prerequisites](../00_Prerequisites/README.md) > [1-Ingestion](../01_ingestion_with_glue/README.md) > [2-Orchestration](../02_orchestration/README.md) > [3-Interactive-SQL](../03_interactive_sql_queries/README.md) > 4-Visualisation > [5-Transformations](../05_transformations/README.md)
+[0-Prerequisites](../00_Prerequisites/README.md) > [1-Ingestion](../01_ingestion_with_glue/README.md) > [2-Orchestration](../02_orchestration/README.md) > [3-Interactive-SQL](../03_interactive_sql_queries/README.md) > 4-Visualisation > [5-Transformations](../05_transformations/README.md) > [99-Conclusion](../99_Wrap_up_and_clean/README.md)
 
 # Lab 4: Visualization using Amazon QuickSight
 
-- [Lab 4: Visualization using Amazon QuickSight](#Lab-4-Visualization-using-Amazon-QuickSight)
-  - [Architectural Diagram](#Architectural-Diagram)
-  - [Signing up for Amazon QuickSight Enterprise Edition](#Signing-up-for-Amazon-QuickSight-Enterprise-Edition)
-  - [Some Quicksight definitions](#Some-Quicksight-definitions)
-  - [Configuring Amazon QuickSight to use Amazon Athena as data source](#Configuring-Amazon-QuickSight-to-use-Amazon-Athena-as-data-source)
-  - [Preparing your data](#Preparing-your-data)
-  - [Visualizing the data using Amazon QuickSight](#Visualizing-the-data-using-Amazon-QuickSight)
-    - [Forecast Monthly Trend for your Quantity Column](#Forecast-Monthly-Trend-for-your-Quantity-Column)
-    - [Adding Filters](#Adding-Filters)
-    - [Visualize Month over Month Quantity](#Visualize-Month-over-Month-Quantity)
-    - [Review ML Insights](#Review-ML-Insights)
-  - [License](#License)
+- [Lab 4: Visualization using Amazon QuickSight](#lab-4-visualization-using-amazon-quicksight)
+  - [Architectural Diagram](#architectural-diagram)
+  - [Signing up for Amazon QuickSight Enterprise Edition](#signing-up-for-amazon-quicksight-enterprise-edition)
+  - [Some Quicksight definitions](#some-quicksight-definitions)
+  - [Configuring Amazon QuickSight to use Amazon Athena as data source](#configuring-amazon-quicksight-to-use-amazon-athena-as-data-source)
+  - [Preparing your data](#preparing-your-data)
+  - [Visualizing the data using Amazon QuickSight](#visualizing-the-data-using-amazon-quicksight)
+    - [Forecast Monthly Trend for your Quantity Column](#forecast-monthly-trend-for-your-quantity-column)
+    - [Adding Filters](#adding-filters)
+    - [Visualize Month over Month Quantity](#visualize-month-over-month-quantity)
+    - [Review ML Insights](#review-ml-insights)
+  - [License](#license)
 
 ## Architectural Diagram
 ![architecture-overview-lab2.png](https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/architecture-overview-lab2.png)
