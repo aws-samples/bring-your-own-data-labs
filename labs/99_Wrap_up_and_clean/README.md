@@ -36,4 +36,4 @@ Make sure you haven't put any recurrence on jobs and triggers:
 
 ### Quicksight
 
-If you want to cancel your subscription to Quicksight you can follow these procedure: [https://docs.aws.amazon.com/quicksight/latest/user/closing-account.html]
+If you want to cancel your subscription to Quicksight you can follow these procedure: (https://docs.aws.amazon.com/quicksight/latest/user/closing-account.html)
