@@ -1,14 +1,14 @@
-[0-Prerequisites](../00_Prerequisites/README.md) > [1-Ingestion](../01_ingestion_with_glue/README.md) > [2-Orchestration](../02_orchestration/README.md) > [3-Interactive-SQL](README.md) > [4-Visualisation](../04_visualization_and_reporting/README.md) > [5-Transformations](../05_transformations/README.md)
+[0-Prerequisites](../00_Prerequisites/README.md) > [1-Ingestion](../01_ingestion_with_glue/README.md) > [2-Orchestration](../02_orchestration/README.md) > [3-Interactive-SQL](../03_interactive_sql_queries/README.md) > [4-Visualisation](../04_visualization_and_reporting/README.md) > [5-Transformations](../05_transformations/README.md) > [99-Conclusion](../99_Wrap_up_and_clean/README.md)
 
 # Lab 3: Interactive SQL - Optional Labs
 
-- [Lab 3: Interactive SQL - Optional Labs](#Lab-3-Interactive-SQL---Optional-Labs)
-  - [Introduction](#Introduction)
-  - [Creating Amazon Athena Database and Table](#Creating-Amazon-Athena-Database-and-Table)
-    - [Create a Database](#Create-a-Database)
-    - [Create a Table](#Create-a-Table)
-      - [Adding Partition Meta-data](#Adding-Partition-Meta-data)
-  - [Detecting New Partitions](#Detecting-New-Partitions)
+- [Lab 3: Interactive SQL - Optional Labs](#lab-3-interactive-sql---optional-labs)
+  - [Introduction](#introduction)
+  - [Creating Amazon Athena Database and Table](#creating-amazon-athena-database-and-table)
+    - [Create a Database](#create-a-database)
+    - [Create a Table](#create-a-table)
+      - [Adding Partition Meta-data](#adding-partition-meta-data)
+  - [Detecting New Partitions](#detecting-new-partitions)
 
 ## Introduction
 

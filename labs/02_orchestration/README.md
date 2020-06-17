@@ -1,11 +1,11 @@
-[0-Prerequisites](../00_Prerequisites/README.md) > [1-Ingestion](../01_ingestion_with_glue/README.md) > 2-Orchestration > [3-Interactive-SQL](../03_interactive_sql_queries/README.md) > [4-Visualisation](../04_visualization_and_reporting/README.md) > [5-Transformations](../05_transformations/README.md)
+[0-Prerequisites](../00_Prerequisites/README.md) > [1-Ingestion](../01_ingestion_with_glue/README.md) > 2-Orchestration > [3-Interactive-SQL](../03_interactive_sql_queries/README.md) > [4-Visualisation](../04_visualization_and_reporting/README.md) > [5-Transformations](../05_transformations/README.md) > [99-Conclusion](../99_Wrap_up_and_clean/README.md)
 
 # Lab 2 Orchestrating the data pipeline
 
-- [Lab 2 Orchestrating the data pipeline](#Lab-2-Orchestrating-the-data-pipeline)
-  - [Orchestrate the data pipeline using the Workflow feature](#Orchestrate-the-data-pipeline-using-the-Workflow-feature)
-    - [Reviewing the results](#Reviewing-the-results)
-  - [Orchestrate YOUR data pipeline using Workflows](#Orchestrate-YOUR-data-pipeline-using-Workflows)
+- [Lab 2 Orchestrating the data pipeline](#lab-2-orchestrating-the-data-pipeline)
+  - [Orchestrate the data pipeline using the Workflow feature](#orchestrate-the-data-pipeline-using-the-workflow-feature)
+    - [Reviewing the results](#reviewing-the-results)
+  - [Orchestrate YOUR data pipeline using Workflows](#orchestrate-your-data-pipeline-using-workflows)
 
 
 In this lab we will continue to work with [Glue](https://aws.amazon.com/glue/) and convert the raw data we have extracted in [the previous lab](../01_ingestion_with_glue/README.md) into a curated data set by making some automation.

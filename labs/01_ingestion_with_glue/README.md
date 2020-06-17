@@ -1,19 +1,22 @@
-[0-Prerequisites](../00_Prerequisites/README.md) > 1-Ingestion > [2-Orchestration](../02_orchestration/README.md) > [3-Interactive-SQL](../03_interactive_sql_queries/README.md) > [4-Visualisation](../04_visualization_and_reporting/README.md) > [5-Transformations](../05_transformations/README.md)
+[0-Prerequisites](../00_Prerequisites/README.md) > 1-Ingestion > [2-Orchestration](../02_orchestration/README.md) > [3-Interactive-SQL](../03_interactive_sql_queries/README.md) > [4-Visualisation](../04_visualization_and_reporting/README.md) > [5-Transformations](../05_transformations/README.md)> [99-Conclusion](../99_Wrap_up_and_clean/README.md)
 
 # Lab 01 - Ingestion with Glue
 
-- [Lab 01 - Ingestion with Glue](#Lab-01---Ingestion-with-Glue)
-  - [Before you begin](#Before-you-begin)
-  - [Preparing your environment](#Preparing-your-environment)
-    - [Configure Permissions](#Configure-Permissions)
-      - [Creating a Policy for Amazon S3 Bucket (Console)](#Creating-a-Policy-for-Amazon-S3-Bucket-Console)
-      - [Creating a Role for AWS Service Glue (Console)](#Creating-a-Role-for-AWS-Service-Glue-Console)
-    - [Creating a Development Endpoint and Notebook (First Part)](#Creating-a-Development-Endpoint-and-Notebook-First-Part)
-  - [Create data catalog from S3 files](#Create-data-catalog-from-S3-files)
-  - [Transform the data to Parquet format](#Transform-the-data-to-Parquet-format)
-  - [Add a crawler for curated data](#Add-a-crawler-for-curated-data)
-  - [Schema Validation](#Schema-Validation)
-    - [Creating a Development Endpoint and Notebook (Second Part)](#Creating-a-Development-Endpoint-and-Notebook-Second-Part)
+- [Lab 01 - Ingestion with Glue](#lab-01---ingestion-with-glue)
+  - [Before you begin](#before-you-begin)
+  - [Preparing your environment](#preparing-your-environment)
+    - [Configure Permissions](#configure-permissions)
+      - [Creating a Policy for Amazon S3 Bucket (Console)](#creating-a-policy-for-amazon-s3-bucket-console)
+      - [Creating a Role for AWS Service Glue (Console)](#creating-a-role-for-aws-service-glue-console)
+    - [Creating a Development Endpoint and Notebook (First Part)](#creating-a-development-endpoint-and-notebook-first-part)
+  - [Create data catalog from S3 files](#create-data-catalog-from-s3-files)
+  - [Transform the data to Parquet format](#transform-the-data-to-parquet-format)
+  - [Add a crawler for curated data](#add-a-crawler-for-curated-data)
+  - [Schema Validation](#schema-validation)
+    - [Creating a Development Endpoint and Notebook (Second Part)](#creating-a-development-endpoint-and-notebook-second-part)
+
+
+
 
 In this Lab we will create a schema from your data optimized for analytics and place the result in an S3 bucket-based data lake.
 
