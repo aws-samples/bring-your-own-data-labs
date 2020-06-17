@@ -2,22 +2,27 @@
 
 # Conclusion Lab : Wrap up and cleaning existing resources
 
-- [Conclusion Lab : Wrap up and cleaning existing resources](#conclusion-lab--wrap-up-and-cleaning-existing-resources)
-  - [Terminate the following resources](#terminate-the-following-resources)
-  - [Clean other resources:](#clean-other-resources)
-    - [Glue Crawlers and Jobs](#glue-crawlers-and-jobs)
-    - [Quicksight](#quicksight)
+- [Terminate your resources](#terminate-your-resources)
+- [Clean other resources:](#clean-other-resources)
+  - [Glue Crawlers and Jobs](#glue-crawlers-and-jobs)
+  - [Quicksight](#quicksight)
 
-Before wrapping up, we strongly recommend you go through these steps to clean the recurrent resources incurred by the workshop:
+Before wrapping up, we strongly recommend you go through these steps to clean the recurrent resources incurred by the workshop.
 
-## Terminate the following resources
+Most of the charges incurred follows a pay as you go model, but some resources incur charges unless you stop them:
 
-The Glue development endpoint and the notebook will incur charges. 
+- Glue development endpoints incur charges until you stop them. cf. (cf. [Glue detailed pricing](https://aws.amazon.com/glue/pricing/))
+- Quicksight is priced per user/month (cf. [Quicksight pricing](https://aws.amazon.com/quicksight/pricing/))
 
-* So please go to [Glue](https://console.aws.amazon.com/glue/home?region=us-east-1#etl:tab=devEndpoints)
+
+## Terminate your resources
+
+As the Glue development endpoint and the notebook will incur charges, let's stop them : 
+
+* Go to [Glue](https://console.aws.amazon.com/glue/home?region=us-east-1#etl:tab=devEndpoints)
     * Select the endpoint - Action -> Delete
 
-* Then go to the [notebook](https://console.aws.amazon.com/glue/home?region=us-east-1#etl:tab=notebooks)
+* Go to the [notebook](https://console.aws.amazon.com/glue/home?region=us-east-1#etl:tab=notebooks)
     * Select the notebook - Action -> Stop, then Delete
 
 ## Clean other resources:
@@ -28,7 +33,7 @@ Other resources that potentially incur charges may need to be cleaned:
 
 Make sure you haven't put any recurrence on jobs and triggers:
 
-* go to the [Glue Console](https://console.aws.amazon.com/glue/)
+* Go to the [Glue Console](https://console.aws.amazon.com/glue/)
     * Click on **Crawlers**
     * Check that the "Schedule" column is empty for the crawlers created during the labs
 * Now click on **Triggers**
@@ -37,3 +42,4 @@ Make sure you haven't put any recurrence on jobs and triggers:
 ### Quicksight
 
 If you want to cancel your subscription to Quicksight you can follow these procedure: (https://docs.aws.amazon.com/quicksight/latest/user/closing-account.html)
+

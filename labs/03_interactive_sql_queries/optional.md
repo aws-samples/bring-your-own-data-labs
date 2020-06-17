@@ -2,13 +2,12 @@
 
 # Lab 3: Interactive SQL - Optional Labs
 
-- [Lab 3: Interactive SQL - Optional Labs](#lab-3-interactive-sql---optional-labs)
-  - [Introduction](#introduction)
-  - [Creating Amazon Athena Database and Table](#creating-amazon-athena-database-and-table)
-    - [Create a Database](#create-a-database)
-    - [Create a Table](#create-a-table)
-      - [Adding Partition Meta-data](#adding-partition-meta-data)
-  - [Detecting New Partitions](#detecting-new-partitions)
+- [Introduction](#introduction)
+- [Creating Amazon Athena Database and Table](#creating-amazon-athena-database-and-table)
+  - [Create a Database](#create-a-database)
+  - [Create a Table](#create-a-table)
+    - [Adding Partition Meta-data](#adding-partition-meta-data)
+- [Detecting New Partitions](#detecting-new-partitions)
 
 ## Introduction
 

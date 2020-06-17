@@ -3,21 +3,20 @@
 
 # Lab 3: Interactive SQL Queries Using Amazon Athena
 
-- [Lab 3: Interactive SQL Queries Using Amazon Athena](#lab-3-interactive-sql-queries-using-amazon-athena)
-  - [Introduction](#introduction)
-  - [Architectural Diagram](#architectural-diagram)
-  - [Setting up Workgroups](#setting-up-workgroups)
-  - [Setting up Amazon S3 and Athena for Storing Query Results](#setting-up-amazon-s3-and-athena-for-storing-query-results)
-    - [Creating an Amazon S3 Bucket](#creating-an-amazon-s3-bucket)
-    - [Setting up Amazon Athena](#setting-up-amazon-athena)
-  - [Start Exploring with Athena](#start-exploring-with-athena)
-  - [Amazon Athena Best Practices](#amazon-athena-best-practices)
-  - [Joining Tables](#joining-tables)
-    - [Create a new Table](#create-a-new-table)
-    - [SQL Joins](#sql-joins)
-    - [Storing SQL Join Results](#storing-sql-join-results)
-  - ['Create Table as Select' Queries](#create-table-as-select-queries)
-  - [Creating Views](#creating-views)
+- [Introduction](#introduction)
+- [Architectural Diagram](#architectural-diagram)
+- [Setting up Workgroups](#setting-up-workgroups)
+- [Setting up Amazon S3 and Athena for Storing Query Results](#setting-up-amazon-s3-and-athena-for-storing-query-results)
+  - [Creating an Amazon S3 Bucket](#creating-an-amazon-s3-bucket)
+  - [Setting up Amazon Athena](#setting-up-amazon-athena)
+- [Start Exploring with Athena](#start-exploring-with-athena)
+- [Amazon Athena Best Practices](#amazon-athena-best-practices)
+- [Joining Tables](#joining-tables)
+  - [Create a new Table](#create-a-new-table)
+  - [SQL Joins](#sql-joins)
+  - [Storing SQL Join Results](#storing-sql-join-results)
+- ['Create Table as Select' Queries](#create-table-as-select-queries)
+- [Creating Views](#creating-views)
 
 ## Introduction
 

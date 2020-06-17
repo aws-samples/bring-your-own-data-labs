@@ -2,15 +2,14 @@
 
 # Lab 03 - Optional - Amazon Athena Best Practices
 
-- [Lab 03 - Optional - Amazon Athena Best Practices](#lab-03---optional---amazon-athena-best-practices)
-  - [Introduction](#introduction)
-  - [Using Columnar Storage](#using-columnar-storage)
-  - [Partitioning your Data](#partitioning-your-data)
-  - [Bucketing your Data](#bucketing-your-data)
-    - [What is 'CREATE TABLE AS SELECT'](#what-is-create-table-as-select)
-    - [Using CTAS to create Partitioned Subset](#using-ctas-to-create-partitioned-subset)
-    - [Using CTAS to create Partitioned and Bucketed Subset](#using-ctas-to-create-partitioned-and-bucketed-subset)
-    - [Comparing Results](#comparing-results)
+- [Introduction](#introduction)
+- [Using Columnar Storage](#using-columnar-storage)
+- [Partitioning your Data](#partitioning-your-data)
+- [Bucketing your Data](#bucketing-your-data)
+  - [What is 'CREATE TABLE AS SELECT'](#what-is-create-table-as-select)
+  - [Using CTAS to create Partitioned Subset](#using-ctas-to-create-partitioned-subset)
+  - [Using CTAS to create Partitioned and Bucketed Subset](#using-ctas-to-create-partitioned-and-bucketed-subset)
+  - [Comparing Results](#comparing-results)
 
 ## Introduction
 

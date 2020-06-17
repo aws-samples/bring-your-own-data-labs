@@ -2,18 +2,17 @@
 
 # Lab 4: Visualization using Amazon QuickSight
 
-- [Lab 4: Visualization using Amazon QuickSight](#lab-4-visualization-using-amazon-quicksight)
-  - [Architectural Diagram](#architectural-diagram)
-  - [Signing up for Amazon QuickSight Enterprise Edition](#signing-up-for-amazon-quicksight-enterprise-edition)
-  - [Some Quicksight definitions](#some-quicksight-definitions)
-  - [Configuring Amazon QuickSight to use Amazon Athena as data source](#configuring-amazon-quicksight-to-use-amazon-athena-as-data-source)
-  - [Preparing your data](#preparing-your-data)
-  - [Visualizing the data using Amazon QuickSight](#visualizing-the-data-using-amazon-quicksight)
-    - [Forecast Monthly Trend for your Quantity Column](#forecast-monthly-trend-for-your-quantity-column)
-    - [Adding Filters](#adding-filters)
-    - [Visualize Month over Month Quantity](#visualize-month-over-month-quantity)
-    - [Review ML Insights](#review-ml-insights)
-  - [License](#license)
+- [Architectural Diagram](#architectural-diagram)
+- [Signing up for Amazon QuickSight Enterprise Edition](#signing-up-for-amazon-quicksight-enterprise-edition)
+- [Some Quicksight definitions](#some-quicksight-definitions)
+- [Configuring Amazon QuickSight to use Amazon Athena as data source](#configuring-amazon-quicksight-to-use-amazon-athena-as-data-source)
+- [Preparing your data](#preparing-your-data)
+- [Visualizing the data using Amazon QuickSight](#visualizing-the-data-using-amazon-quicksight)
+  - [Forecast Monthly Trend for your Quantity Column](#forecast-monthly-trend-for-your-quantity-column)
+  - [Adding Filters](#adding-filters)
+  - [Visualize Month over Month Quantity](#visualize-month-over-month-quantity)
+  - [Review ML Insights](#review-ml-insights)
+- [License](#license)
 
 ## Architectural Diagram
 ![architecture-overview-lab2.png](https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/architecture-overview-lab2.png)

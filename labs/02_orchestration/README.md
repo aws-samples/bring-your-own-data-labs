@@ -2,10 +2,9 @@
 
 # Lab 2 Orchestrating the data pipeline
 
-- [Lab 2 Orchestrating the data pipeline](#lab-2-orchestrating-the-data-pipeline)
-  - [Orchestrate the data pipeline using the Workflow feature](#orchestrate-the-data-pipeline-using-the-workflow-feature)
-    - [Reviewing the results](#reviewing-the-results)
-  - [Orchestrate YOUR data pipeline using Workflows](#orchestrate-your-data-pipeline-using-workflows)
+- [Orchestrate the data pipeline using the Workflow feature](#orchestrate-the-data-pipeline-using-the-workflow-feature)
+  - [Reviewing the results](#reviewing-the-results)
+- [Orchestrate YOUR data pipeline using Workflows](#orchestrate-your-data-pipeline-using-workflows)
 
 
 In this lab we will continue to work with [Glue](https://aws.amazon.com/glue/) and convert the raw data we have extracted in [the previous lab](../01_ingestion_with_glue/README.md) into a curated data set by making some automation.
