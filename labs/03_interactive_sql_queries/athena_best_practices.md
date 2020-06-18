@@ -1,16 +1,15 @@
-[0-Prerequisites](../00_Prerequisites/README.md) > [1-Ingestion](../01_ingestion_with_glue/README.md) > [2-Orchestration](../02_orchestration/README.md) > [3-Interactive-SQL](README.md) > [4-Visualisation](../04_visualization_and_reporting/README.md) > [5-Transformations](../05_transformations/README.md)
+[0-Prerequisites](../00_Prerequisites/README.md) > [1-Ingestion](../01_ingestion_with_glue/README.md) > [2-Orchestration](../02_orchestration/README.md) > [3-Interactive-SQL](../03_interactive_sql_queries/README.md) > [4-Visualisation](../04_visualization_and_reporting/README.md) > [5-Transformations](../05_transformations/README.md) > [99-Conclusion](../99_Wrap_up_and_clean/README.md)
 
 # Lab 03 - Optional - Amazon Athena Best Practices
 
-- [Lab 03 - Optional - Amazon Athena Best Practices](#Lab-03---Optional---Amazon-Athena-Best-Practices)
-  - [Introduction](#Introduction)
-  - [Using Columnar Storage](#Using-Columnar-Storage)
-  - [Partitioning your Data](#Partitioning-your-Data)
-  - [Bucketing your Data](#Bucketing-your-Data)
-    - [What is 'CREATE TABLE AS SELECT'](#What-is-CREATE-TABLE-AS-SELECT)
-    - [Using CTAS to create Partitioned Subset](#Using-CTAS-to-create-Partitioned-Subset)
-    - [Using CTAS to create Partitioned and Bucketed Subset](#Using-CTAS-to-create-Partitioned-and-Bucketed-Subset)
-    - [Comparing Results](#Comparing-Results)
+- [Introduction](#introduction)
+- [Using Columnar Storage](#using-columnar-storage)
+- [Partitioning your Data](#partitioning-your-data)
+- [Bucketing your Data](#bucketing-your-data)
+  - [What is 'CREATE TABLE AS SELECT'](#what-is-create-table-as-select)
+  - [Using CTAS to create Partitioned Subset](#using-ctas-to-create-partitioned-subset)
+  - [Using CTAS to create Partitioned and Bucketed Subset](#using-ctas-to-create-partitioned-and-bucketed-subset)
+  - [Comparing Results](#comparing-results)
 
 ## Introduction
 
