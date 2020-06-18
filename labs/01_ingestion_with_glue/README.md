@@ -111,6 +111,9 @@ NOTE: “AWSGlueServiceRole” is an AWS Managed Policy to provide Glue with nee
 In AWS Glue can create an environment—known as a development endpoint—that you can use to iteratively develop and test your extract, transform, and load (ETL) scripts. 
 You can then create a notebook that connects to the endpoint, and use your notebook to author and test your ETL script. When you're satisfied with the results of your development process, you can create an ETL job that runs your script. With this process, you can add functions and debug your scripts in an interactive manner.
 
+**NOTE: Please be aware that AWS Glue allocates 5 DPUs to each development endpoint by default, you are billed $0.44 per DPU-Hour, therefore PLEASE make sure to clean/ delete this endpoint once you have finish all the labs - follow the instructions in [lab - Wrap Up and Clean](https://github.com/laumcaicedo/bring-your-own-data-labs/tree/master/labs/99_Wrap_up_and_clean)**
+
+
 Go to Glue in the console https://console.aws.amazon.com/glue/
 
 1. On the left menu, click in Dev. endpoints and **Add endpoint**.
