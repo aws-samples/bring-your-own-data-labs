@@ -15,9 +15,6 @@
   - [Schema Validation](#schema-validation)
     - [Creating a Development Endpoint and Notebook (Second Part)](#creating-a-development-endpoint-and-notebook-second-part)
 
-
-
-
 In this Lab we will create a schema from your data optimized for analytics and place the result in an S3 bucket-based data lake.
 
 ## Before you begin
@@ -29,11 +26,11 @@ All resources to be created **must** be in the same region.
 
 The encoding of your raw files should be UTF-8. You should export your files from your source with UTF-8 encoding. For this workshop, you may convert the encoding before uploading files to S3 bucket with text editing tools, such as Sublime Text
 
-or by using this Linux command: 
-``` python iconv -f <current-encoding of file> -t utf-8 data.csv outputfile.csv```
-    
+or by using this Linux command:
+`python iconv -f <current-encoding of file> -t utf-8 data.csv outputfile.csv`
+  
 if you don't know the encoding, you can use this command to determine: "
-``` python enca -L none data.csv```
+`python enca -L none data.csv`
 
 Also, before you start, make sure your raw data files are saved in a separate bucket in a folder
 called "raw". Each file should be a separate table. Each table file should be preferably in a
@@ -107,8 +104,7 @@ NOTE: “AWSGlueServiceRole” is an AWS Managed Policy to provide Glue with nee
 
 ### Creating a Development Endpoint and Notebook (First Part)
 
-
-In AWS Glue can create an environment—known as a development endpoint—that you can use to iteratively develop and test your extract, transform, and load (ETL) scripts. 
+In AWS Glue can create an environment—known as a development endpoint—that you can use to iteratively develop and test your extract, transform, and load (ETL) scripts.
 You can then create a notebook that connects to the endpoint, and use your notebook to author and test your ETL script. When you're satisfied with the results of your development process, you can create an ETL job that runs your script. With this process, you can add functions and debug your scripts in an interactive manner.
 
 Go to Glue in the console https://console.aws.amazon.com/glue/
@@ -169,6 +165,7 @@ This step needs to be done per each file you have.
 ```python
 import sys
 import datetime
+import re
 from awsglue.transforms import *
 from awsglue.utils import getResolvedOptions
 from pyspark.context import SparkContext
@@ -178,24 +175,33 @@ glueContext = GlueContext(SparkContext.getOrCreate())
 job = Job(glueContext)
 
 ## DONT FORGET TO PUT IN YOUR INPUT AND OUTPUT LOCATIONS BELOW.
-your_database_name = "byod_initial"
-your_table_name = "investments_csv"
-output_location = "s3://sinan-byod-test/curated2"
+your_database_name = "YOUR-DATABASE-NAME"
+your_table_name = "YOUR-TABLE-NAME"
+output_location = "s3://YOUR-BUCKET-NAME/YOUR-OUTPUT-FOLDER"
 
 job.init("byod-workshop" + str(datetime.datetime.now().timestamp()))
 
+#load our data from the catalog that we created with a crawler
 dynamicF = glueContext.create_dynamic_frame.from_catalog(
     database = your_database_name,
     table_name = your_table_name,
     transformation_ctx = "dynamicF")
 
-dynamicF.toDF().write.mode("overwrite").format("parquet").save(output_location)
+# invalid characters in column names are replaced by _
+df = dynamicF.toDF()
+def canonical(x): return re.sub("[ ,;{}()\n\t=]+", '_', x.lower())
+renamed_cols = [canonical(c) for c in df.columns]
+df = df.toDF(*renamed_cols)
+
+# write our dataframe in parquet format to an output s3 bucket
+df.write.mode("overwrite").format("parquet").save(output_location)
 
 job.commit()
 ```
 
-Click \* **Save** and **Run Job**
+Notice that we have a section in this script where we are replacing invalid characters that you may have in your column headers. Spark doesn't accept certain characters in field names including spaces.
 
+Click \* **Save** and **Run Job**
 
 ![add a glue job](./img/ingestion/glue-job3.png)
 
@@ -248,6 +254,5 @@ NOTE: If you have any "id" column as integer, please make sure type is set to "d
 3. Attach to development: choose the endpoint created some steps back
 4. Create a new IAM Role.
 5. **Create notebook**
-
 
 Now go to lab 2 : [Orchestration](../02_orchestration/README.md)
