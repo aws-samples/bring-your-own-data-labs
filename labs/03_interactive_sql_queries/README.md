@@ -74,7 +74,7 @@ You may create separate workgroups for different teams in your organisation. In 
 
   
 
-5. 5. In the new page, enter the **Workgroup name**, **Description**, the **Query result location** and click on **Create workgroup**.
+5. In the new page, enter the **Workgroup name**, **Description**, the **Query result location** and click on **Create workgroup**.
 
 ![image](img/athena_workgroup_general_1.png)
 
