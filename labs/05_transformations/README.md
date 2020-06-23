@@ -1,18 +1,16 @@
-[0-Prerequisites](../00_Prerequisites/README.md) > [1-Ingestion](../01_ingestion_with_glue/README.md) > [2-Orchestration](../02_orchestration/README.md) > [3-Interactive-SQL](../03_interactive_sql_queries/README.md) > [4-Visualisation](../04_visualization_and_reporting/README.md) > 5-Transformations
+[0-Prerequisites](../00_Prerequisites/README.md) > [1-Ingestion](../01_ingestion_with_glue/README.md) > [2-Orchestration](../02_orchestration/README.md) > [3-Interactive-SQL](../03_interactive_sql_queries/README.md) > [4-Visualisation](../04_visualization_and_reporting/README.md) > 5-Transformations > [99-Conclusion](../99_Wrap_up_and_clean/README.md)
 
 # Lab 05 - Transformations
 
-- [Lab 05 - Transformations](#Lab-05---Transformations)
-  - [Open the notebook](#Open-the-notebook)
-  - [Transformations](#Transformations)
-    - [Drop Columns](#Drop-Columns)
-      - [Example NY Taxis dataset](#Example-NY-Taxis-dataset)
-    - [Convert to Time stamp](#Convert-to-Time-stamp)
-      - [Example NY Taxis dataset](#Example-NY-Taxis-dataset-1)
-  - [Partitioning](#Partitioning)
-  - [Run this in a Glue Job](#Run-this-in-a-Glue-Job)
-  - [Other time formats](#Other-time-formats)
-  - [Terminate the following resources](#Terminate-the-following-resources)
+- [Open the notebook](#open-the-notebook)
+- [Transformations](#transformations)
+  - [Drop Columns](#drop-columns)
+    - [Example NY Taxis dataset](#example-ny-taxis-dataset)
+  - [Convert to Time stamp](#convert-to-time-stamp)
+    - [Example NY Taxis dataset](#example-ny-taxis-dataset-1)
+- [Partitioning](#partitioning)
+- [Run this in a Glue Job](#run-this-in-a-glue-job)
+- [Other time formats](#other-time-formats)
 
 
 Now we are going to start cleaning, transforming, aggregating and partitioning data. For development and debugging purposes, we are going to use the Developer Endpoint and Notebook we created some steps back.
@@ -222,15 +220,6 @@ To convert unique data formats, we use to_date() function to specify how to pars
 ## Adding trx_date date column with yyyy-MM-dd format converting a current timestamp/unix date format
 df = df.withColumn('trx_date', date_format(to_date(df['{YOUR_DATE_COL_NAME}'], {DATE_LITERALS}), "yyyy-MM-dd").cast(DateType()))
 ```
-
-## Terminate the following resources
-
-The Glue development endpoint and the notebook will incur charges. So please go to [Glue](https://console.aws.amazon.com/glue/home?region=us-east-1#etl:tab=devEndpoints)
-Select the endpoint - Action -> Delete
-
-Then go to the [notebook](https://console.aws.amazon.com/glue/home?region=us-east-1#etl:tab=notebooks)
-Select the notebook - Action -> Stop, then Delete
-
 
 
 
