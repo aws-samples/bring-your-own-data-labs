@@ -5,9 +5,9 @@
 
 - [Introduction](#introduction)
 - [Architectural Diagram](#architectural-diagram)
-- [Setting up Workgroups](#setting-up-workgroups)
 - [Setting up Amazon S3 and Athena for Storing Query Results](#setting-up-amazon-s3-and-athena-for-storing-query-results)
   - [Creating an Amazon S3 Bucket](#creating-an-amazon-s3-bucket)
+  - [Setting up Workgroups](#setting-up-workgroups)
   - [Setting up Amazon Athena](#setting-up-amazon-athena)
 - [Start Exploring with Athena](#start-exploring-with-athena)
 - [Amazon Athena Best Practices](#amazon-athena-best-practices)
@@ -18,13 +18,14 @@
 - ['Create Table as Select' Queries](#create-table-as-select-queries)
 - [Creating Views](#creating-views)
 
+
 ## Introduction
 
 Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to setup or manage, and you can start analyzing data immediately. You don’t even need to load your data into Athena, it works directly with data stored in S3.
 
 In this lab, we will use Athena to explore, analyze and prepare the data for visualization in QuickSight. This lab is divided into three sections; one mandatory and two optional:
 
-*  To start working with Athena, continue on this lab and follow through the different section. Next lab is [Setting up Workgroups](#setting-up-workgroups)
+*  To start working with Athena, continue on this lab and follow through the different section. Next lab is [Setting up Amazon S3 and Athena for Storing Query Results](#setting-up-amazon-s3-and-athena-for-storing-query-results)
 *  [Optional] In [lab 1](../01_ingestion_with_glue/README.md), we used Glue Crawlers to create our Database and Tables. To create your Database and tables using Athena, click [here](./optional.md)
 *  [Optional] To review Athena best practices, click on [Amazon Athena Best Practices](./athena_best_practices.md)
 
@@ -37,7 +38,49 @@ This is an example architecture, the raw data is stored in S3 in CSV format and 
 
   
 
-## Setting up Workgroups
+
+  
+
+## Setting up Amazon S3 and Athena for Storing Query Results
+
+  
+
+If you’re a first time Athena user, you will have to configure an S3 bucket, where Athena will store the query results.
+
+  
+
+### Creating an Amazon S3 Bucket
+
+  
+
+> Note: If you have already had an S3 bucket in your AWS Account and can be used to store Athena Query results, [you can skip this section](#setting-up-workgroups).
+
+  
+
+1. Open the [AWS Management console for Amazon S3](https://s3.console.aws.amazon.com/s3/home?region=eu-west-1)
+
+  
+
+2. On the S3 Dashboard, Click on **Create Bucket**.
+
+  
+
+  
+
+![image](img/create-bucket.png)
+
+  
+
+  
+
+3. In the **Create Bucket** pop-up page, input a unique **Bucket name**. It is advised to choose a large bucket name, with many random characters and numbers (no spaces). Select the region and make sure you are using the same region used throughout the lab.
+
+  
+
+![image](img/athena-s3.png)
+
+
+### Setting up Workgroups
 
   
 
@@ -73,9 +116,9 @@ You may create separate workgroups for different teams in your organisation. In 
 
   
 
-5. In the new page, enter the **Workgroup name**, **Description** and click on **Create workgroup**.
+5. In the new page, enter the **Workgroup name**, **Description**, the **Query result location** and click on **Create workgroup**.
 
-![image](img/athena_workgroup_general.png)
+![image](img/athena_workgroup_general_1.png)
 
   
 
@@ -89,46 +132,6 @@ You may create separate workgroups for different teams in your organisation. In 
 > Note: If the workgroup did not change, try clearing the browser cookies or change the browser.
 
 ![image](img/athena_workgroup_validate.png)
-
-  
-
-## Setting up Amazon S3 and Athena for Storing Query Results
-
-  
-
-If you’re a first time Athena user, you will have to configure an S3 bucket, where Athena will store the query results.
-
-  
-
-### Creating an Amazon S3 Bucket
-
-  
-
-> Note: If you have already had an S3 bucket in your AWS Account and can be used to store Athena Query results, you can skip this section.
-
-  
-
-1. Open the [AWS Management console for Amazon S3](https://s3.console.aws.amazon.com/s3/home?region=eu-west-1)
-
-  
-
-2. On the S3 Dashboard, Click on **Create Bucket**.
-
-  
-
-  
-
-![image](img/create-bucket.png)
-
-  
-
-  
-
-3. In the **Create Bucket** pop-up page, input a unique **Bucket name**. It is advised to choose a large bucket name, with many random characters and numbers (no spaces). Select the region and make sure you are using the same region used throughout the lab.
-
-  
-
-![image](img/athena-s3.png)
 
   
 
@@ -146,7 +149,7 @@ You can use an already existing bucket with a dedicated folder or you can create
 
   
 
-3. Fill in the S3 path (the bucket we created earlier) in **Query result location** field and click **Save**
+3. Fill in the S3 path **again** (the bucket we created earlier and used when creating the workgroup) in **Query result location** field and click **Save**
 
   > Note: Make sure you have forward slash at the end of the S3 path
 
