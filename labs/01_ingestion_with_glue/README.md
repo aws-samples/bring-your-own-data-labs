@@ -27,10 +27,16 @@ All resources to be created **must** be in the same region.
 The encoding of your raw files should be UTF-8. You should export your files from your source with UTF-8 encoding. For this workshop, you may convert the encoding before uploading files to S3 bucket with text editing tools, such as Sublime Text
 
 or by using this Linux command:
-`python iconv -f <current-encoding of file> -t utf-8 data.csv outputfile.csv`
-  
-if you don't know the encoding, you can use this command to determine: "
-`python enca -L none data.csv`
+
+```
+python iconv -f <current-encoding of file> -t utf-8 data.csv outputfile.csv
+```
+
+if you don't know the encoding, you can use this command to determine:
+
+```
+python enca -L none data.csv
+```
 
 Also, before you start, make sure your raw data files are saved in a separate bucket in a folder
 called "raw". Each file should be a separate table. Each table file should be preferably in a
@@ -104,7 +110,7 @@ NOTE: “AWSGlueServiceRole” is an AWS Managed Policy to provide Glue with nee
 
 ### Creating a Development Endpoint and Notebook (First Part)
 
-In AWS Glue can create an environment—known as a development endpoint—that you can use to iteratively develop and test your extract, transform, and load (ETL) scripts.
+In AWS Glue, you can create an environment—known as a development endpoint—that you can use to iteratively develop and test your extract, transform, and load (ETL) scripts.
 You can then create a notebook that connects to the endpoint, and use your notebook to author and test your ETL script. When you're satisfied with the results of your development process, you can create an ETL job that runs your script. With this process, you can add functions and debug your scripts in an interactive manner.
 
 Go to Glue in the console https://console.aws.amazon.com/glue/
