@@ -53,7 +53,7 @@ If you’re a first time Athena user, you will have to configure an S3 bucket, w
 
   
 
-> Note: If you have already had an S3 bucket in your AWS Account and can be used to store Athena Query results, you can skip this section.
+> Note: If you have already had an S3 bucket in your AWS Account and can be used to store Athena Query results, [you can skip this section](#setting-up-workgroups).
 
   
 
