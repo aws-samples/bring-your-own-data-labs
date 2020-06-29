@@ -140,12 +140,6 @@ We will be using AWS Glue Crawlers to infer the schema of the files and create d
 
 - select the newly created crawler and push the **Run crawler** button. It will take a few minutes until it populates the data catalog.
 
-This is code for cleaning column names from spaces and special characters for Glue Crawler to recognize them:
-
-```json
-Example
-```
-
 Validation: After the crawler finishes running, from the left menu, go to **Databases**, select your database, and click "Tables in <database-name>" link. Choose the table you just created. You will be able to see information and schema of your files.
 
 ## Transform the data to Parquet format
