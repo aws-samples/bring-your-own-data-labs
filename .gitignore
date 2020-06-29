@@ -4,4 +4,4 @@ site/*
 .DS_Store
 
 .unotes/*
-.idea
+.idea/*
