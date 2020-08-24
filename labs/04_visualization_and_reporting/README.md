@@ -68,6 +68,8 @@ Now, on the Amazon QuickSight dashboard, navigate to User Settings page by click
     i. The S3 bucket(s) you store your data
     ii. The S3 bucket that that you store Athena query results, as specified in your Athena workgroup settings.
   
+NOTE: Make sure to tick the boxes for "Write permission for Athena Workgroup" as well.  
+
 10. Click on **Select buckets**.
 
 ![image](https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/qsimage6.PNG)
