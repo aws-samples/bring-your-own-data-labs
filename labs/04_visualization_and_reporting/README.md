@@ -149,6 +149,7 @@ marked by a **green hash #**)
 category, etc. Usually marked by **ticket icon**)
 
 4. Optional - Change the data type. You can change the field's data type in one of the available data types.
+<!---  
   * Go to the datasets page
 ![image](img/manage-data.png)
 
@@ -157,7 +158,7 @@ category, etc. Usually marked by **ticket icon**)
 
   * Choose to Edit your Dataset
 ![image](img/Edit-dataset.png)
-
+--->
   * Press over the arrow on the right side of the field you want to modify
 ![image](img/arrow-edit-dataset-type.png)
 
