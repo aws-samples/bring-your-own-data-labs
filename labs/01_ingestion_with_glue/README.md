@@ -110,7 +110,7 @@ NOTE: “AWSGlueServiceRole” is an AWS Managed Policy to provide Glue with nee
 
 ## Creating a Development Endpoint and Notebook - Step 1
 
-> Development endpoint and notebook will be used in Part 05 of this workshop. Since it takes a bit of time to create the resources, we are doing it now so that they will be ready when we need them.
+> Development endpoint and notebook will be used in Lab 5 of this workshop. Since it takes a bit of time to create the resources, we are doing it now so that they will be ready when we need them.
 
 In AWS Glue, you can create an environment — known as a development endpoint — that you can use to iteratively develop and test your extract, transform, and load (ETL) scripts.
 
