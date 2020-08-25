@@ -101,11 +101,9 @@ A **dashboard** is a read-only snapshot of an analysis that you can share with o
 
 1. Click on the region icon on the top-right corner of the page, and select the region where your data resides. 
 
-2. Click on **Manage data** on the top-right corner of the webpage to review existing data sets.
+2. Click on **Datasets** in the left menu to review existing data sets.
 
-![image](img/oregon-manage.png)
-
-3. Click on **New data set** on the top-left corner of the webpage and review the options. 
+3. Click on **New dataset** on the top-right corner of the web page and review the options. 
 
 4. Select **Athena** as a Data source.
 
@@ -119,9 +117,11 @@ A **dashboard** is a read-only snapshot of an analysis that you can share with o
 --->
 6. Click **Create data source**.
 
-7. Choose the table you need to visualize its data.
+7. Choose curated database you created then choose the table you need to visualize its data.
 
-8. Choose **Save and Visualize** on top of the page.
+8. Choose **Select**.
+
+9. Choose to <b>Directly query your data</b> then click <b>Visualize</b>
 
 ***Alternative Option***
 
@@ -131,9 +131,11 @@ You can choose to create a dataset using S3 as your data source. For this:
 
 ## Preparing your data
 
-1. You can edit an existing data set to perform data preparation. To edit a data set from the Your **Data Sets page**, choose the data set, and then choose **Edit Data Set**. The data set opens in the data preparation page.
+1. You can edit an existing data set to perform data preparation. To edit a data set from the **Analysis page**, choose the small edit icon in the top left above <b>Fields list</b>. The data set opens in the data preparation page.
 
-  You can duplicate an existing data set to save a copy of it with a new name. The new data set is a completely separate copy.  Choose **Duplicate** data set, and enter a name for the copy.
+![image](img/edit-dataset-icon.png)
+
+<!---You can duplicate an existing data set to save a copy of it with a new name. The new data set is a completely separate copy.  Choose **Duplicate** data set, and enter a name for the copy.--->
 
 2. Select the fields that you will use for the visualization.
 ![image](img/Select_Fields.png)
