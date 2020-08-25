@@ -82,6 +82,8 @@ Select the job that needs to run - In this case, we want the transformation job 
 
 ![adding jobs to the trigger](./img/orchestration/wf5.png)
 
+NOTE: If you have multiple tables, you will need to repeat the last step to trigger job of each table.
+
 We are almost there, however there's one more thing: we need to add the crawler for the curated data - Please follow the same steps
 
 Click on the byod job and then click in **Add Trigger**.
@@ -96,11 +98,17 @@ For the Event, we want that after the previous job is done (SUCCESS) then trigge
 
 ![adding jobs to the trigger](./img/orchestration/wf8.png)
 
+At this point, if you have multiple tables, please do the following to add other jobs to watch:
+1. Click on the created trigger
+2. Click <b>Action</b> menu in the top right of the diagram.
+3. Choose <b>Add jobs/crawlers to watch</b>
+4. Mark other jobs to be watched as checked and click <b>Add</b>
+
 Now, please click on the trigger, and then **Add Node**.
 
 ![adding jobs to the trigger](./img/orchestration/wf8-1.png)
 
-Add a job to be triggered (In this case the crawler created in the previous step - you probably named it something like this {choose-name}-curated-ds)
+Add the curated crawler to be triggered (In this case the crawler created in the previous step - you probably named it something like this {choose-name}-curated-ds)
 
 ![adding jobs to the trigger](./img/orchestration/wf51.png)
 

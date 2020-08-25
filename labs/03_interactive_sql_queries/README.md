@@ -7,7 +7,6 @@
 - [Architectural Diagram](#architectural-diagram)
 - [Setting up Amazon S3 and Athena for Storing Query Results](#setting-up-amazon-s3-and-athena-for-storing-query-results)
   - [Creating an Amazon S3 Bucket](#creating-an-amazon-s3-bucket)
-  - [Setting up Workgroups](#setting-up-workgroups)
   - [Setting up Amazon Athena](#setting-up-amazon-athena)
 - [Start Exploring with Athena](#start-exploring-with-athena)
 - [Amazon Athena Best Practices](#amazon-athena-best-practices)
@@ -53,7 +52,7 @@ If you’re a first time Athena user, you will have to configure an S3 bucket, w
 
   
 
-> Note: If you have already had an S3 bucket in your AWS Account and can be used to store Athena Query results, [you can skip this section](#setting-up-workgroups).
+> Note: If you have already had an S3 bucket in your AWS Account and can be used to store Athena Query results, [you can skip this section](#setting-up-amazon-athena).
 
   
 
@@ -79,7 +78,7 @@ If you’re a first time Athena user, you will have to configure an S3 bucket, w
 
 ![image](img/athena-s3.png)
 
-
+<!---
 ### Setting up Workgroups
 
   
@@ -134,7 +133,7 @@ You may create separate workgroups for different teams in your organisation. In 
 ![image](img/athena_workgroup_validate.png)
 
   
-
+--->
 ### Setting up Amazon Athena
 
   
@@ -145,11 +144,11 @@ You can use an already existing bucket with a dedicated folder or you can create
 
 1. Navigate to Athena console
 
-2. Make sure you are on the right workgroup and click on **Settings** on the top bar
+2. <!---Make sure you are on the right workgroup and--->Click on **Settings** on the top bar
 
   
 
-3. Fill in the S3 path **again** (the bucket we created earlier and used when creating the workgroup) in **Query result location** field and click **Save**
+3. Fill in the S3 path **again** (the bucket we created earlier) in **Query result location** field and click **Save**
 
   > Note: Make sure you have forward slash at the end of the S3 path
 
@@ -174,7 +173,7 @@ After initial setup you can start exploring your data with Athena. You can run n
 
   
 
-2. In the left pane, choose the database name
+2. In the left pane, choose the curated database name we created in Glue before.
 
 ![image](img/athena-db-selec.png)
 

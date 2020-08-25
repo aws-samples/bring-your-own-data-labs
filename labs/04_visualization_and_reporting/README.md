@@ -66,7 +66,7 @@ Now, on the Amazon QuickSight dashboard, navigate to User Settings page by click
   a. Choose **Select All** if you have permissions on all S3 folders
   b. Choose the following two buckets:
     i. The S3 bucket(s) you store your data
-    ii. The S3 bucket that that you store Athena query results, as specified in your Athena workgroup settings.
+    ii. The S3 bucket that that you store Athena query results.
   
 NOTE: Make sure to tick the boxes for "Write permission for Athena Workgroup" as well.  
 
@@ -112,16 +112,16 @@ A **dashboard** is a read-only snapshot of an analysis that you can share with o
 ![image](img/connectors.png)
 
 5. Enter the **Data source** **name** (e.g. *AthenaDataSource*).
-
+<!---
 6. Select the Athena **workgroup** you created specifically for QuickSight. Then **Validate the Connection**.
 
 ![image](img/AthenaWorkGroup_DataSource.png)
+--->
+6. Click **Create data source**.
 
-7. Click **Create data source**.
+7. Choose the table you need to visualize its data.
 
-8. Choose the table you need to visualize its data.
-
-9. Choose **Save and Visualize** on top of the page.
+8. Choose **Save and Visualize** on top of the page.
 
 ***Alternative Option***
 
