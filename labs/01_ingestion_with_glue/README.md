@@ -8,12 +8,11 @@
     - [Configure Permissions](#configure-permissions)
       - [Creating a Policy for Amazon S3 Bucket (Console)](#creating-a-policy-for-amazon-s3-bucket-console)
       - [Creating a Role for AWS Service Glue (Console)](#creating-a-role-for-aws-service-glue-console)
-    - [Creating a Development Endpoint and Notebook (First Part)](#creating-a-development-endpoint-and-notebook-first-part)
   - [Create data catalog from S3 files](#create-data-catalog-from-s3-files)
   - [Transform the data to Parquet format](#transform-the-data-to-parquet-format)
   - [Add a crawler for curated data](#add-a-crawler-for-curated-data)
   - [Schema Validation](#schema-validation)
-    - [Creating a Development Endpoint and Notebook (Second Part)](#creating-a-development-endpoint-and-notebook-second-part)
+  - [OPTIONAL - Creating a Development Endpoint and Notebook](#optional-creating-a-development-endpoint-and-notebook)
 
 In this Lab we will create a schema from your data optimized for analytics and place the result in an S3 bucket-based data lake.
 
@@ -145,7 +144,7 @@ We will place this data under the folder named "_curated_" in the data lake.
 - select the option "_A new script to be authored by you_";
 - Provide a script name (preferably **TABLE-NAME-1-job-script.py**)
 - Tick the checkbox for "_Job Metrics_", under **Monitoring Options** and DO NOT hit **Next** yet;
-- Under "Security configuration, script libraries, and job parameters (optional)", set **Maximum capacity** as 20. This determines the number of processing units to be used for the job. Higher numbers result in faster processing times but incur higher costs. This should be determined according to data size, data type etc. (further info can be found in [Glue documentation](https://docs.aws.amazon.com/glue/latest/dg/add-job.html).) - hit **Next**
+- Under "Security configuration, script libraries, and job parameters (optional)", check that **Worker type** is "Standard" and **Number of workers** is "10". This determines the worker type and the number of processing units to be used for the job. Higher numbers result in faster processing times but may incur higher costs. This should be determined according to data size, data type etc. (further info can be found in [Glue documentation](https://docs.aws.amazon.com/glue/latest/dg/add-job.html).) - hit **Next**
 - click **Next**, then **Save job and edit script**. You will be redirected to script editor.
 - Paste the following code to the editor. **DONT FORGET TO PUT IN YOUR INPUT AND OUTPUT FOLDER LOCATIONS.**
 
@@ -240,7 +239,7 @@ NOTE: If you have any "id" column as integer, please make sure type is set to "d
 Now go to lab 2 : [Orchestration](../02_orchestration/README.md)
 
 
-### OPTIONAL: Creating a Development Endpoint and Notebook
+## OPTIONAL: Creating a Development Endpoint and Notebook
 
 In AWS Glue, you can create an environment — known as a development endpoint — that you can use to iteratively develop and test your extract, transform, and load (ETL) scripts.
 
