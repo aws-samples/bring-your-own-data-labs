@@ -108,27 +108,6 @@ In this lab we will:
 
 NOTE: “AWSGlueServiceRole” is an AWS Managed Policy to provide Glue with needed permissions to access S3 data. However, you still need to allow access to your specific S3 bucket for Glue by attaching “BYOD-S3Policy” created policy.
 
-### Creating a Development Endpoint and Notebook (First Part)
-
-In AWS Glue, you can create an environment—known as a development endpoint—that you can use to iteratively develop and test your extract, transform, and load (ETL) scripts.
-You can then create a notebook that connects to the endpoint, and use your notebook to author and test your ETL script. When you're satisfied with the results of your development process, you can create an ETL job that runs your script. With this process, you can add functions and debug your scripts in an interactive manner.
-
-**NOTE: Please be aware that AWS Glue allocates 5 DPUs to each development endpoint by default, you are billed $0.44 per DPU-Hour, therefore PLEASE make sure to clean/ delete this endpoint once you have finish all the labs - follow the instructions in [lab - Wrap Up and Clean](../99_Wrap_up_and_clean/README.md)**
-
-
-Go to Glue in the console https://console.aws.amazon.com/glue/
-
-1. On the left menu, click in Dev. endpoints and **Add endpoint**.
-2. Development endpoint name: `byod`
-3. IAM role: **glue-processor-role**
-4. Click **Next**
-5. Select Skip networking information
-6. Click **Next**
-7. Click **Next** \- No need to Add SSH public key for now
-8. Click **Finish**
-
-It will take a while to create the endpoint - we will be back to this step. Please continue.
-
 ## Create data catalog from S3 files
 
 We will be using AWS Glue Crawlers to infer the schema of the files and create data catalog. Without a crawler, you can still read data from the S3 by a Glue job, but it will not be able to determine data types (string, int, etc) for each column.
@@ -162,6 +141,7 @@ We will place this data under the folder named "_curated_" in the data lake.
 - Click on the _Add job_ button;
 - specify a name (preferably **TABLE-NAME-1-job**) in the name field, then select the _"glue-processor-role"_;
 - select Type: **Spark**
+- make sure Glue version 2 is selected: "Spark 2.4, Python 3 with improved job startup times (Glue Version 2.0)" (If you want to read more about version 2: [Glue version 2 announced](https://aws.amazon.com/blogs/aws/aws-glue-version-2-0-featuring-10x-faster-job-start-times-and-1-minute-minimum-billing-duration/))
 - select the option "_A new script to be authored by you_";
 - Provide a script name (preferably **TABLE-NAME-1-job-script.py**)
 - Tick the checkbox for "_Job Metrics_", under **Monitoring Options** and DO NOT hit **Next** yet;
@@ -256,12 +236,34 @@ NOTE: If you have any "id" column as integer, please make sure type is set to "d
 
 - Click Save.
 
-### Creating a Development Endpoint and Notebook (Second Part)
+
+Now go to lab 2 : [Orchestration](../02_orchestration/README.md)
+
+
+### OPTIONAL: Creating a Development Endpoint and Notebook
+
+In AWS Glue, you can create an environment — known as a development endpoint — that you can use to iteratively develop and test your extract, transform, and load (ETL) scripts.
+
+You can then create a notebook that connects to the endpoint, and use your notebook to author and test your ETL script. When you're satisfied with the results of your development process, you can create an ETL job that runs your script. With this process, you can add functions and debug your scripts in an interactive manner.
+
+It is also possible to connect your local IDE to this endpoint, which is explained here: [Tutorial: Set Up PyCharm Professional with a Development Endpoint](https://docs.aws.amazon.com/glue/latest/dg/dev-endpoint-tutorial-pycharm.html)
+
+How to create an endpoint and use it from a notebook:
+
+Go to Glue in the console https://console.aws.amazon.com/glue/
+1. On the left menu, click in Dev endpoints and **Add endpoint**.
+2. Development endpoint name: `byod`
+3. IAM role: **glue-processor-role**
+4. Click **Next**
+5. Select Skip networking information
+6. Click **Next**
+7. Click **Next** \- No need to Add SSH public key for now
+8. Click **Finish**
+
+It will take a while to create the endpoint. After it is finished:
 
 1. In the glue console, Go to Notebooks, click Create notebook
 2. Notebook name: aws-glue-`byod`
 3. Attach to development: choose the endpoint created some steps back
 4. Create a new IAM Role.
 5. **Create notebook**
-
-Now go to lab 2 : [Orchestration](../02_orchestration/README.md)
