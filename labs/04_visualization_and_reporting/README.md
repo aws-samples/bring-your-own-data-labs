@@ -66,13 +66,13 @@ Now, on the Amazon QuickSight dashboard, navigate to User Settings page by click
   a. Choose **Select All** if you have permissions on all S3 folders
   b. Choose the following two buckets:
     i. The S3 bucket(s) you store your data
-    ii. The S3 bucket that that you store Athena query results, as specified in your Athena workgroup settings.
+    ii. The S3 bucket that that you store Athena query results.
   
 NOTE: Make sure to tick the boxes for "Write permission for Athena Workgroup" as well.  
 
 10. Click on **Select buckets**.
 
-![image](https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/qsimage6.PNG)
+![image](img/qs-workgroup-permission.png)
 
 12. When you are done doing all this, click **Update** to bring you back to the user settings back.
 
@@ -101,11 +101,9 @@ A **dashboard** is a read-only snapshot of an analysis that you can share with o
 
 1. Click on the region icon on the top-right corner of the page, and select the region where your data resides. 
 
-2. Click on **Manage data** on the top-right corner of the webpage to review existing data sets.
+2. Click on **Datasets** in the left menu to review existing data sets.
 
-![image](img/oregon-manage.png)
-
-3. Click on **New data set** on the top-left corner of the webpage and review the options. 
+3. Click on **New dataset** on the top-right corner of the web page and review the options. 
 
 4. Select **Athena** as a Data source.
 
@@ -119,9 +117,11 @@ A **dashboard** is a read-only snapshot of an analysis that you can share with o
 
 7. Click **Create data source**.
 
-8. Choose the table you need to visualize its data.
+8. Choose curated database you created then choose the table you need to visualize its data.
 
-9. Choose **Save and Visualize** on top of the page.
+9. Choose **Select**.
+
+10. Choose to <b>Directly query your data</b> then click <b>Visualize</b>
 
 ***Alternative Option***
 
@@ -131,9 +131,11 @@ You can choose to create a dataset using S3 as your data source. For this:
 
 ## Preparing your data
 
-1. You can edit an existing data set to perform data preparation. To edit a data set from the Your **Data Sets page**, choose the data set, and then choose **Edit Data Set**. The data set opens in the data preparation page.
+1. You can edit an existing data set to perform data preparation. To edit a data set from the **Analysis page**, choose the small edit icon in the top left above <b>Fields list</b>. The data set opens in the data preparation page.
 
-  You can duplicate an existing data set to save a copy of it with a new name. The new data set is a completely separate copy.  Choose **Duplicate** data set, and enter a name for the copy.
+![image](img/edit-dataset-icon.png)
+
+<!---You can duplicate an existing data set to save a copy of it with a new name. The new data set is a completely separate copy.  Choose **Duplicate** data set, and enter a name for the copy.--->
 
 2. Select the fields that you will use for the visualization.
 ![image](img/Select_Fields.png)
@@ -147,6 +149,7 @@ marked by a **green hash #**)
 category, etc. Usually marked by **ticket icon**)
 
 4. Optional - Change the data type. You can change the field's data type in one of the available data types.
+<!---  
   * Go to the datasets page
 ![image](img/manage-data.png)
 
@@ -155,7 +158,7 @@ category, etc. Usually marked by **ticket icon**)
 
   * Choose to Edit your Dataset
 ![image](img/Edit-dataset.png)
-
+--->
   * Press over the arrow on the right side of the field you want to modify
 ![image](img/arrow-edit-dataset-type.png)
 

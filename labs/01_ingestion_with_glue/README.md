@@ -190,7 +190,7 @@ job = Job(glueContext)
 ## DONT FORGET TO PUT IN YOUR INPUT AND OUTPUT LOCATIONS BELOW.
 your_database_name = "YOUR-DATABASE-NAME"
 your_table_name = "YOUR-TABLE-NAME"
-output_location = "s3://YOUR-BUCKET-NAME/YOUR-OUTPUT-FOLDER"
+output_location = "s3://YOUR-BUCKET-NAME/curated/TABLE-NAME"
 
 job.init("byod-workshop" + str(datetime.datetime.now().timestamp()))
 
@@ -241,7 +241,7 @@ Glue crawler connects to a data store to determine the schema for your data, and
 - If you have more than one folder (meaning different sets type of data), you need to add them as other datastores one by one in this step. Otherwide, choose "No".
 - Choose the _glue-processor-role_ as IAM Role and proceed to the schedule;
 - Leave the _Run on demand_ option at the Frequency section and press **Next**;
-- Click on the **Add database** button and specify {choose-name}\_src as database name (this will be the name representing the source database in the data catalog - make sure the name does not have "-" since you may have problems in the future steps). Press **Next** and **Finish**;
+- Click on the **Add database** button and specify {choose-name}\_curated as database name (this will be the name representing the curated database in the data catalog - make sure the name does not have "-" since you may have problems in the future steps). Press **Next** and **Finish**;
 
 - select the newly created crawler and push the **Run crawler** button. It will take a few minutes until it populates the data catalog.
 
