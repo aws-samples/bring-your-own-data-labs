@@ -72,7 +72,7 @@ NOTE: Make sure to tick the boxes for "Write permission for Athena Workgroup" as
 
 10. Click on **Select buckets**.
 
-![image](https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/qsimage6.PNG)
+![image](img/qs-workgroup-permission.png)
 
 12. When you are done doing all this, click **Update** to bring you back to the user settings back.
 
@@ -110,18 +110,18 @@ A **dashboard** is a read-only snapshot of an analysis that you can share with o
 ![image](img/connectors.png)
 
 5. Enter the **Data source** **name** (e.g. *AthenaDataSource*).
-<!---
+
 6. Select the Athena **workgroup** you created specifically for QuickSight. Then **Validate the Connection**.
 
 ![image](img/AthenaWorkGroup_DataSource.png)
---->
-6. Click **Create data source**.
 
-7. Choose curated database you created then choose the table you need to visualize its data.
+7. Click **Create data source**.
 
-8. Choose **Select**.
+8. Choose curated database you created then choose the table you need to visualize its data.
 
-9. Choose to <b>Directly query your data</b> then click <b>Visualize</b>
+9. Choose **Select**.
+
+10. Choose to <b>Directly query your data</b> then click <b>Visualize</b>
 
 ***Alternative Option***
 

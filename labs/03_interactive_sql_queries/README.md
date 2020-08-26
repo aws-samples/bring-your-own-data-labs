@@ -7,6 +7,7 @@
 - [Architectural Diagram](#architectural-diagram)
 - [Setting up Amazon S3 and Athena for Storing Query Results](#setting-up-amazon-s3-and-athena-for-storing-query-results)
   - [Creating an Amazon S3 Bucket](#creating-an-amazon-s3-bucket)
+  - [Setting up Workgroups](#setting-up-workgroups)
   - [Setting up Amazon Athena](#setting-up-amazon-athena)
 - [Start Exploring with Athena](#start-exploring-with-athena)
 - [Amazon Athena Best Practices](#amazon-athena-best-practices)
@@ -78,7 +79,6 @@ If you’re a first time Athena user, you will have to configure an S3 bucket, w
 
 ![image](img/athena-s3.png)
 
-<!---
 ### Setting up Workgroups
 
   
@@ -132,8 +132,6 @@ You may create separate workgroups for different teams in your organisation. In 
 
 ![image](img/athena_workgroup_validate.png)
 
-  
---->
 ### Setting up Amazon Athena
 
   
