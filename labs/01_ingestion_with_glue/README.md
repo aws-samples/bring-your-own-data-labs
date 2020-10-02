@@ -8,7 +8,6 @@
     - [Configure Permissions](#configure-permissions)
       - [Creating a Policy for Amazon S3 Bucket (Console)](#creating-a-policy-for-amazon-s3-bucket-console)
       - [Creating a Role for AWS Service Glue (Console)](#creating-a-role-for-aws-service-glue-console)
-  - [Creating a Development Endpoint and Notebook - Step 1](#creating-a-development-endpoint-and-notebook---step-1)
   - [Create data catalog from S3 files](#create-data-catalog-from-s3-files)
   - [Transform the data to Parquet format](#transform-the-data-to-parquet-format)
     - [Adding a source from the catalog](#adding-a-source-from-the-catalog)
@@ -18,7 +17,6 @@
     - [Monitoring the job](#monitoring-the-job)
   - [Add a crawler for curated data](#add-a-crawler-for-curated-data)
   - [Schema Validation](#schema-validation)
-  - [Creating a Development Endpoint and Notebook - Step 2](#creating-a-development-endpoint-and-notebook---step-2)
 
 In this Lab we will create a schema from your data optimized for analytics and place the result in an S3 bucket-based data lake.
 
@@ -112,30 +110,6 @@ In this lab we will:
 12. Review the role and then choose **Create role**.
 
 NOTE: “AWSGlueServiceRole” is an AWS Managed Policy to provide Glue with needed permissions to access S3 data. However, you still need to allow access to your specific S3 bucket for Glue by attaching “BYOD-S3Policy” created policy.
-
-## Creating a Development Endpoint and Notebook - Step 1
-
-> Development endpoint and notebook will be used in Lab 5 of this workshop. Since it takes a bit of time to create the resources, we are doing it now so that they will be ready when we need them.
-
-In AWS Glue, you can create an environment — known as a development endpoint — that you can use to iteratively develop and test your extract, transform, and load (ETL) scripts.
-
-You can then create a notebook that connects to the endpoint, and use your notebook to author and test your ETL script. When you're satisfied with the results of your development process, you can create an ETL job that runs your script. With this process, you can add functions and debug your scripts in an interactive manner.
-
-It is also possible to connect your local IDE to this endpoint, which is explained here: [Tutorial: Set Up PyCharm Professional with a Development Endpoint](https://docs.aws.amazon.com/glue/latest/dg/dev-endpoint-tutorial-pycharm.html)
-
-How to create an endpoint and use it from a notebook:
-
-Go to Glue in the console https://console.aws.amazon.com/glue/
-1. On the left menu, click in Dev endpoints and **Add endpoint**.
-2. Development endpoint name: `byod`
-3. IAM role: **glue-processor-role**
-4. Click **Next**
-5. Select Skip networking information
-6. Click **Next**
-7. Click **Next** \- No need to Add SSH public key for now
-8. Click **Finish**
-
-It will take a while to create the endpoint.
 
 ## Create data catalog from S3 files
 
@@ -300,15 +274,6 @@ You may notice that some tables have column headers such as col0,col1,col2,col3.
 NOTE: If you have any "id" column as integer, please make sure type is set to "double".
 
 - Click Save.
-
-## Creating a Development Endpoint and Notebook - Step 2
-
-1. In the glue console, Go to Notebooks, click Create notebook
-2. Notebook name: aws-glue-`byod`
-3. Attach to development: choose the endpoint created some steps back
-4. Create a new IAM Role.
-5. **Create notebook**
-
 
 Now go to lab 2 : [Orchestration](../02_orchestration/README.md)
 
