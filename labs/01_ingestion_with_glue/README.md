@@ -11,6 +11,11 @@
   - [Creating a Development Endpoint and Notebook - Step 1](#creating-a-development-endpoint-and-notebook---step-1)
   - [Create data catalog from S3 files](#create-data-catalog-from-s3-files)
   - [Transform the data to Parquet format](#transform-the-data-to-parquet-format)
+    - [Adding a source from the catalog](#adding-a-source-from-the-catalog)
+    - [Adding transforms](#adding-transforms)
+    - [Storing the results](#storing-the-results)
+    - [Running the job](#running-the-job)
+    - [Monitoring the job](#monitoring-the-job)
   - [Add a crawler for curated data](#add-a-crawler-for-curated-data)
   - [Schema Validation](#schema-validation)
   - [Creating a Development Endpoint and Notebook - Step 2](#creating-a-development-endpoint-and-notebook---step-2)
@@ -161,70 +166,106 @@ In the following section, we will create one job per each file to transform the 
 
 We will place this data under the folder named "_curated_" in the data lake.
 
-- In the Glue Console select the **Jobs** section in the left navigation panel'
-- Click on the _Add job_ button;
-- specify a name (preferably **TABLE-NAME-1-job**) in the name field, then select the _"glue-processor-role"_;
-- select Type: **Spark**
-- make sure Glue version 2 is selected: "Spark 2.4, Python 3 with improved job startup times (Glue Version 2.0)" (If you want to read more about version 2: [Glue version 2 announced](https://aws.amazon.com/blogs/aws/aws-glue-version-2-0-featuring-10x-faster-job-start-times-and-1-minute-minimum-billing-duration/))
-- select the option "_A new script to be authored by you_";
-- Provide a script name (preferably **TABLE-NAME-1-job-script.py**)
-- Tick the checkbox for "_Job Metrics_", under **Monitoring Options** and DO NOT hit **Next** yet;
-- Under "Security configuration, script libraries, and job parameters (optional)", check that **Worker type** is "Standard" and **Number of workers** is "10". This determines the worker type and the number of processing units to be used for the job. Higher numbers result in faster processing times but may incur higher costs. This should be determined according to data size, data type etc. (further info can be found in [Glue documentation](https://docs.aws.amazon.com/glue/latest/dg/add-job.html).) - hit **Next**
-- click **Next**, then **Save job and edit script**. You will be redirected to script editor.
-- Paste the following code to the editor. **DONT FORGET TO PUT IN YOUR INPUT AND OUTPUT FOLDER LOCATIONS.**
+- In the Glue Console select **AWS Glue Studio** 
+- On the AWS Glue Studio home page, **Create and manage jobs**
 
-This step needs to be done per each file you have.
+![create and manage jobs](./img/ingestion/aws-glue-studio-2.jpg)
 
-```python
-import sys
-import datetime
-import re
-from awsglue.transforms import *
-from awsglue.utils import getResolvedOptions
-from pyspark.context import SparkContext
-from awsglue.context import GlueContext
-from awsglue.job import Job
-glueContext = GlueContext(SparkContext.getOrCreate())
-job = Job(glueContext)
+- AWS Glue Studio supports different sources, including Amazon S3, Amazon RDS, Amazon Kinesis and Apache Kafka. For the transformation you will use one AWS table as the data source and one S3 bucket as the destination.
 
-## DONT FORGET TO PUT IN YOUR INPUT AND OUTPUT LOCATIONS BELOW.
-your_database_name = "YOUR-DATABASE-NAME"
-your_table_name = "YOUR-TABLE-NAME"
-output_location = "s3://YOUR-BUCKET-NAME/curated/TABLE-NAME"
+- In the **Create Job** section, select **Source and target added to the graph**. Make sure **S3** is configured as the both the **Source** and **Target** then click **Create**.
 
-job.init("byod-workshop" + str(datetime.datetime.now().timestamp()))
+![create job](./img/ingestion/aws-glue-studio-3.png)
+This takes you to the Visual Canvas to create an AWS Glue job. You should already see the canvas prepopulated with a basic diagram. 
+- Change the **Job name** from **Untitled job** to the desired name (preferably **TABLE-NAME-1-job**) 
+![rename job](./img/ingestion/aws-glue-studio-4.png)
 
-#load our data from the catalog that we created with a crawler
-dynamicF = glueContext.create_dynamic_frame.from_catalog(
-    database = your_database_name,
-    table_name = your_table_name,
-    transformation_ctx = "dynamicF")
+### Adding a source from the catalog
+1. Select the **Data source - S3** bucket node.
+2. On the **Data source properties - S3** tab, choose the relevant Database and table. Leave the partition predicate field empty. 
+  
+  ![add source](./img/ingestion/aws-glue-studio-5.png)
 
-# invalid characters in column names are replaced by _
-df = dynamicF.toDF()
-def canonical(x): return re.sub("[ ,;{}()\n\t=]+", '_', x.lower())
-renamed_cols = [canonical(c) for c in df.columns]
-df = df.toDF(*renamed_cols)
+### Adding transforms
 
-# write our dataframe in parquet format to an output s3 bucket
-df.write.mode("overwrite").format("parquet").save(output_location)
+A transform is the AWS Glue Studio component were the data is modified. You have the option of using different transforms that are part of this service or custom code. 
 
-job.commit()
+1. One **ApplyMapping** transform has automatically been added for you. Click it to modify it. 
+2. On the **transform** tab, change the data types for specific columns to the desired values. You can also choose to rename columns.
+3. Drop the columns that you will not require downstream.
+
+![rename columns](./img/ingestion/aws-glue-studio-6.png)
+
+Now we will add a second custom transform to the data source, where we are replacing invalid characters that you may have in your column headers. Spark doesn't accept certain characters in field names including spaces, so it is better to fix this before we send the data down stream. 
+1. Click the first **ApplyMapping** transform node.
+2. Click the **(+)** icon.
+
+![](./img/ingestion/aws-glue-studio-7.png)
+
+3. On the Node properties tab, for Name enter **Column Header Cleaner**.
+4. For Node type, choose **Custom transform**
+
+![](./img/ingestion/aws-glue-studio-77.png)
+
+5. On the Transform tab for Code block, change the function name from MyTransform to **ColumnHeaderCleaner**
+6. Enter the following code under the function body:
+```    
+    import re
+    def canonical(x): return re.sub("[ ,;{}()\n\t=]+", '_', x.lower())
+    
+    # select the first collection from the DynamicFrameCollection
+    selected = dfc.select(list(dfc.keys())[0]).toDF()
+    
+    renamed_cols = [canonical(c) for c in selected.columns]
+    cleaned_df = DynamicFrame.fromDF(selected.toDF(*renamed_cols), glueContext,"cleaned_df")
+    return DynamicFrameCollection({"cleaned_df": cleaned_df}, glueContext)
 ```
+![](./img/ingestion/aws-glue-studio-8.png)
 
-Notice that we have a section in this script where we are replacing invalid characters that you may have in your column headers. Spark doesn't accept certain characters in field names including spaces.
+After adding the custom transformation to the AWS Glue job, you want to store the result of the aggregation in the S3 bucket. To do this, you need a Select from collection transform to read the output from the **Column Header Cleaner** node and send it to the destination.
 
-Click \* **Save** and **Run Job**
+7. Choose the **New node** node.
+8. Leave the **Transform** tab with the default values.
+9. On the **Node Properties** tab, change the name of the transform to **Select Aggregated Data**.
+10. Leave everything else with the default values.
 
-![add a glue job](./img/ingestion/glue-job3.png)
+### Storing the results
+1. Select the **Data target - S3 bucket** node
+2. Under **Node properties**, change the Node parent to be the **Select Aggregated Data** Transform
+![](./img/ingestion/aws-glue-studio-99.png)
 
-Check the status of the job by selecting the job and go to history tab in the lower panel. In order to continue we need to wait until this job is done, this can take around 5 minutes (and up to 10 minutes to start), depending on the size of your dataset.
+3. Under **Data target properties - S3**, select **Parquet** as format and the compression type to be **GZIP**. Select the curated location as the **S3 target location**.
 
-![add a glue job](./img/ingestion/seejob.png)
+![](./img/ingestion/aws-glue-studio-9.png)
 
-To make sure the job transformed the data, go to S3, you should see a new sub-folder called curated with data on it.
+If you followed this guide closely, your final schematic should look similar to the one below: 
+![](./img/ingestion/aws-glue-studio-10.png) 
 
-Now, remember to repeat this last step per each file you had originally.
+### Running the job
+
+1. Under Job details, select the _"glue-processor-role"_ as the IAM Role
+2. Select Type: **Spark**
+3. Make sure Glue version 2 is selected: "Glue 2.0 - Supports spark 2.4, Scala 2, Python 3" (If you want to read more about version 2: [Glue version 2 announced](https://aws.amazon.com/blogs/aws/aws-glue-version-2-0-featuring-10x-faster-job-start-times-and-1-minute-minimum-billing-duration/))
+4. Check that **G.1x** is selected as the worker type and that **Worker type** and that **Number of workers** is "10". This determines the worker type and the number of processing units to be used for the job. Higher numbers result in faster processing times but may incur higher costs. This should be determined according to data size, data type etc. (further info can be found in [Glue documentation](https://docs.aws.amazon.com/glue/latest/dg/add-job.html).)
+
+![](./img/ingestion/aws-glue-studio-11.png)
+
+5. Click **Save** and **Run Job**
+
+### Monitoring the job
+AWS Glue Studio offers a job monitoring dashboard that provides comprehensive information about your jobs. You can get job statistics and see detailed info about the job and the job status when running.
+
+In the AWS Glue Studio navigation panel, choose Monitoring.
+Choose the entry with the job name you have configured above.
+To get more details about the job run, choose View run details.
+
+![](./img/ingestion/aws-glue-studio-13.jpg)
+
+Wait until **Run Status** changes to **Succeeded**. This can take up to several minutes, depending on the size of your dataset.
+
+![](./img/ingestion/aws-glue-studio-12.png)
+
+**NOTE: Now, remember to repeat this create job step for each file you had originally.**
 
 ## Add a crawler for curated data
 
