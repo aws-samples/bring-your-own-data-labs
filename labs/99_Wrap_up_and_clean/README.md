@@ -2,34 +2,15 @@
 
 # Conclusion Lab : Wrap up and cleaning existing resources
 
-- [Terminate your resources](#terminate-your-resources)
-- [Clean other resources:](#clean-other-resources)
+- [Conclusion Lab : Wrap up and cleaning existing resources](#conclusion-lab--wrap-up-and-cleaning-existing-resources)
   - [Glue Crawlers and Jobs](#glue-crawlers-and-jobs)
   - [Quicksight](#quicksight)
 
 Before wrapping up, we strongly recommend you go through these steps to clean the recurrent resources incurred by the workshop.
 
-Most of the charges incurred follows a pay as you go model, but some resources incur charges unless you stop them:
+Most of the charges incurred follows a pay as you go model, but some resources incur charges unless you stop them.
 
-- Glue development endpoints incur charges until you stop them. cf. (cf. [Glue detailed pricing](https://aws.amazon.com/glue/pricing/))
-- Quicksight is priced per user/month (cf. [Quicksight pricing](https://aws.amazon.com/quicksight/pricing/))
-
-
-## Terminate your resources
-
-As the Glue development endpoint and the notebook will incur charges, let's stop them : 
-
-* Go to [Glue](https://console.aws.amazon.com/glue/home?region=us-east-1#etl:tab=devEndpoints)
-    * Select the endpoint - Action -> Delete
-
-* Go to the [notebook](https://console.aws.amazon.com/glue/home?region=us-east-1#etl:tab=notebooks)
-    * Select the notebook - Action -> Stop, then Delete
-
-## Clean other resources:
-
-Other resources that potentially incur charges may need to be cleaned:
-
-### Glue Crawlers and Jobs
+## Glue Crawlers and Jobs
 
 Make sure you haven't put any recurrence on jobs and triggers:
 
@@ -39,7 +20,9 @@ Make sure you haven't put any recurrence on jobs and triggers:
 * Now click on **Triggers**
     * check you have no triggers with a schedule type
 
-### Quicksight
+## Quicksight
+
+Quicksight is priced per user/month (cf. [Quicksight pricing](https://aws.amazon.com/quicksight/pricing/))
 
 If you want to cancel your subscription to Quicksight you can follow these procedure: (https://docs.aws.amazon.com/quicksight/latest/user/closing-account.html)
 
