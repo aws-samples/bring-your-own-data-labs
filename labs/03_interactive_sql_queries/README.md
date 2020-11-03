@@ -446,6 +446,8 @@ external_location = 's3://{athena-s3-bucket}/{join_table_folder}',
 
 partitioned_by = ARRAY['{col1_name}','{col2_name}']#optional
 
+)
+
 AS {your_join_query}
 
 ```
