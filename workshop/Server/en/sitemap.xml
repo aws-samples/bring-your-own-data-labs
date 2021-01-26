@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/en/athena/athena_best_practices.html</loc>
+    <lastmod>2020-10-22T16:16:22+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/athena/optional.html</loc>
+    <lastmod>2020-10-22T16:16:01+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/requirements.html</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/requirements.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/requirements.html"
+                />
+  </url>
+  
+  <url>
+    <loc>/en/requirements/knowledge.html</loc>
+  </url>
+  
+  <url>
+    <loc>/en/requirements/prerequisites.html</loc>
+  </url>
+  
+  <url>
+    <loc>/en/glue.html</loc>
+    <lastmod>2020-10-20T20:12:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/glue/21_permissions.html</loc>
+    <lastmod>2020-10-20T20:12:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/glue/22_raw_crawler.html</loc>
+    <lastmod>2020-10-20T20:12:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/glue/23_transform_with_glue_job.html</loc>
+    <lastmod>2020-10-20T20:12:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/glue/24_curated_crawler.html</loc>
+    <lastmod>2020-10-20T20:12:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/glue/25_schema_validation.html</loc>
+    <lastmod>2020-10-20T20:12:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/glue/26_testing_pyspark_locally.html</loc>
+    <lastmod>2020-10-20T20:12:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/glue/27_optional_dev_endpoint.html</loc>
+    <lastmod>2020-10-20T20:12:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/orchestration.html</loc>
+    <lastmod>2020-10-20T20:12:26+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/athena.html</loc>
+    <lastmod>2020-10-20T20:12:40+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/visualization.html</loc>
+    <lastmod>2020-10-20T20:12:54+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/transformations.html</loc>
+    <lastmod>2020-10-20T20:13:10+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/</loc>
+    <lastmod>2020-10-22T16:16:22+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>/en/wrapup.html</loc>
+    <lastmod>2020-10-22T15:26:43+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/en/categories.html</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/categories.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/categories.html"
+                />
+  </url>
+  
+  <url>
+    <loc>/en/tags.html</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/tags.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags.html"
+                />
+  </url>
+  
+</urlset>

@@ -9,9 +9,11 @@ Required prerequisites
 * Basic knowledge of AWS foundational services such as IAM and S3, as well as basic SQL knowledge.
 * AWS account with admin privileges.
 
-## Getting Started !
+## Workshop
 
-Ready to get started ?
+> :warning: This repository contains only the source for the workshop content
+> If you're looking for the actual workshop click here: [https://bringyourowndatalabs.workshop.aws/en/](https://bringyourowndatalabs.workshop.aws/en/)
 
-* [Check the pre-requisites](labs/00_Prerequisites/README.md)
-* [Start lab 1 directly](labs/01_ingestion_with_glue/README.md)
+## Contribute?
+
+If you'd like to contribute to the workshop content, please fork and create a pull request with your added/modified content we would be happy to review it internally.

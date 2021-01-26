@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html lang="en" class="js csstransforms3d">
+<head>
+  <meta charset="utf-8">
+  <meta property="og:title" content="Bring Your Own Data Labs (BYOD)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="generator" content="Hugo 0.63.1" />
+  <meta name="description" content="Bring Your Own Data Labs (BYOD)">
+<meta name="author" content="Ahmed Hany Architect">
+
+  <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+<link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+
+  <title>Interactive SQL - Optional Labs :: Bring Your Own Data Labs (BYOD)</title>
+
+  
+  <link href="../../css/nucleus.css" rel="stylesheet">
+  <link href="../../css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="../../css/hybrid.css" rel="stylesheet">
+  <link href="../../css/featherlight.min.css" rel="stylesheet">
+  <link href="../../css/perfect-scrollbar.min.css" rel="stylesheet">
+  <link href="../../css/auto-complete.css" rel="stylesheet">
+  <link href="../../css/atom-one-dark-reasonable.css" rel="stylesheet">
+  <link href="../../css/theme.css" rel="stylesheet">
+  <link href="../../css/hugo-theme.css" rel="stylesheet">
+  
+  <link href="../../css/theme-aws.css" rel="stylesheet">
+  
+
+  <script src="../../js/jquery-3.3.1.min.js"></script>
+
+  <style>
+    :root #header + #content > #left > #rlblock_left{
+        display:none !important;
+    }
+    
+      :not(pre) > code + span.copy-to-clipboard {
+          display: none;
+      }
+    
+  </style>
+  
+</head>
+
+<body class="" data-url="/en/athena/optional.html">
+  <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+    <a href="../../" title="Go home">
+        <img style="vertical-align:middle" src="../../images/logo.png" height="70px" />
+    </a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../../js/lunr.min.js"></script>
+<script type="text/javascript" src="../../js/auto-complete.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/en";
+    
+</script>
+<script type="text/javascript" src="../../js/search.js"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements.html" title="Requirements" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../en/requirements.html">
+          <b>1. </b>Requirements
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements/knowledge.html" title="Required Knowledge" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../en/requirements/knowledge.html">
+          Required Knowledge
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements/prerequisites.html" title="Required Prerequisites" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../en/requirements/prerequisites.html">
+          Required Prerequisites
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/glue.html" title="Ingestion with Glue" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../en/glue.html">
+          <b>2. </b>Ingestion with Glue
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/21_permissions.html" title="Configure Permissions" class="dd-item ">
+        <a href="../../en/glue/21_permissions.html">
+        <b>2.1. </b>Configure Permissions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/22_raw_crawler.html" title="Create data catalog from S3 files" class="dd-item ">
+        <a href="../../en/glue/22_raw_crawler.html">
+        <b>2.2. </b>Create data catalog from S3 files
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/23_transform_with_glue_job.html" title="Transform the data to Parquet format" class="dd-item ">
+        <a href="../../en/glue/23_transform_with_glue_job.html">
+        <b>2.3. </b>Transform the data to Parquet format
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/24_curated_crawler.html" title="Add a crawler for curated data" class="dd-item ">
+        <a href="../../en/glue/24_curated_crawler.html">
+        <b>2.4. </b>Add a crawler for curated data
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/25_schema_validation.html" title="Schema Validation" class="dd-item ">
+        <a href="../../en/glue/25_schema_validation.html">
+        <b>2.5. </b>Schema Validation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/26_testing_pyspark_locally.html" title="Testing Pyspark Locally with Docker" class="dd-item ">
+        <a href="../../en/glue/26_testing_pyspark_locally.html">
+        <b>2.6. </b>Testing Pyspark Locally with Docker
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/27_optional_dev_endpoint.html" title="Optional: Creating a Development Endpoint for Glue" class="dd-item ">
+        <a href="../../en/glue/27_optional_dev_endpoint.html">
+        <b>2.7 </b>Optional: Creating a Development Endpoint for Glue
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/orchestration.html" title="Orchestrating the data pipeline" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../en/orchestration.html">
+          <b>3. </b>Orchestrating the data pipeline
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/athena.html" title="Interactive SQL Queries Using Amazon Athena" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="../../en/athena.html">
+          <b>4. </b>Interactive SQL Queries Using Amazon Athena
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/athena/athena_best_practices.html" title="Optional - Amazon Athena Best Practices" class="dd-item ">
+        <a href="../../en/athena/athena_best_practices.html">
+        Optional - Amazon Athena Best Practices
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/athena/optional.html" title="Interactive SQL - Optional Labs" class="dd-item active">
+        <a href="../../en/athena/optional.html">
+        Interactive SQL - Optional Labs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/visualization.html" title="Visualization using Amazon QuickSight" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../en/visualization.html">
+          <b>5. </b>Visualization using Amazon QuickSight
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/transformations.html" title="Transformations" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../en/transformations.html">
+          <b>6. </b>Transformations
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/wrapup.html" title="Wrap up and cleaning existing resources" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../en/wrapup.html">
+          <b>7. </b>Wrap up and cleaning existing resources
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/en/athena/optional.html" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+
+    <a href="https://aws.amazon.com/privacy/?nc1=f_pr">Privacy</a> | <a href="https://aws.amazon.com/terms/?nc1=f_pr">Site Terms</a> | © 2020, Amazon Web Services, Inc. or its affiliates. All rights reserved. 
+
+</left>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+  <section id="body">
+    <div id="overlay"></div>
+    <div class="padding highlightable">
+      
+      <div>
+        <div id="top-bar">
+          
+          
+          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fa fa-bars"></i>
+              </a>
+            </span>
+            
+            <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+            
+            <span class="links">
+              
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href='../../en/'>Bring Your Own Data Labs (BYOD)</a> > <a href='../../en/athena.html'>Interactive SQL Queries Using Amazon Athena</a> > Interactive SQL - Optional Labs
+          
+          
+          
+          
+          
+          
+            </span>
+          </div>
+          
+          <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#creating-amazon-athena-database-and-table">Creating Amazon Athena Database and Table</a>
+      <ul>
+        <li><a href="#create-a-database">Create a Database</a></li>
+        <li><a href="#create-a-table">Create a Table</a></li>
+      </ul>
+    </li>
+    <li><a href="#detecting-new-partitions">Detecting New Partitions</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+          
+        </div>
+      </div>
+      
+
+      
+        <div id="body-inner">
+          <h1>Interactive SQL - Optional Labs</h1>
+          
+          
+
+
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#creating-amazon-athena-database-and-table">Creating Amazon Athena Database and Table</a>
+<ul>
+<li><a href="#create-a-database">Create a Database</a></li>
+<li><a href="#create-a-table">Create a Table</a>
+<ul>
+<li><a href="#adding-partition-meta-data">Adding Partition Meta-data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#detecting-new-partitions">Detecting New Partitions</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>These are optional labs:</p>
+<ul>
+<li><a href="#creating-amazon-athena-database-and-table">Creating Amazon Athena Database and Table</a>: Should be completed if you want Athena to create the database and table and not Glue Crawlers</li>
+<li><a href="#detecting-new-partitions">Detecting New Partitions</a>: Should be completed if you manually added a partition that conforms with Hive format, and do not want want to use Glue crawlers to add the partitions to the table.</li>
+</ul>
+<h2 id="creating-amazon-athena-database-and-table">Creating Amazon Athena Database and Table</h2>
+<blockquote>
+<p>Note: If you  completed the <a href="../../en/glue.html">Lab 1: Ingestion with Glue</a> you can skip this section and go back to <a href="./main.md/#start-exploring-with-athena">Start Exploring with Athena</a></p>
+</blockquote>
+<p>One other method to populate the Data Catalog is using Amazon Athena. If you have a simple dataset and you already know the schema, you can manually populate the Data Catalog using SQL DDL statements. You enter these SQL DDL statements in Athena Console and Athena will execute them <strong>free of charge</strong></p>
+<p>Athena uses Apache Hive to define tables and create databases. Databases are a logical grouping of tables. When you create a database and table in Athena, you are simply describing the schema and location of the table data in Amazon S3. In case of Hive, databases and tables don’t store the data along with the schema definition unlike traditional relational database systems. The data is read from Amazon S3 only when you query the table. The other benefit of using Hive is that the metastore found in Hive can be used in many other big data applications such as Spark, Hadoop, and Presto. With Athena catalog, you can now have Hive-compatible metastore in the cloud without the need for provisioning a Hadoop cluster or RDS instance. For guidance on databases and tables creation refer <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual&#43;DDL" target="_blank">Apache Hive documentation</a>. The following steps provides guidance specifically for Amazon Athena.</p>
+<h3 id="create-a-database">Create a Database</h3>
+<ol>
+<li>
+<p>Open the <a href="https://console.aws.amazon.com/athena/home" target="_blank">AWS Management Console for Athena</a>.</p>
+</li>
+<li>
+<p>Make a note of the AWS region name.</p>
+</li>
+<li>
+<p>In the Athena <strong>Query Editor</strong>, you will see a query pane with an example query. Now you can start entering your query in the query pane.</p>
+</li>
+<li>
+<p>To create a database named <em>mydatabase</em>, copy the following statement, and then choose <strong>Run Query</strong>:</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">CREATE</span>  <span style="color:#66d9ef">DATABASE</span>  mydatabase
+
+</code></pre></div><ol start="5">
+<li>Ensure <em>mydatabase</em> appears in the DATABASE list on the <strong>Catalog</strong> dashboard</li>
+</ol>
+<p><img src="../../athena_img/athena_database.png" alt="image"></p>
+<h3 id="create-a-table">Create a Table</h3>
+<ol>
+<li>
+<p>Ensure that you are on the same AWS Region</p>
+</li>
+<li>
+<p>Ensure <strong>mydatabase</strong> is selected from the DATABASE list and then choose <strong>New Query</strong>.</p>
+</li>
+<li>
+<p>In the query pane, copy the following statement to create a the NYTaxiRides table, and then choose <strong>Run Query</strong>:</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">CREATE</span>  <span style="color:#66d9ef">EXTERNAL</span>  <span style="color:#66d9ef">TABLE</span> NYTaxiRides (
+
+vendorid STRING,
+
+pickup_datetime <span style="color:#66d9ef">TIMESTAMP</span>,
+
+dropoff_datetime <span style="color:#66d9ef">TIMESTAMP</span>,
+
+ratecode INT,
+
+passenger_count INT,
+
+trip_distance DOUBLE,
+
+fare_amount DOUBLE,
+
+total_amount DOUBLE,
+
+payment_type INT
+
+)
+
+PARTITIONED <span style="color:#66d9ef">BY</span> (<span style="color:#66d9ef">YEAR</span>  INT, <span style="color:#66d9ef">MONTH</span>  INT, <span style="color:#66d9ef">TYPE</span> string)
+
+STORED <span style="color:#66d9ef">AS</span>  PARQUET
+
+<span style="color:#66d9ef">LOCATION</span>  <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">s3://us-west-2.serverless-analytics/canonical/NY-Pub</span><span style="color:#e6db74">&#39;</span>
+
+</code></pre></div><ol start="4">
+<li>Ensure the table you just created appears on the Catalog dashboard for the selected database.</li>
+</ol>
+<h4 id="adding-partition-meta-data">Adding Partition Meta-data</h4>
+<p>Now that you have created the table you need to add the partition metadata to the Amazon Athena Catalog.</p>
+<ol>
+<li>Choose <strong>New Query</strong>, copy the following statement into the query pane, and then choose <strong>Run Query</strong> to add partition metadata.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+MSCK REPAIR <span style="color:#66d9ef">TABLE</span> NYTaxiRides
+
+</code></pre></div><p>The returned result will contain information for the partitions that are added to NYTaxiRides for each taxi type (yellow, green, fhv) for every month for the year from 2009 to 2016</p>
+<h2 id="detecting-new-partitions">Detecting New Partitions</h2>
+<p><strong>[OPTIONAL]</strong></p>
+<blockquote>
+<p>Note: This lab will run on the Curated dataset and table</p>
+</blockquote>
+<p>If a new partition is added, the <strong>Data Catalog</strong> used by Athena should be updated to recognise the new partition. A common way to detect newly added partitions is to run the Glue Crawler once a new partition is added. In Lab 2 we went through how to orchestrate your jobs and crawlers to run periodically or with on-demand triggers.
+Another approach is to use <a href="https://docs.aws.amazon.com/athena/latest/ug/msck-repair-table.html" target="_blank">MSCK RERAIR TABLE</a> command to automatically add the partitions to the catalog. This command if the partitioning structure conforms to Hive structure <em>(s3://dataset/{col1=value}/{col2=value})</em>. If the portioning structure does not conform to Hive <em>(for example: s3://dataset/2019/Jan and s3://dataset/2018/Feb)</em>, then you might have to run the Crawler or manually add the partitions by using ALTER TABLE in Athena</p>
+<p>In this section we will manually create a new partition in S3. Check if Athena recognises the partition, load all partitions and check again.</p>
+<ol>
+<li>
+<p>Open the <a href="https://s3.console.aws.amazon.com/s3/home?region=eu-west-1" target="_blank">AWS Management console for Amazon S3</a></p>
+</li>
+<li>
+<p>Navigate into your <strong>curated dataset</strong> folder and add a new folder (partition) by clicking on <strong>Create Folder</strong>. We will not need to add data to the partition
+<img src="../../athena_img/athena_s3_addpart.png" alt="image"></p>
+</li>
+<li>
+<p>If you do not have sub-partitions (for example; year only) proceed to the next step.
+If your table has sub-partitions (for example; partition by year and month), create a new empty folder inside your new partition. The end result should be something like this; s3://{bucket_name}/{curated_dataset}/{col1=value}/{col2=value}</p>
+</li>
+<li>
+<p>Let&rsquo;s see if Athena can recognise the new partitions. Go to Athena Console, in the <strong>Query Editor</strong> pane type the following SQL</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SHOW</span> PARTITIONS <span style="color:#960050;background-color:#1e0010">{</span>curated_table_name<span style="color:#960050;background-color:#1e0010">}</span>
+
+</code></pre></div><ol start="5">
+<li>
+<p>Wait for the query to finish and check the results. You will notice that you will not find the newly created partition.
+<img src="../../athena_img/athena_showpart.png" alt="image"></p>
+</li>
+<li>
+<p>In the <strong>Query Editor</strong> pane execute the following SQL command</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">MSCK REAPAIR <span style="color:#66d9ef">TABLE</span> <span style="color:#960050;background-color:#1e0010">{</span>curated_table_name<span style="color:#960050;background-color:#1e0010">}</span>
+
+</code></pre></div><ol start="7">
+<li>
+<p>Wait for the query to finish and check the results.
+<img src="../../athena_img/athena_newpart_msc.png" alt="image"></p>
+</li>
+<li>
+<p>Run the <code>SHOW PARTITIONS {curated_table_name}</code> query again and wait for the query to finish. You will notice in the results that Athena now recognises the new partitions.
+<img src="../../athena_img/athena_showpart2.png" alt="image"></p>
+</li>
+</ol>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../../en/athena/athena_best_practices.html" title="Optional - Amazon Athena Best Practices"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="../../en/visualization.html" title="Visualization using Amazon QuickSight" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../../js/clipboard.min.js"></script>
+    <script src="../../js/perfect-scrollbar.min.js"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../../js/jquery.sticky.js"></script>
+    <script src="../../js/featherlight.min.js"></script>
+    <script src="../../js/html5shiv-printshiv.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../js/modernizr.custom-3.6.0.js"></script>
+    <script src="../../js/learn.js"></script>
+    <script src="../../js/hugo-learn.js"></script>
+
+    <link href="../../mermaid/mermaid.css" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <div id = 'kinesisStreamName' title = ""/></div>
+<div id = 'cognitoPoolId' title = ""/></div>
+<div id = 'awsRegion' title = ""/></div>
+<div id = 'contentId' title = ""/></div>
+<div id = 'language' title = "en"/></div>
+<div id = 'versions' title = ""/></div>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+<script src="../../js/kinesis.js"></script>
+  </body>
+</html>
+

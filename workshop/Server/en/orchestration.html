@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html lang="en" class="js csstransforms3d">
+<head>
+  <meta charset="utf-8">
+  <meta property="og:title" content="Bring Your Own Data Labs (BYOD)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="generator" content="Hugo 0.63.1" />
+  <meta name="description" content="Bring Your Own Data Labs (BYOD)">
+<meta name="author" content="Ahmed Hany Architect">
+
+  <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+<link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+
+  <title>Orchestrating the data pipeline :: Bring Your Own Data Labs (BYOD)</title>
+
+  
+  <link href="../css/nucleus.css" rel="stylesheet">
+  <link href="../css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="../css/hybrid.css" rel="stylesheet">
+  <link href="../css/featherlight.min.css" rel="stylesheet">
+  <link href="../css/perfect-scrollbar.min.css" rel="stylesheet">
+  <link href="../css/auto-complete.css" rel="stylesheet">
+  <link href="../css/atom-one-dark-reasonable.css" rel="stylesheet">
+  <link href="../css/theme.css" rel="stylesheet">
+  <link href="../css/hugo-theme.css" rel="stylesheet">
+  
+  <link href="../css/theme-aws.css" rel="stylesheet">
+  
+
+  <script src="../js/jquery-3.3.1.min.js"></script>
+
+  <style>
+    :root #header + #content > #left > #rlblock_left{
+        display:none !important;
+    }
+    
+      :not(pre) > code + span.copy-to-clipboard {
+          display: none;
+      }
+    
+  </style>
+  
+</head>
+
+<body class="" data-url="/en/orchestration.html">
+  <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+    <a href="../" title="Go home">
+        <img style="vertical-align:middle" src="../images/logo.png" height="70px" />
+    </a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../js/lunr.min.js"></script>
+<script type="text/javascript" src="../js/auto-complete.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/en";
+    
+</script>
+<script type="text/javascript" src="../js/search.js"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements.html" title="Requirements" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/requirements.html">
+          <b>1. </b>Requirements
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements/knowledge.html" title="Required Knowledge" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/requirements/knowledge.html">
+          Required Knowledge
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements/prerequisites.html" title="Required Prerequisites" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/requirements/prerequisites.html">
+          Required Prerequisites
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/glue.html" title="Ingestion with Glue" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/glue.html">
+          <b>2. </b>Ingestion with Glue
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/21_permissions.html" title="Configure Permissions" class="dd-item ">
+        <a href="../en/glue/21_permissions.html">
+        <b>2.1. </b>Configure Permissions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/22_raw_crawler.html" title="Create data catalog from S3 files" class="dd-item ">
+        <a href="../en/glue/22_raw_crawler.html">
+        <b>2.2. </b>Create data catalog from S3 files
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/23_transform_with_glue_job.html" title="Transform the data to Parquet format" class="dd-item ">
+        <a href="../en/glue/23_transform_with_glue_job.html">
+        <b>2.3. </b>Transform the data to Parquet format
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/24_curated_crawler.html" title="Add a crawler for curated data" class="dd-item ">
+        <a href="../en/glue/24_curated_crawler.html">
+        <b>2.4. </b>Add a crawler for curated data
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/25_schema_validation.html" title="Schema Validation" class="dd-item ">
+        <a href="../en/glue/25_schema_validation.html">
+        <b>2.5. </b>Schema Validation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/26_testing_pyspark_locally.html" title="Testing Pyspark Locally with Docker" class="dd-item ">
+        <a href="../en/glue/26_testing_pyspark_locally.html">
+        <b>2.6. </b>Testing Pyspark Locally with Docker
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/27_optional_dev_endpoint.html" title="Optional: Creating a Development Endpoint for Glue" class="dd-item ">
+        <a href="../en/glue/27_optional_dev_endpoint.html">
+        <b>2.7 </b>Optional: Creating a Development Endpoint for Glue
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/orchestration.html" title="Orchestrating the data pipeline" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="../en/orchestration.html">
+          <b>3. </b>Orchestrating the data pipeline
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/athena.html" title="Interactive SQL Queries Using Amazon Athena" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/athena.html">
+          <b>4. </b>Interactive SQL Queries Using Amazon Athena
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/athena/athena_best_practices.html" title="Optional - Amazon Athena Best Practices" class="dd-item ">
+        <a href="../en/athena/athena_best_practices.html">
+        Optional - Amazon Athena Best Practices
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/athena/optional.html" title="Interactive SQL - Optional Labs" class="dd-item ">
+        <a href="../en/athena/optional.html">
+        Interactive SQL - Optional Labs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/visualization.html" title="Visualization using Amazon QuickSight" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/visualization.html">
+          <b>5. </b>Visualization using Amazon QuickSight
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/transformations.html" title="Transformations" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/transformations.html">
+          <b>6. </b>Transformations
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/wrapup.html" title="Wrap up and cleaning existing resources" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/wrapup.html">
+          <b>7. </b>Wrap up and cleaning existing resources
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/en/orchestration.html" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+
+    <a href="https://aws.amazon.com/privacy/?nc1=f_pr">Privacy</a> | <a href="https://aws.amazon.com/terms/?nc1=f_pr">Site Terms</a> | © 2020, Amazon Web Services, Inc. or its affiliates. All rights reserved. 
+
+</left>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+  <section id="body">
+    <div id="overlay"></div>
+    <div class="padding highlightable">
+      
+      <div>
+        <div id="top-bar">
+          
+          
+          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fa fa-bars"></i>
+              </a>
+            </span>
+            
+            <span class="links">
+              
+          
+          
+          
+          
+          
+          
+          <a href='../en/'>Bring Your Own Data Labs (BYOD)</a> > Orchestrating the data pipeline
+          
+          
+          
+          
+            </span>
+          </div>
+          
+        </div>
+      </div>
+      
+
+      
+      <div id="chapter">
+        
+        <div id="body-inner">
+          <h1>Orchestrating the data pipeline</h1>
+          
+          
+
+
+
+	<ul>
+<li><a href="#orchestrate-the-data-pipeline-using-the-workflow-feature">Orchestrate the data pipeline using the Workflow feature</a>
+<ul>
+<li><a href="#reviewing-the-results">Reviewing the results</a></li>
+</ul>
+</li>
+<li><a href="#orchestrate-your-data-pipeline-using-workflows">Orchestrate YOUR data pipeline using Workflows</a></li>
+</ul>
+<p>In this lab we will continue to work with <a href="https://aws.amazon.com/glue/" target="_blank">Glue</a> and convert the raw data we have extracted in <a href="../01_ingestion_with_glue/README.md">the previous lab</a> into a curated data set by making some automation.</p>
+<blockquote>
+<p><strong>Please note</strong>: this Lab depends on the steps executed in the <a href="../01_ingestion_with_glue/README.md">Transformation</a> LAB;
+In case you didn&rsquo;t finish that one yet, now is the time :)</p>
+</blockquote>
+<p>At this stage we have Glue Jobs configured to convert our raw data into Parquet. We should be able to observe 2 main folders in our data-lake bucket (raw and curated).</p>
+<p><img src="../orch_img/orchestration/s3_raw_and_curated.png" alt="data-lake with raw and curated"></p>
+<h2 id="orchestrate-the-data-pipeline-using-the-workflow-feature">Orchestrate the data pipeline using the Workflow feature</h2>
+<p>When you only have a Glue job or a single Crawler that needs to be run periodically, you can schedule it with Glue scheduler or maybe you can use Amazon CloudWatch events with a Lambda function. But if you need more complex flows - for example chaining multiple jobs and crawlers, running different jobs in parallel - Glue provides a workflow mechanism.</p>
+<p>The example presented here assumes a lineal/ dependant approach - some jobs before running the others. The plan is to create a pipeline, which will refresh the data-set every once in a while.</p>
+<p>Another example of dependent jobs are jobs that extracts data from other source and ingest it into your data lake before kicking off another transformation jobs.</p>
+<p>For this basic example we decided to automate the following steps:</p>
+<ul>
+<li>Transform data into parquet</li>
+<li>Crawl Parquet/ curated data</li>
+</ul>
+<p>The first three steps were done in the previous part. The updated diagram of what we did including the crawler should look something like this:</p>
+<p><img src="../orch_img/orchestration/all_steps_glue2.png" alt="all_steps_glue"></p>
+<p>Now, let&rsquo;s automate this process so we don&rsquo;t have to worry about it&hellip;</p>
+<p>Once we are done, it should look something like this:</p>
+<p><img src="../orch_img/orchestration/workflow_complete2.png" alt="complete workflow"></p>
+<p>Let&rsquo;s get started - navigate to the <em>Workflows</em> in the <em>ETL</em> section on the left side-pane.</p>
+<ul>
+<li>we start by clicking on the <strong>Add Workflow</strong> button;</li>
+<li>add a name for our workflow (e.g. <code>byod</code>) and press the <strong>Add Workflow</strong> button;</li>
+</ul>
+<p><img src="../orch_img/orchestration/wf1.png" alt="add workflow"></p>
+<p>Now, in the new created workflow, please click on <strong>Add Trigger</strong></p>
+<ul>
+<li>Make sure you select the <em>Add New</em> tab;</li>
+<li>Define a <em>Name</em> for the new trigger (<code>trigger-crawler-rawdata</code>);</li>
+<li>Trigger Type - Schedule</li>
+</ul>
+<p><img src="../orch_img/orchestration/2-1.png" alt="configuring the trigger"></p>
+<p>Now, let&rsquo;s specify the <em>Frequency</em> before you press <strong>Add</strong> (let&rsquo;s say you run this workflow once a day);
+<img src="../orch_img/orchestration/wf3-1.png" alt="configuring the scheduler"></p>
+<p>Now, we need to configure the job that is going to be triggered. Click <strong>Add Node</strong></p>
+<p><img src="../orch_img/orchestration/addcrawler-trigger.png" alt="adding node"></p>
+<p>Select the crawler that needs to run first- In this case, we want the raw data crawler created in the first step (you probably named it <strong>{choose-name}-initial-ds</strong>), then click <strong>Add</strong>.</p>
+<p><img src="../orch_img/orchestration/wf51.png" alt="adding jobs to the trigger"></p>
+<p>Until this point it should look something like this</p>
+<p><img src="../orch_img/orchestration/workflow61.png" alt="workflow"></p>
+<p>now, we need to set up the job that converts data into parquet. For that please click on the crawler (byod-ds in the image) and then click in <strong>Add Trigger</strong></p>
+<p>Repeat the creation of the trigger
+Note: Make sure you select Add new at the top and give it a name (trigger-job-parquet). The trigger type Event should be already selected and the option Start after ANY watched event as well. After done, it should look something like this</p>
+<p><img src="../orch_img/orchestration/workflow71.png" alt="workflow"></p>
+<p>Click on the trigger and then <strong>Add Node</strong></p>
+<p>Select the job that needs to run - In this case, we want the transformation job created in the first step (you probably named it <strong>TABLE-NAME-1-job</strong>), then click <strong>Add</strong>.</p>
+<p><img src="../orch_img/orchestration/wf5.png" alt="adding jobs to the trigger"></p>
+<p>NOTE: If you have multiple tables, you will need to repeat the last step to trigger job of each table.</p>
+<p>We are almost there, however there&rsquo;s one more thing: we need to add the crawler for the curated data - Please follow the same steps</p>
+<p>Click on the byod job and then click in <strong>Add Trigger</strong>.</p>
+<p><img src="../orch_img/orchestration/wf6.png" alt="adding jobs to the trigger"></p>
+<p>Make sure you Add new one. Choose a name and the trigger to be <strong>Event</strong></p>
+<p><img src="../orch_img/orchestration/wf7.png" alt="adding jobs to the trigger"></p>
+<p>For the Event, we want that after the previous job is done (SUCCESS) then trigger the crawler</p>
+<p><img src="../orch_img/orchestration/wf8.png" alt="adding jobs to the trigger"></p>
+<p>At this point, if you have multiple tables, please do the following to add other jobs to watch:</p>
+<ol>
+<li>Click on the created trigger</li>
+<li>Click <b>Action</b> menu in the top right of the diagram.</li>
+<li>Choose <b>Add jobs/crawlers to watch</b></li>
+<li>Mark other jobs to be watched as checked and click <b>Add</b></li>
+</ol>
+<p>Now, please click on the trigger, and then <strong>Add Node</strong>.</p>
+<p><img src="../orch_img/orchestration/wf8-1.png" alt="adding jobs to the trigger"></p>
+<p>Add the curated crawler to be triggered (In this case the crawler created in the previous step - you probably named it something like this {choose-name}-curated-ds)</p>
+<p><img src="../orch_img/orchestration/wf51.png" alt="adding jobs to the trigger"></p>
+<h3 id="reviewing-the-results">Reviewing the results</h3>
+<p>Once we are ready, we can try out the workflow by clicking on <strong>Run</strong> in the <strong>Actions</strong> menu.</p>
+<blockquote>
+<p>Once you selected a job, you can monitor the execution status in the <em>History</em> TAB in the bottom panel; If the job(s) succeeded, visit the <em>Metrics</em> TAB to see resource utilisation and data movement information; Also note that the jobs can take quite a bit of time to end, about 15 minutes in total.</p>
+</blockquote>
+<p>When jobs succeed, you should find in your S3 bucket a folder called <em>curated</em> with subfolders for all your tables.</p>
+<p>By selecting the latest Job and clicking on the <strong>View run details</strong> you can monitor the execution results of the data processing pipeline:</p>
+<p><img src="../orch_img/orchestration/wf-observe1.png" alt="check out the execution results"></p>
+<p>Once the pipeline succeeded at least once, we should be able to observe the newly created databases in the data catalog.</p>
+<p><img src="../orch_img/orchestration/dc-1.png" alt="check out the execution results"></p>
+<p>When you navigate to the <strong>Tables</strong>, you will observe tables created from your data files.</p>
+<p>&ldquo;What can I do with it?&quot;, you may wonder. Stay tuned, we will cover this in great details in the next session.</p>
+<h2 id="orchestrate-your-data-pipeline-using-workflows">Orchestrate YOUR data pipeline using Workflows</h2>
+<p>We just walked you through an example, now its time you think about your own workflow case. Which are those jobs that have to run on a recurring/ schedule basis?
+Please note that this was a lineal job, but you can run some jobs in parallel, you can add them in parallel in the pipeline.
+Think about how your workflow will look like, you can ask help to one of the support members from AWS.</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+            </div> 
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../en/glue/27_optional_dev_endpoint.html" title="Optional: Creating a Development Endpoint for Glue"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="../en/athena.html" title="Interactive SQL Queries Using Amazon Athena" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../js/clipboard.min.js"></script>
+    <script src="../js/perfect-scrollbar.min.js"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../js/jquery.sticky.js"></script>
+    <script src="../js/featherlight.min.js"></script>
+    <script src="../js/html5shiv-printshiv.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../js/modernizr.custom-3.6.0.js"></script>
+    <script src="../js/learn.js"></script>
+    <script src="../js/hugo-learn.js"></script>
+
+    <link href="../mermaid/mermaid.css" rel="stylesheet" />
+    <script src="../mermaid/mermaid.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <div id = 'kinesisStreamName' title = ""/></div>
+<div id = 'cognitoPoolId' title = ""/></div>
+<div id = 'awsRegion' title = ""/></div>
+<div id = 'contentId' title = ""/></div>
+<div id = 'language' title = "en"/></div>
+<div id = 'versions' title = ""/></div>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+<script src="../js/kinesis.js"></script>
+  </body>
+</html>

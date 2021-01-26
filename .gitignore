@@ -1,6 +1,8 @@
-labs/visualization_and_reporting/temp
-site/*
-.local/*
+*.code-workspace
+node_modules
+workshop/public
+public
+packaged.yaml
+resources/_gen
 .DS_Store
-.unotes/*
 .idea

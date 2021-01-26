@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ingestion with Glue on Bring Your Own Data Labs (BYOD)</title>
+    <link>/en/glue.html</link>
+    <description>Recent content in Ingestion with Glue on Bring Your Own Data Labs (BYOD)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 20 Oct 2020 20:12:11 +0100</lastBuildDate>
+    
+	<atom:link href="/en/glue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Configure Permissions</title>
+      <link>/en/glue/21_permissions.html</link>
+      <pubDate>Tue, 20 Oct 2020 20:12:11 +0100</pubDate>
+      
+      <guid>/en/glue/21_permissions.html</guid>
+      <description>Create a Policy for Amazon S3 Bucket (Console)  Sign in to the IAM console at https://console.aws.amazon.com/iam/ with your user that has administrator permissions. In the navigation pane, choose Policies. In the content pane, choose Create policy. Select &amp;ldquo;JSON&amp;rdquo; tab. Paste the following string in the text area. DO NOT FORGET TO PUT YOUR BUCKET NAME INSTEAD OF &amp;ldquo;YOUR-BUCKET-NAME&amp;rdquo;  { &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34;, &amp;#34;Statement&amp;#34;: [ { &amp;#34;Sid&amp;#34;: &amp;#34;s0&amp;#34;, &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Action&amp;#34;: [ &amp;#34;s3:PutObject&amp;#34;, &amp;#34;s3:GetObject&amp;#34;, &amp;#34;s3:ListBucket&amp;#34;, &amp;#34;s3:DeleteObject&amp;#34; ], &amp;#34;Resource&amp;#34;: [ &amp;#34;arn:aws:s3:::YOUR-BUCKET-NAME&amp;#34;, &amp;#34;arn:aws:s3:::YOUR-BUCKET-NAME/*&amp;#34; ] } ] } Click &amp;ldquo;Review policy&amp;rdquo; Enter the name of policy as “BYOD-S3Policy” Click &amp;ldquo;Create policy&amp;rdquo;  Create a Role for AWS Service Glue (Console)  Open the IAM console at https://console.</description>
+    </item>
+    
+    <item>
+      <title>Create data catalog from S3 files</title>
+      <link>/en/glue/22_raw_crawler.html</link>
+      <pubDate>Tue, 20 Oct 2020 20:12:11 +0100</pubDate>
+      
+      <guid>/en/glue/22_raw_crawler.html</guid>
+      <description>We will be using AWS Glue Crawlers to infer the schema of the files and create data catalog. Without a crawler, you can still read data from the S3 by a Glue job, but it will not be able to determine data types (string, int, etc) for each column.
+ start by navigating to the Crawlers menu on the navigation pane, then press Add crawler. specify the name: “byod-YOUR_TABLE_NAME-raw-crawler” and press Next; choose Data stores as Crawler source type and press Next; Choose S3 as data store.</description>
+    </item>
+    
+    <item>
+      <title>Transform the data to Parquet format</title>
+      <link>/en/glue/23_transform_with_glue_job.html</link>
+      <pubDate>Tue, 20 Oct 2020 20:12:11 +0100</pubDate>
+      
+      <guid>/en/glue/23_transform_with_glue_job.html</guid>
+      <description>In the following section, we will create one job per each file to transform the data from csv, tsv, xls (typical input formats) to parquet.
+We will place this data under the folder named &amp;ldquo;curated&amp;rdquo; in the data lake.
+ In the Glue Console select the Jobs section in the left navigation panel&amp;rsquo; Click on the Add job button; specify a name (preferably byod-YOUR-TABLE-NAME-job) in the name field, then select the &amp;ldquo;glue-processor-role&amp;rdquo;; select Type: Spark make sure Glue version 2 is selected: &amp;ldquo;Spark 2.</description>
+    </item>
+    
+    <item>
+      <title>Add a crawler for curated data</title>
+      <link>/en/glue/24_curated_crawler.html</link>
+      <pubDate>Tue, 20 Oct 2020 20:12:11 +0100</pubDate>
+      
+      <guid>/en/glue/24_curated_crawler.html</guid>
+      <description>Note: To proceed with this step, you need to wait for all the glue jobs to finish.
+Now that we have the data in Parquet format, we need to infer the schema.
+Repeat this step per each job you created in the previous step.
+ Glue crawler connects to a data store to determine the schema for your data, and then creates metadata tables in the data catalog.
+  start by navigating to the Crawlers menu on the navigation pane, then press Add crawler.</description>
+    </item>
+    
+    <item>
+      <title>Schema Validation</title>
+      <link>/en/glue/25_schema_validation.html</link>
+      <pubDate>Tue, 20 Oct 2020 20:12:11 +0100</pubDate>
+      
+      <guid>/en/glue/25_schema_validation.html</guid>
+      <description>In the AWS Glue navigation pane, click Databases &amp;gt; Tables. You can also click the database name (e.g., &amp;ldquo;ticketdata&amp;rdquo; to browse the tables). Within the Tables section of your database, check each table&amp;rsquo;s schema. Validate your raw and curated folders have different tables.  You may notice that some tables have column headers such as col0,col1,col2,col3. In absence of headers or when the crawler cannot determine the header type, default column headers are specified.</description>
+    </item>
+    
+    <item>
+      <title>Testing Pyspark Locally with Docker</title>
+      <link>/en/glue/26_testing_pyspark_locally.html</link>
+      <pubDate>Tue, 20 Oct 2020 20:12:11 +0100</pubDate>
+      
+      <guid>/en/glue/26_testing_pyspark_locally.html</guid>
+      <description>This part is the preferred method for testing and debugging, and will be useful for our 6th part: Transformations. Alternative is using Glue Development Endpoint which is explained in the next part of the lab. Otherwise it would be difficult and time consuming to debug your Spark script.
+ Developers would usually develop their applications locally before deploying to testing and production environments. In order to test your Pyspark scripts locally, you will need a Spark environment on your local machine.</description>
+    </item>
+    
+    <item>
+      <title>Optional: Creating a Development Endpoint for Glue</title>
+      <link>/en/glue/27_optional_dev_endpoint.html</link>
+      <pubDate>Tue, 20 Oct 2020 20:12:11 +0100</pubDate>
+      
+      <guid>/en/glue/27_optional_dev_endpoint.html</guid>
+      <description>This part is OPTIONAL for our workshop. You don&amp;rsquo;t need it if you already have a local Docker setup and have your data files ready in your local machine.
+ Development endpoints incur costs whether or not you are using them. Please delete the endpoints AND notebooks after usage.
+ In AWS Glue, you can create an environment — known as a development endpoint — that you can use to iteratively develop and test your extract, transform, and load (ETL) scripts.</description>
+    </item>
+    
+  </channel>
+</rss>

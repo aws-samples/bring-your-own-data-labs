@@ -1,0 +1,47 @@
+RelativeURLs=true
+CanonifyURLs=true
+languageCode = "en-US"
+defaultContentLanguage = "en"
+
+title = "Bring Your Own Data Labs (BYOD)"
+theme = "learn"
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= true
+
+uglyurls = true
+sectionPagesMenu = "main"
+pygmentsCodeFences = true
+pygmentsStyle = "monokai"
+
+[params]
+  description = "Bring Your Own Data Labs (BYOD)"
+  author = "Ahmed Hany Architect"
+  disableBreadcrumb = false
+  disableNextPrev = false
+  themeVariant = "aws"
+  disableSearch = false
+  disableAssetsBusting = true
+  disableLanguageSwitchingButton = false
+  disableShortcutsTitle = true
+  disableInlineCopyToClipBoard = true
+  editURL = "https://github.com/aws-samples/bring-your-own-data-labs/tree/main/workshop/content/"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[Languages]
+[Languages.en]
+title = "Bring Your Own Data Labs (BYOD)"
+weight = 1
+languageName = "English"
+
+[Languages.fr]
+title = "Bring Your Own Data Labs (BYOD)"
+weight = 2
+languageName = "Français"

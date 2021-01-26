@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html lang="en" class="js csstransforms3d">
+<head>
+  <meta charset="utf-8">
+  <meta property="og:title" content="Bring Your Own Data Labs (BYOD)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="generator" content="Hugo 0.63.1" />
+  <meta name="description" content="Bring Your Own Data Labs (BYOD)">
+<meta name="author" content="Ahmed Hany Architect">
+
+  <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+<link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+
+  <title>Visualization using Amazon QuickSight :: Bring Your Own Data Labs (BYOD)</title>
+
+  
+  <link href="../css/nucleus.css" rel="stylesheet">
+  <link href="../css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="../css/hybrid.css" rel="stylesheet">
+  <link href="../css/featherlight.min.css" rel="stylesheet">
+  <link href="../css/perfect-scrollbar.min.css" rel="stylesheet">
+  <link href="../css/auto-complete.css" rel="stylesheet">
+  <link href="../css/atom-one-dark-reasonable.css" rel="stylesheet">
+  <link href="../css/theme.css" rel="stylesheet">
+  <link href="../css/hugo-theme.css" rel="stylesheet">
+  
+  <link href="../css/theme-aws.css" rel="stylesheet">
+  
+
+  <script src="../js/jquery-3.3.1.min.js"></script>
+
+  <style>
+    :root #header + #content > #left > #rlblock_left{
+        display:none !important;
+    }
+    
+      :not(pre) > code + span.copy-to-clipboard {
+          display: none;
+      }
+    
+  </style>
+  
+</head>
+
+<body class="" data-url="/en/visualization.html">
+  <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+    <a href="../" title="Go home">
+        <img style="vertical-align:middle" src="../images/logo.png" height="70px" />
+    </a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../js/lunr.min.js"></script>
+<script type="text/javascript" src="../js/auto-complete.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/en";
+    
+</script>
+<script type="text/javascript" src="../js/search.js"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements.html" title="Requirements" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/requirements.html">
+          <b>1. </b>Requirements
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements/knowledge.html" title="Required Knowledge" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/requirements/knowledge.html">
+          Required Knowledge
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements/prerequisites.html" title="Required Prerequisites" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/requirements/prerequisites.html">
+          Required Prerequisites
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/glue.html" title="Ingestion with Glue" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/glue.html">
+          <b>2. </b>Ingestion with Glue
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/21_permissions.html" title="Configure Permissions" class="dd-item ">
+        <a href="../en/glue/21_permissions.html">
+        <b>2.1. </b>Configure Permissions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/22_raw_crawler.html" title="Create data catalog from S3 files" class="dd-item ">
+        <a href="../en/glue/22_raw_crawler.html">
+        <b>2.2. </b>Create data catalog from S3 files
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/23_transform_with_glue_job.html" title="Transform the data to Parquet format" class="dd-item ">
+        <a href="../en/glue/23_transform_with_glue_job.html">
+        <b>2.3. </b>Transform the data to Parquet format
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/24_curated_crawler.html" title="Add a crawler for curated data" class="dd-item ">
+        <a href="../en/glue/24_curated_crawler.html">
+        <b>2.4. </b>Add a crawler for curated data
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/25_schema_validation.html" title="Schema Validation" class="dd-item ">
+        <a href="../en/glue/25_schema_validation.html">
+        <b>2.5. </b>Schema Validation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/26_testing_pyspark_locally.html" title="Testing Pyspark Locally with Docker" class="dd-item ">
+        <a href="../en/glue/26_testing_pyspark_locally.html">
+        <b>2.6. </b>Testing Pyspark Locally with Docker
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/27_optional_dev_endpoint.html" title="Optional: Creating a Development Endpoint for Glue" class="dd-item ">
+        <a href="../en/glue/27_optional_dev_endpoint.html">
+        <b>2.7 </b>Optional: Creating a Development Endpoint for Glue
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/orchestration.html" title="Orchestrating the data pipeline" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/orchestration.html">
+          <b>3. </b>Orchestrating the data pipeline
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/athena.html" title="Interactive SQL Queries Using Amazon Athena" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/athena.html">
+          <b>4. </b>Interactive SQL Queries Using Amazon Athena
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/athena/athena_best_practices.html" title="Optional - Amazon Athena Best Practices" class="dd-item ">
+        <a href="../en/athena/athena_best_practices.html">
+        Optional - Amazon Athena Best Practices
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/athena/optional.html" title="Interactive SQL - Optional Labs" class="dd-item ">
+        <a href="../en/athena/optional.html">
+        Interactive SQL - Optional Labs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/visualization.html" title="Visualization using Amazon QuickSight" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="../en/visualization.html">
+          <b>5. </b>Visualization using Amazon QuickSight
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/transformations.html" title="Transformations" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/transformations.html">
+          <b>6. </b>Transformations
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/wrapup.html" title="Wrap up and cleaning existing resources" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/wrapup.html">
+          <b>7. </b>Wrap up and cleaning existing resources
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/en/visualization.html" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+
+    <a href="https://aws.amazon.com/privacy/?nc1=f_pr">Privacy</a> | <a href="https://aws.amazon.com/terms/?nc1=f_pr">Site Terms</a> | © 2020, Amazon Web Services, Inc. or its affiliates. All rights reserved. 
+
+</left>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+  <section id="body">
+    <div id="overlay"></div>
+    <div class="padding highlightable">
+      
+      <div>
+        <div id="top-bar">
+          
+          
+          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fa fa-bars"></i>
+              </a>
+            </span>
+            
+            <span class="links">
+              
+          
+          
+          
+          
+          
+          
+          <a href='../en/'>Bring Your Own Data Labs (BYOD)</a> > Visualization using Amazon QuickSight
+          
+          
+          
+          
+            </span>
+          </div>
+          
+        </div>
+      </div>
+      
+
+      
+      <div id="chapter">
+        
+        <div id="body-inner">
+          <h1>Visualization using Amazon QuickSight</h1>
+          
+          
+
+
+
+	<ul>
+<li><a href="#architectural-diagram">Architectural Diagram</a></li>
+<li><a href="#signing-up-for-amazon-quicksight-enterprise-edition">Signing up for Amazon QuickSight Enterprise Edition</a></li>
+<li><a href="#some-quicksight-definitions">Some Quicksight definitions</a></li>
+<li><a href="#configuring-amazon-quicksight-to-use-amazon-athena-as-data-source">Configuring Amazon QuickSight to use Amazon Athena as data source</a></li>
+<li><a href="#preparing-your-data">Preparing your data</a></li>
+<li><a href="#visualizing-the-data-using-amazon-quicksight">Visualizing the data using Amazon QuickSight</a>
+<ul>
+<li><a href="#forecast-monthly-trend-for-your-quantity-column">Forecast Monthly Trend for your Quantity Column</a></li>
+<li><a href="#adding-filters">Adding Filters</a></li>
+<li><a href="#visualize-month-over-month-quantity">Visualize Month over Month Quantity</a></li>
+<li><a href="#review-ml-insights">Review ML Insights</a></li>
+</ul>
+</li>
+<li><a href="#license">License</a></li>
+</ul>
+<p><strong>NOTE:</strong> Before continuing with the following steps, make sure you are in
+the <strong>N. Virginia Region</strong></p>
+<h2 id="architectural-diagram">Architectural Diagram</h2>
+<p><img src="https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/architecture-overview-lab2.png" alt="architecture-overview-lab2.png"></p>
+<p>In this lab you will be using the S3 bucket with your data and the Athena table you created in the previous lab.</p>
+<h2 id="signing-up-for-amazon-quicksight-enterprise-edition">Signing up for Amazon QuickSight Enterprise Edition</h2>
+<ol>
+<li>Open the <a href="https://us-east-1.quicksight.aws.amazon.com/sn/start" target="_blank">AWS Management Console for QuickSight</a>.</li>
+</ol>
+<p><img src="https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/qsimage1.PNG" alt="image"></p>
+<ol start="2">
+<li>If this is the first time you are accessing QuickSight, you will see a sign-up landing page for QuickSight.</li>
+<li>Click on <strong>Sign up for QuickSight</strong>.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> Chrome browser might timeout at this step. If that&rsquo;s the case, try this step in Firefox/Microsoft Edge/Safari.</p>
+</blockquote>
+<ol start="4">
+<li>On the next page, for the subscription type select the <strong>&ldquo;Enterprise Edition&rdquo;</strong> and click <strong>Continue</strong>.</li>
+</ol>
+<p><img src="../visualization_images/enterprise.png" alt="image"></p>
+<ol start="5">
+<li>
+<p>On the next page,</p>
+<p>i. Enter a unique <strong>QuickSight account name.</strong></p>
+<p>ii. Enter a valid email for <strong>Notification email address</strong>.</p>
+<p>iii. Just for this step, leave the <strong>QuickSight capacity region</strong> as <strong>N.Virginia</strong>.</p>
+<p>iv. Ensure that <strong>Enable autodiscovery of your data and users in your Amazon Redshift, Amazon RDS and AWS IAM Services</strong> and <strong>Amazon Athena</strong> boxes are checked.</p>
+<p>v. <strong>Click Finish</strong>.</p>
+<p><img src="../visualization_images/new-account-fields.png" alt="image"></p>
+<p>vi. You will be presented with a message <strong>Congratulations</strong>! <strong>You are signed up for Amazon QuickSight!</strong> on successful sign up. Click on <strong>Go to Amazon QuickSight</strong>.</p>
+</li>
+<li>
+<p><strong>Before continuing with the following steps, make sure you are in the N. Virginia Region to edit permissions.</strong></p>
+</li>
+</ol>
+<p>Now, on the Amazon QuickSight dashboard, navigate to User Settings page by clicking on the Top-Right section - see image below - and click <strong>Manage QuickSight</strong>.</p>
+<p><img src="../visualization_images/quicksight-first-page.png" alt="image"></p>
+<ol start="7">
+<li>In this section, click on <strong>Security &amp; permissions</strong> and then click <strong>Add or remove</strong>.</li>
+</ol>
+<p align="center"><img src="img/updated1.png" /></p> 
+<ol start="8">
+<li>Click on <strong>Amazon S3</strong> and on the tab that says <strong>S3 buckets linked to QuickSight account</strong>.</li>
+<li>You have two options depending on the permissions of your account:
+a. Choose <strong>Select All</strong> if you have permissions on all S3 folders
+b. Choose the following two buckets:
+i. The S3 bucket(s) you store your data
+ii. The S3 bucket that that you store Athena query results.</li>
+</ol>
+<p>NOTE: Make sure to tick the boxes for &ldquo;Write permission for Athena Workgroup&rdquo; as well.</p>
+<ol start="10">
+<li>Click on <strong>Select buckets</strong>.</li>
+</ol>
+<p><img src="../visualization_images/qs-workgroup-permission.png" alt="image"></p>
+<ol start="12">
+<li>When you are done doing all this, click <strong>Update</strong> to bring you back to the user settings back.</li>
+</ol>
+<h2 id="some-quicksight-definitions">Some Quicksight definitions</h2>
+<p><strong>What is a data source and what is a dataset?</strong></p>
+<p>A <strong>data source</strong> is an external data store and you use it to access the data in this external data store eg. Amazon S3, Amazon Athena, Salesforce etc.</p>
+<p>A <strong>data set</strong> identifies the specific data in a data source that you want to use. For example, the data source might be a table if you are connecting to a database data source. It might be a file if you are connecting to an Amazon S3 data source. A data set also stores any data preparation you have performed on that data, such as renaming a field or changing its data type. Storing this preparation means that you don&rsquo;t have to reprepare the data each time you want to create an analysis based on it.</p>
+<p><strong>What is an Analysis, a Visual and a Dashboard?</strong></p>
+<p>An <strong>analysis</strong> is a container for a set of related visuals and stories, for example all the ones that apply to a given business goal or key performance indicator. You can use multiple data sets in an analysis, although any given visual can only use one of those data sets.</p>
+<p>A <strong>visual</strong> is a graphical representation of your data. You can create a wide variety of visuals in an analysis, using different datasets and visual types.</p>
+<p>A <strong>dashboard</strong> is a read-only snapshot of an analysis that you can share with other Amazon QuickSight users for reporting purposes. A dashboard preserves the configuration of the analysis at the time you publish it, including such things as filtering, parameters, controls, and sort order. The data used for the analysis isn&rsquo;t captured as part of the dashboard. When you view the dashboard, it reflects the current data in the data sets used by the analysis.</p>
+<h2 id="configuring-amazon-quicksight-to-use-amazon-athena-as-data-source">Configuring Amazon QuickSight to use Amazon Athena as data source</h2>
+<blockquote>
+<p>For this lab, you will need to choose the region where your data resides.</p>
+</blockquote>
+<p><img src="../visualization_images/oregon.png" alt="image"></p>
+<ol>
+<li>
+<p>Click on the region icon on the top-right corner of the page, and select the region where your data resides.</p>
+</li>
+<li>
+<p>Click on <strong>Datasets</strong> in the left menu to review existing data sets.</p>
+</li>
+<li>
+<p>Click on <strong>New dataset</strong> on the top-right corner of the web page and review the options.</p>
+</li>
+<li>
+<p>Select <strong>Athena</strong> as a Data source.</p>
+</li>
+</ol>
+<p><img src="../visualization_images/connectors.png" alt="image"></p>
+<ol start="5">
+<li>
+<p>Enter the <strong>Data source</strong> <strong>name</strong> (e.g. <em>AthenaDataSource</em>).</p>
+</li>
+<li>
+<p>Select the Athena <strong>workgroup</strong> you created specifically for QuickSight. Then <strong>Validate the Connection</strong>.</p>
+</li>
+</ol>
+<p><img src="../visualization_images/AthenaWorkGroup_DataSource.png" alt="image"></p>
+<ol start="7">
+<li>
+<p>Click <strong>Create data source</strong>.</p>
+</li>
+<li>
+<p>Choose curated database you created then choose the table you need to visualize its data.</p>
+</li>
+<li>
+<p>Choose <strong>Select</strong>.</p>
+</li>
+<li>
+<p>Choose to <b>Directly query your data</b> then click <b>Visualize</b></p>
+</li>
+</ol>
+<p><em><strong>Alternative Option</strong></em></p>
+<p>You can choose to create a dataset using S3 as your data source. For this:</p>
+<ul>
+<li>Make sure you have granted Amazon QuickSight access to any Amazon S3 buckets that you want to read files from.</li>
+<li>Create a manifest file to identify the text files that you want to import. <a href="https://docs.aws.amazon.com/quicksight/latest/user/supported-manifest-file-format.html" target="_blank">Supported Formats for Amazon S3 Manifest Files</a></li>
+</ul>
+<h2 id="preparing-your-data">Preparing your data</h2>
+<ol>
+<li>You can edit an existing data set to perform data preparation. To edit a data set from the <strong>Analysis page</strong>, choose the small edit icon in the top left above <b>Fields list</b>.
+This should open list of data sets in this analysis. Choose the data set to edit and click on the three dots on the right of the data set chosen, then click <strong>Edit</strong>. The data set opens in the data preparation page.</li>
+</ol>
+<p><img src="../visualization_images/edit-dataset-icon.png" alt="image"></p>
+<!---You can duplicate an existing data set to save a copy of it with a new name. The new data set is a completely separate copy.  Choose **Duplicate** data set, and enter a name for the copy.--->
+<ol start="2">
+<li>
+<p>Select the fields that you will use for the visualization.
+<img src="../visualization_images/Select_Fields.png" alt="image"></p>
+</li>
+<li>
+<p>We suggest that you pick two - three columns from your data set that meet the following criteria:</p>
+</li>
+</ol>
+<ul>
+<li>The first column is a date column (can be year, month or day. Usually marked by <strong>calendar icon</strong>
+in <strong>Fields list</strong> on the left)</li>
+<li>The second column is a quantifiable number (revenue, count, distance, etc. Usually
+marked by a <strong>green hash #</strong>)</li>
+<li>The third column has categorical value, which means it has specific limited set of values (type,
+category, etc. Usually marked by <strong>ticket icon</strong>)</li>
+</ul>
+<ol start="4">
+<li>Optional - Change the data type. You can change the field&rsquo;s data type in one of the available data types.</li>
+</ol>
+<!---  
+  * Go to the datasets page
+![image](img/manage-data.png)
+
+  * Choose your dataset
+![image](img/choose-dataset.png)
+
+  * Choose to Edit your Dataset
+![image](img/Edit-dataset.png)
+--->
+<ul>
+<li>
+<p>Press over the arrow on the right side of the field you want to modify
+<img src="../visualization_images/arrow-edit-dataset-type.png" alt="image"></p>
+</li>
+<li>
+<p>Choose one of the available data types
+<img src="../visualization_images/Field_DataTypes.png" alt="image"></p>
+</li>
+<li>
+<p>You can also modify the <strong>format of your date field(s)</strong> into one of the supported formats.
+<img src="../visualization_images/DateFormat.png" alt="image"></p>
+</li>
+<li>
+<p>Once you finish your edit, press the <strong>Save and Visualize</strong> button on top of the screen.
+<img src="../visualization_images/save-visualize.png" alt="image"></p>
+</li>
+</ul>
+<h2 id="visualizing-the-data-using-amazon-quicksight">Visualizing the data using Amazon QuickSight</h2>
+<p>Now that you have configured the data source and prepared the dataset to work with, we will
+start by forecasting values in future dates based on your sample data.</p>
+<h3 id="forecast-monthly-trend-for-your-quantity-column">Forecast Monthly Trend for your Quantity Column</h3>
+<ol start="2">
+<li>Under the <strong>Fields list</strong>, select your <strong>Date</strong> column for x-axis by clicking on the field name.</li>
+<li>Change the visual type to a line chart by selecting the line chart icon highlighted in the screenshot below under <strong>Visual types</strong>.</li>
+</ol>
+<p>At this point, the Y-axis of the visual will be populated automatically with count of records
+that match each date individually. You can keep it that way and do forecasting for
+<strong>count of records</strong>, or choose another <strong>quantity attribute</strong> from Fields list to populate
+Y-axis automatically and have more meaningful forecast.</p>
+<p>Before viewing the forecast, you can choose the level of aggregation you want for your <strong>date</strong>
+column to populate X-axis by year, month or day.
+4. Click on the <strong>date</strong> field name in top <strong>Field Wells</strong> bar to reveal a sub-menu.
+5. Select <strong>Aggregate:Month</strong> to aggregate by month.</p>
+<p>You can also use the slider on the X-axis to select the range of values to appear in the graph.</p>
+<p><img src="../visualization_images/prepare-forecast.png" alt="image"></p>
+<ol start="6">
+<li>Click arrow in top right corner of the visual and select <strong>Add forecast</strong>.</li>
+</ol>
+<p><img src="../visualization_images/forecast.png" alt="image"></p>
+<p><img src="../visualization_images/end.png" alt="image"></p>
+<p>If you receive an error, try to use <strong>Forecast properties</strong> panel that opens at left, customizing <strong>Periods backward</strong> value to match your number of data points.</p>
+<p><strong>NOTE:</strong> Make sure your Y-axis is assigned to a quantity column before proceeding.</p>
+<h3 id="adding-filters">Adding Filters</h3>
+<p>You can apply filters to both regular and calculated fields, which include text, numeric, and date fields.
+Let&rsquo;s apply a date filter:</p>
+<ol>
+<li>
+<p>Choose <strong>Filter</strong> on the tool bar.</p>
+</li>
+<li>
+<p>On the <strong>Applied filters</strong> pane, choose <strong>Create one</strong>, and then choose a date field to filter on.
+<img src="../visualization_images/filter_creation.png" alt="image"></p>
+</li>
+<li>
+<p>Choose in which visual the filter will apply and choose the filter type from the dropdown list.
+<img src="../visualization_images/filter_selection.png" alt="image"></p>
+</li>
+<li>
+<p>Choose a comparison type.
+<img src="../visualization_images/filter_comparison_type.png" alt="image"></p>
+</li>
+<li>
+<p>Enter date values.
+<img src="../visualization_images/time_range.png" alt="image"></p>
+</li>
+<li>
+<p>Choose Apply.</p>
+</li>
+</ol>
+<h3 id="visualize-month-over-month-quantity">Visualize Month over Month Quantity</h3>
+<ol>
+<li>Add a new visual by duplicating the previous visual. Click on visual top right arrow and select <strong>Duplicate visual</strong>.</li>
+<li>Select <strong>KPI</strong> as the Visual Type (bottom left of the screen).</li>
+<li>In the field wells, click arrow in <strong>Date</strong> column to change the aggregation level to Month or as needed.</li>
+</ol>
+<p><img src="../visualization_images/kpi.png" alt="image"></p>
+<ol>
+<li>Now select format visual by clicking on arrow on top right corner of the KPI graph.</li>
+<li>Select <strong>Different as percent(%)</strong> under <strong>comparison method</strong> on the left.</li>
+</ol>
+<p><img src="../visualization_images/kpi-percent.png" alt="image"></p>
+<h3 id="review-ml-insights">Review ML Insights</h3>
+<ol>
+<li>Click the ‘Insights’ menu on the left. Notice all the suggested insights QuickSight has generated based on what has been built so far!</li>
+<li>Hover over any of the insights and click the ‘+’ to add it to the dashboard.</li>
+</ol>
+<p><img src="../visualization_images/add-insight.png" alt="image"></p>
+<p><strong>NOTE:</strong> You can customize the narrative by clicking on top right arrow of the visual and
+selecting <strong>Customize narrative</strong>.</p>
+<blockquote>
+<p>Note: The interesting outlier in the above graph is that on Jan23rd, 2016, you see the dip in the number of taxis across all types. Doing a quick google search for that date, gets us this weather article from NBC New York
+<img src="https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/qsimage22.PNG" alt="image"></p>
+</blockquote>
+<p><em>Using Amazon QuickSight, you were able to see patterns across a time-series data by building visualizations, performing ad-hoc analysis, and quickly generating insights.</em></p>
+<hr>
+<h2 id="license">License</h2>
+<p>This library is licensed under the Apache 2.0 License.</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+            </div> 
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../en/athena/optional.html" title="Interactive SQL - Optional Labs"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="../en/transformations.html" title="Transformations" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../js/clipboard.min.js"></script>
+    <script src="../js/perfect-scrollbar.min.js"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../js/jquery.sticky.js"></script>
+    <script src="../js/featherlight.min.js"></script>
+    <script src="../js/html5shiv-printshiv.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../js/modernizr.custom-3.6.0.js"></script>
+    <script src="../js/learn.js"></script>
+    <script src="../js/hugo-learn.js"></script>
+
+    <link href="../mermaid/mermaid.css" rel="stylesheet" />
+    <script src="../mermaid/mermaid.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <div id = 'kinesisStreamName' title = ""/></div>
+<div id = 'cognitoPoolId' title = ""/></div>
+<div id = 'awsRegion' title = ""/></div>
+<div id = 'contentId' title = ""/></div>
+<div id = 'language' title = "en"/></div>
+<div id = 'versions' title = ""/></div>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+<script src="../js/kinesis.js"></script>
+  </body>
+</html>
