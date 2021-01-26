@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html lang="en" class="js csstransforms3d">
+<head>
+  <meta charset="utf-8">
+  <meta property="og:title" content="Bring Your Own Data Labs (BYOD)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="generator" content="Hugo 0.63.1" />
+  <meta name="description" content="Bring Your Own Data Labs (BYOD)">
+<meta name="author" content="Ahmed Hany Architect">
+
+  <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+<link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+
+  <title>Transformations :: Bring Your Own Data Labs (BYOD)</title>
+
+  
+  <link href="../css/nucleus.css" rel="stylesheet">
+  <link href="../css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="../css/hybrid.css" rel="stylesheet">
+  <link href="../css/featherlight.min.css" rel="stylesheet">
+  <link href="../css/perfect-scrollbar.min.css" rel="stylesheet">
+  <link href="../css/auto-complete.css" rel="stylesheet">
+  <link href="../css/atom-one-dark-reasonable.css" rel="stylesheet">
+  <link href="../css/theme.css" rel="stylesheet">
+  <link href="../css/hugo-theme.css" rel="stylesheet">
+  
+  <link href="../css/theme-aws.css" rel="stylesheet">
+  
+
+  <script src="../js/jquery-3.3.1.min.js"></script>
+
+  <style>
+    :root #header + #content > #left > #rlblock_left{
+        display:none !important;
+    }
+    
+      :not(pre) > code + span.copy-to-clipboard {
+          display: none;
+      }
+    
+  </style>
+  
+</head>
+
+<body class="" data-url="/en/transformations.html">
+  <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+    <a href="../" title="Go home">
+        <img style="vertical-align:middle" src="../images/logo.png" height="70px" />
+    </a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../js/lunr.min.js"></script>
+<script type="text/javascript" src="../js/auto-complete.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/en";
+    
+</script>
+<script type="text/javascript" src="../js/search.js"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements.html" title="Requirements" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/requirements.html">
+          <b>1. </b>Requirements
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements/knowledge.html" title="Required Knowledge" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/requirements/knowledge.html">
+          Required Knowledge
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements/prerequisites.html" title="Required Prerequisites" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/requirements/prerequisites.html">
+          Required Prerequisites
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/glue.html" title="Ingestion with Glue" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/glue.html">
+          <b>2. </b>Ingestion with Glue
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/21_permissions.html" title="Configure Permissions" class="dd-item ">
+        <a href="../en/glue/21_permissions.html">
+        <b>2.1. </b>Configure Permissions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/22_raw_crawler.html" title="Create data catalog from S3 files" class="dd-item ">
+        <a href="../en/glue/22_raw_crawler.html">
+        <b>2.2. </b>Create data catalog from S3 files
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/23_transform_with_glue_job.html" title="Transform the data to Parquet format" class="dd-item ">
+        <a href="../en/glue/23_transform_with_glue_job.html">
+        <b>2.3. </b>Transform the data to Parquet format
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/24_curated_crawler.html" title="Add a crawler for curated data" class="dd-item ">
+        <a href="../en/glue/24_curated_crawler.html">
+        <b>2.4. </b>Add a crawler for curated data
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/25_schema_validation.html" title="Schema Validation" class="dd-item ">
+        <a href="../en/glue/25_schema_validation.html">
+        <b>2.5. </b>Schema Validation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/26_testing_pyspark_locally.html" title="Testing Pyspark Locally with Docker" class="dd-item ">
+        <a href="../en/glue/26_testing_pyspark_locally.html">
+        <b>2.6. </b>Testing Pyspark Locally with Docker
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/27_optional_dev_endpoint.html" title="Optional: Creating a Development Endpoint for Glue" class="dd-item ">
+        <a href="../en/glue/27_optional_dev_endpoint.html">
+        <b>2.7 </b>Optional: Creating a Development Endpoint for Glue
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/orchestration.html" title="Orchestrating the data pipeline" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/orchestration.html">
+          <b>3. </b>Orchestrating the data pipeline
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/athena.html" title="Interactive SQL Queries Using Amazon Athena" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/athena.html">
+          <b>4. </b>Interactive SQL Queries Using Amazon Athena
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/athena/athena_best_practices.html" title="Optional - Amazon Athena Best Practices" class="dd-item ">
+        <a href="../en/athena/athena_best_practices.html">
+        Optional - Amazon Athena Best Practices
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/athena/optional.html" title="Interactive SQL - Optional Labs" class="dd-item ">
+        <a href="../en/athena/optional.html">
+        Interactive SQL - Optional Labs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/visualization.html" title="Visualization using Amazon QuickSight" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/visualization.html">
+          <b>5. </b>Visualization using Amazon QuickSight
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/transformations.html" title="Transformations" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="../en/transformations.html">
+          <b>6. </b>Transformations
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/wrapup.html" title="Wrap up and cleaning existing resources" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/wrapup.html">
+          <b>7. </b>Wrap up and cleaning existing resources
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/en/transformations.html" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+
+    <a href="https://aws.amazon.com/privacy/?nc1=f_pr">Privacy</a> | <a href="https://aws.amazon.com/terms/?nc1=f_pr">Site Terms</a> | © 2020, Amazon Web Services, Inc. or its affiliates. All rights reserved. 
+
+</left>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+  <section id="body">
+    <div id="overlay"></div>
+    <div class="padding highlightable">
+      
+      <div>
+        <div id="top-bar">
+          
+          
+          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fa fa-bars"></i>
+              </a>
+            </span>
+            
+            <span class="links">
+              
+          
+          
+          
+          
+          
+          
+          <a href='../en/'>Bring Your Own Data Labs (BYOD)</a> > Transformations
+          
+          
+          
+          
+            </span>
+          </div>
+          
+        </div>
+      </div>
+      
+
+      
+      <div id="chapter">
+        
+        <div id="body-inner">
+          <h1>Transformations</h1>
+          
+          
+
+
+
+	<p>This lab covers a few examples for cleaning, transforming and partitioning yoour data before putting the final results to your data lake. You may or may not need them depending on your data structure.</p>
+
+<div class="notices info" ><p>The code snippets shared here are examples and may require modification, trial and error for each dataset. It is a good idea to use either your local environment or Glue Development Endpoint to develop and debug your code before deploying to production.</p>
+</div>
+
+<h2 id="open-the-notebook">Open the notebook</h2>
+<h3 id="if-you-are-using-jupyter-pyspark-container-on-your-local-machine-as-we-explained-in-the-first-lab">If you are using Jupyter Pyspark container on your local machine as we explained in the first lab:</h3>
+<p>Open the notebook on your browser with the url given from the terminal. Go to New -&gt; Python 3</p>
+<h3 id="if-you-are-using-glue-development-endpoint">If you are using Glue Development Endpoint:</h3>
+<p>From the Glue console, click &ldquo;Notebooks&rdquo; on the left menu and open the Notebook created. This will launch Jupyter Notebook. Go to New -&gt; Sparkmagic (PySpark)</p>
+<p><img src="../tran_img/notebook.png" alt="notebook"></p>
+
+<div class="notices warning" ><p>Development endpoints <a href="https://aws.amazon.com/glue/pricing/" target="_blank">incur costs</a> whether or not you are using them. Please delete the endpoints AND notebooks after usage.</p>
+</div>
+
+<p>The rest of the lab is same for each environment.</p>
+<h2 id="initial-script-setup">Initial script setup</h2>
+<ol>
+<li>Make sure that the notebook is running pyspark</li>
+<li>This is the plus button for adding new lines - In this image I have added two lines of code</li>
+<li>Once you add a line of code, then click Run</li>
+<li>Once it has run, then you should see a number here</li>
+</ol>
+<p>Click plus [2] - We will start by importing all the libraries we need</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
+<span style="color:#f92672">import</span> datetime
+<span style="color:#f92672">from</span> awsglue.transforms <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">from</span> awsglue.utils <span style="color:#f92672">import</span> getResolvedOptions
+<span style="color:#f92672">from</span> pyspark.context <span style="color:#f92672">import</span> SparkContext
+<span style="color:#f92672">from</span> awsglue.context <span style="color:#f92672">import</span> GlueContext
+<span style="color:#f92672">from</span> awsglue.job <span style="color:#f92672">import</span> Job
+
+<span style="color:#f92672">from</span> pyspark.sql.functions <span style="color:#f92672">import</span> lit
+<span style="color:#f92672">from</span> awsglue.dynamicframe <span style="color:#f92672">import</span> DynamicFrame
+
+glueContext <span style="color:#f92672">=</span> GlueContext(SparkContext<span style="color:#f92672">.</span>getOrCreate())
+job <span style="color:#f92672">=</span> Job(glueContext)
+job<span style="color:#f92672">.</span>init(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">byod-workshop-</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> str(datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now()<span style="color:#f92672">.</span>timestamp()))
+
+</code></pre></div><p>Then click Run</p>
+<p><strong>DynamicFrame vs Spark DataFrames</strong>
+One of the major abstractions in Apache Spark is the SparkSQL DataFrame, which is similar to the DataFrame construct found in R and Pandas. A DataFrame is similar to a table and supports functional-style (map/reduce/filter/etc.) operations and SQL operations (select, project, aggregate).</p>
+<p>DataFrames are powerful and widely used, but they have limitations with respect to extract, transform, and load (ETL) operations. Most significantly, they require a schema to be specified before any data is loaded. To address these limitations, AWS Glue introduces the DynamicFrame. A DynamicFrame is similar to a DataFrame, except that each record is self-describing, so no schema is required initially. Instead, AWS Glue computes a schema on-the-fly when required, and explicitly encodes schema inconsistencies using a choice (or union) type.</p>
+<p>It is possible to convert a DataFrame to a DynamicFrame and vice versa with <code>toDF()</code> and <code>fromDF()</code> methods.</p>
+<p>We are going to use the <strong>curated</strong> data we transformed to parquet in previous steps. For that, we create a dynamic frame pointing to the database and table that our crawler inferred, then we are going to show the schema</p>
+<p>If you do not remember the database/table names, just go to Databases/ Table tab in Glue and copy its names.</p>
+<p>Click plus [2] and add the following code in a separate line</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dynamicF <span style="color:#f92672">=</span> glueContext<span style="color:#f92672">.</span>create_dynamic_frame<span style="color:#f92672">.</span>from_catalog(database<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">DATABASE_NAME</span><span style="color:#e6db74">&#34;</span>, table_name<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">TABLE_NAME</span><span style="color:#e6db74">&#34;</span>)
+dynamicF<span style="color:#f92672">.</span>printSchema()
+</code></pre></div><p>Then click Run</p>
+<h2 id="transformations">Transformations</h2>
+<p>You probably have a large number of columns and some of them can have complicated names. To analyze the data, perhaps we may not need all the columns, just a small set of them, and to make easier to recall, we may want to change the name of the columns. Therefore, we are going to select only the columns we are interested in, drop the rest of them and we are going to rename them.</p>
+<h3 id="drop-columns">Drop Columns</h3>
+<p>There are two different ways to drop columns</p>
+<ol>
+<li>You use the select_fields method to drop all the columns and keep just the ones you need</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dynamicF<span style="color:#f92672">=</span> dynamicF<span style="color:#f92672">.</span>select_fields([<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">COLUMN1_TO_KEEP</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">COLUMN2_TO_KEEP</span><span style="color:#e6db74">&#39;</span>])<span style="color:#f92672">.</span>rename_field(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">COLUMN1_TO_RENAME</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">NEW_COLUMN_NAME</span><span style="color:#e6db74">&#39;</span>)<span style="color:#f92672">.</span>rename_field(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">COLUMN2_TO_RENAME</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">NEW_COLUMN_NAME</span><span style="color:#e6db74">&#39;</span>)
+dynamicF<span style="color:#f92672">.</span>printSchema()
+</code></pre></div><ol start="2">
+<li>You use the drop_fields method to keep all the columns and just drop the ones you do not need.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dynamicF <span style="color:#f92672">=</span> dynamicF<span style="color:#f92672">.</span>drop_fields([<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">COLUMN1_TO_DROP</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">COLUMN2_TO_DROP</span><span style="color:#e6db74">&#39;</span>])<span style="color:#f92672">.</span>rename_field(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">COLUMN1_TO_RENAME</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">NEW_COLUMN_NAME</span><span style="color:#e6db74">&#39;</span>)<span style="color:#f92672">.</span>rename_field(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">COLUMN2_TO_RENAME</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">NEW_COLUMN_NAME</span><span style="color:#e6db74">&#39;</span>)
+dynamicF<span style="color:#f92672">.</span>printSchema()
+</code></pre></div><p>For the rename part, we are using the <code>rename_field()</code> method. This should be invoked for each column you want to rename</p>
+<h4 id="example-ny-taxis-dataset">Example NY Taxis dataset</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dynamicF <span style="color:#f92672">=</span> dynamicF<span style="color:#f92672">.</span>select_fields([<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">tpep_pickup_datetime</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">trip_distance</span><span style="color:#e6db74">&#39;</span>])<span style="color:#f92672">.</span>rename_field(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">tpep_pickup_datetime</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">pickup_datetime</span><span style="color:#e6db74">&#39;</span>)
+dynamicF<span style="color:#f92672">.</span>printSchema()
+</code></pre></div><h3 id="convert-to-time-stamp">Convert to Time stamp</h3>
+<p>Please check the datetime column schema, from the previous step. It may be string or another type different than what we may need it to be. Therefore, we are going to do some transformations.</p>
+<p>First, let&rsquo;s add the libraries we need to make this conversion:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pyspark.sql.functions <span style="color:#f92672">import</span> date_format
+<span style="color:#f92672">from</span> pyspark.sql.functions <span style="color:#f92672">import</span> to_date
+<span style="color:#f92672">from</span> pyspark.sql.types <span style="color:#f92672">import</span> DateType
+<span style="color:#f92672">from</span> pyspark.sql.functions <span style="color:#f92672">import</span> year, month, dayofmonth, date_format
+</code></pre></div><p>Then, depending on the format of our current field, we may want to convert it into another format that contains year and month only. This will allow us later to partition our data according to year and month easily. Select which line of code you will use according to your date type format.</p>
+<p>First, we need to change the format from dynamic frame to dataframe (If you do not remember the difference between dynamic frame and data frame, you can read again the explanation above). This will allow us to use some the libraries previously imported:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> dynamicF<span style="color:#f92672">.</span>toDF()
+df<span style="color:#f92672">.</span>show()
+</code></pre></div><p><strong>ISO 8601 TIMESTAMP</strong>
+Below is example code that can be used to do the conversion from ISO 8601 date format. Please substitute your own date-format in place of yyyy-MM-dd</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## Adding trx_date date column with y-M format converting a current timestamp/unix date format</span>
+df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>withColumn(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">trx_date</span><span style="color:#e6db74">&#39;</span>, to_date(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">trx-date</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">yyyy-MM-dd</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">.</span>cast(DateType()))
+</code></pre></div><p>If you do not get an error but the date column is full of NULL, then probably you didn&rsquo;t substitute your own date-format in yyyy-MM-dd
+If you still have errors, then please go to the other date formats section.</p>
+<h4 id="example-ny-taxis-dataset-1">Example NY Taxis dataset</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## Adding pickup_datetime date column with yyyy-MM-dd format converting a current timestamp/unix date format</span>
+df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>withColumn(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">pickup_datetime</span><span style="color:#e6db74">&#39;</span>, to_date(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">pickup_datetime</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">yyyy-MM-dd</span><span style="color:#e6db74">&#34;</span>))<span style="color:#f92672">.</span>cast(DateType())
+df<span style="color:#f92672">.</span>show()
+</code></pre></div><h2 id="other-time-formats">Other time formats</h2>
+<p>Now, depending on the time format, please select which line of code you will use according to your date type format.</p>
+<p><strong>UNIX TIMESTAMP</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## Adding trx_date date column with yyyy-MM-dd format converting a current timestamp/unix date format</span>
+df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>withColumn(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">trx_date</span><span style="color:#e6db74">&#39;</span>, date_format(from_unixtime(df[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{YOUR_DATE_COL_NAME}</span><span style="color:#e6db74">&#39;</span>]), <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">yyyy-MM-dd</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">.</span>cast(DateType()))
+</code></pre></div><p><strong>OTHER DATE FORMATS</strong></p>
+<p>To convert unique data formats, we use to_date() function to specify how to parse your value specifying date literals in second attribute (Look at resources section for more information).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## Adding trx_date date column with yyyy-MM-dd format converting a current timestamp/unix date format</span>
+df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>withColumn(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">trx_date</span><span style="color:#e6db74">&#39;</span>, date_format(to_date(df[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{YOUR_DATE_COL_NAME}</span><span style="color:#e6db74">&#39;</span>], {DATE_LITERALS}), <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">yyyy-MM-dd</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">.</span>cast(DateType()))
+</code></pre></div><h2 id="partitioning">Partitioning</h2>
+<p>Partitioning the data greatly increases the performance of your queries and reduce costs. For example, if you only need last month&rsquo;s data from a large dataset, if the data is partitioned by day, month and year, then you can use a &ldquo;where&rdquo; clause in your query and Athena will only use relevant folders and will not scan the unnecessary ones.</p>
+<p>In order to partition our data, we will first create extra columns for year, month and day. Then when writing the data into S3, we will partition it by year, month and day. So, our final folder structure will be like:</p>
+<pre><code>/curated/TABLE-NAME-1/year=YYYY/month=MM/day=DD/file1.parquet
+</code></pre><p>You can also add additional partitions if you know you will often use those fields to filter data. For example, if you will often filter your data on product types, you can add a column for that field and also partition by that column additionally.</p>
+<p>Add this code at the end of your script:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>withColumn(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">year</span><span style="color:#e6db74">&#39;</span>, year(df<span style="color:#f92672">.</span>trx_date))<span style="color:#f92672">.</span>withColumn(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">month</span><span style="color:#e6db74">&#39;</span>, month(df<span style="color:#f92672">.</span>trx_date))<span style="color:#f92672">.</span>withColumn(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">day</span><span style="color:#e6db74">&#39;</span>, dayofmonth(df<span style="color:#f92672">.</span>trx_date))
+
+df<span style="color:#f92672">.</span>show()
+
+</code></pre></div><p>See that there are three extra fields for year, month and day - If you want, you can also drop the &ldquo;trx_date&rdquo; column using <code>df.drop('trx_date')</code> - Please note that since we are using data frame instead of dynamic frame, we can not use the same method <em>drop_fields</em> introduced earlier.</p>
+<h2 id="run-this-in-a-glue-job">Run this in a Glue Job</h2>
+<p>Please add these lines to the end of your notebook</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## DONT FORGET TO PUT IN YOUR BUCKET NAME.</span>
+output_location <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">s3://YOUR-BUCKET/curated</span><span style="color:#e6db74">&#34;</span>
+
+df<span style="color:#f92672">.</span>write<span style="color:#f92672">.</span>mode(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">overwrite</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">.</span>partitionBy(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">year</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">month</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">day</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">.</span>parquet(output_location)
+
+job<span style="color:#f92672">.</span>commit()
+</code></pre></div><p>Now, let&rsquo;s export our job and move it into a glue job.</p>
+<p><img src="../tran_img/notebook-to-glue.png" alt="exporting notebook to glue"></p>
+<ol>
+<li>Click File</li>
+<li>Download as &gt; Pyspark (txt)</li>
+</ol>
+<p>Please open the txt file, <strong>Remove any line containing</strong>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">.</span>show()
+<span style="color:#f92672">.</span>printSchema()
+</code></pre></div><p>and copy it. In the AWS Glue Console (<a href="https://console.aws.amazon.com/glue/),">https://console.aws.amazon.com/glue/),</a> click on <strong>Jobs</strong>, and <strong>Add Job</strong></p>
+<ul>
+<li>Name:  <code>byod-data-transformation</code></li>
+<li>IAM Role: glue-processor-role</li>
+<li>This job runs: A new script to be authored by you</li>
+<li>Monitoring - Job metrics</li>
+<li>Connections - Save job and edit script</li>
+<li>Now, paste the txt downloaded from the notebook</li>
+<li>Save and Run</li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+            </div> 
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../en/visualization.html" title="Visualization using Amazon QuickSight"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="../en/wrapup.html" title="Wrap up and cleaning existing resources" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../js/clipboard.min.js"></script>
+    <script src="../js/perfect-scrollbar.min.js"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../js/jquery.sticky.js"></script>
+    <script src="../js/featherlight.min.js"></script>
+    <script src="../js/html5shiv-printshiv.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../js/modernizr.custom-3.6.0.js"></script>
+    <script src="../js/learn.js"></script>
+    <script src="../js/hugo-learn.js"></script>
+
+    <link href="../mermaid/mermaid.css" rel="stylesheet" />
+    <script src="../mermaid/mermaid.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <div id = 'kinesisStreamName' title = ""/></div>
+<div id = 'cognitoPoolId' title = ""/></div>
+<div id = 'awsRegion' title = ""/></div>
+<div id = 'contentId' title = ""/></div>
+<div id = 'language' title = "en"/></div>
+<div id = 'versions' title = ""/></div>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+<script src="../js/kinesis.js"></script>
+  </body>
+</html>

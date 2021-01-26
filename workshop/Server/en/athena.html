@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html lang="en" class="js csstransforms3d">
+<head>
+  <meta charset="utf-8">
+  <meta property="og:title" content="Bring Your Own Data Labs (BYOD)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="generator" content="Hugo 0.63.1" />
+  <meta name="description" content="Bring Your Own Data Labs (BYOD)">
+<meta name="author" content="Ahmed Hany Architect">
+
+  <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+<link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+
+  <title>Interactive SQL Queries Using Amazon Athena :: Bring Your Own Data Labs (BYOD)</title>
+
+  
+  <link href="../css/nucleus.css" rel="stylesheet">
+  <link href="../css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="../css/hybrid.css" rel="stylesheet">
+  <link href="../css/featherlight.min.css" rel="stylesheet">
+  <link href="../css/perfect-scrollbar.min.css" rel="stylesheet">
+  <link href="../css/auto-complete.css" rel="stylesheet">
+  <link href="../css/atom-one-dark-reasonable.css" rel="stylesheet">
+  <link href="../css/theme.css" rel="stylesheet">
+  <link href="../css/hugo-theme.css" rel="stylesheet">
+  
+  <link href="../css/theme-aws.css" rel="stylesheet">
+  
+
+  <script src="../js/jquery-3.3.1.min.js"></script>
+
+  <style>
+    :root #header + #content > #left > #rlblock_left{
+        display:none !important;
+    }
+    
+      :not(pre) > code + span.copy-to-clipboard {
+          display: none;
+      }
+    
+  </style>
+  
+</head>
+
+<body class="" data-url="/en/athena.html">
+  <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+    <a href="../" title="Go home">
+        <img style="vertical-align:middle" src="../images/logo.png" height="70px" />
+    </a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../js/lunr.min.js"></script>
+<script type="text/javascript" src="../js/auto-complete.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/en";
+    
+</script>
+<script type="text/javascript" src="../js/search.js"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements.html" title="Requirements" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/requirements.html">
+          <b>1. </b>Requirements
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements/knowledge.html" title="Required Knowledge" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/requirements/knowledge.html">
+          Required Knowledge
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements/prerequisites.html" title="Required Prerequisites" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/requirements/prerequisites.html">
+          Required Prerequisites
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/glue.html" title="Ingestion with Glue" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/glue.html">
+          <b>2. </b>Ingestion with Glue
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/21_permissions.html" title="Configure Permissions" class="dd-item ">
+        <a href="../en/glue/21_permissions.html">
+        <b>2.1. </b>Configure Permissions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/22_raw_crawler.html" title="Create data catalog from S3 files" class="dd-item ">
+        <a href="../en/glue/22_raw_crawler.html">
+        <b>2.2. </b>Create data catalog from S3 files
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/23_transform_with_glue_job.html" title="Transform the data to Parquet format" class="dd-item ">
+        <a href="../en/glue/23_transform_with_glue_job.html">
+        <b>2.3. </b>Transform the data to Parquet format
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/24_curated_crawler.html" title="Add a crawler for curated data" class="dd-item ">
+        <a href="../en/glue/24_curated_crawler.html">
+        <b>2.4. </b>Add a crawler for curated data
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/25_schema_validation.html" title="Schema Validation" class="dd-item ">
+        <a href="../en/glue/25_schema_validation.html">
+        <b>2.5. </b>Schema Validation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/26_testing_pyspark_locally.html" title="Testing Pyspark Locally with Docker" class="dd-item ">
+        <a href="../en/glue/26_testing_pyspark_locally.html">
+        <b>2.6. </b>Testing Pyspark Locally with Docker
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/27_optional_dev_endpoint.html" title="Optional: Creating a Development Endpoint for Glue" class="dd-item ">
+        <a href="../en/glue/27_optional_dev_endpoint.html">
+        <b>2.7 </b>Optional: Creating a Development Endpoint for Glue
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/orchestration.html" title="Orchestrating the data pipeline" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/orchestration.html">
+          <b>3. </b>Orchestrating the data pipeline
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/athena.html" title="Interactive SQL Queries Using Amazon Athena" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="../en/athena.html">
+          <b>4. </b>Interactive SQL Queries Using Amazon Athena
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/athena/athena_best_practices.html" title="Optional - Amazon Athena Best Practices" class="dd-item ">
+        <a href="../en/athena/athena_best_practices.html">
+        Optional - Amazon Athena Best Practices
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/athena/optional.html" title="Interactive SQL - Optional Labs" class="dd-item ">
+        <a href="../en/athena/optional.html">
+        Interactive SQL - Optional Labs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/visualization.html" title="Visualization using Amazon QuickSight" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/visualization.html">
+          <b>5. </b>Visualization using Amazon QuickSight
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/transformations.html" title="Transformations" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/transformations.html">
+          <b>6. </b>Transformations
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/wrapup.html" title="Wrap up and cleaning existing resources" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../en/wrapup.html">
+          <b>7. </b>Wrap up and cleaning existing resources
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/en/athena.html" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+
+    <a href="https://aws.amazon.com/privacy/?nc1=f_pr">Privacy</a> | <a href="https://aws.amazon.com/terms/?nc1=f_pr">Site Terms</a> | © 2020, Amazon Web Services, Inc. or its affiliates. All rights reserved. 
+
+</left>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+  <section id="body">
+    <div id="overlay"></div>
+    <div class="padding highlightable">
+      
+      <div>
+        <div id="top-bar">
+          
+          
+          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fa fa-bars"></i>
+              </a>
+            </span>
+            
+            <span class="links">
+              
+          
+          
+          
+          
+          
+          
+          <a href='../en/'>Bring Your Own Data Labs (BYOD)</a> > Interactive SQL Queries Using Amazon Athena
+          
+          
+          
+          
+            </span>
+          </div>
+          
+        </div>
+      </div>
+      
+
+      
+      <div id="chapter">
+        
+        <div id="body-inner">
+          <h1>Interactive SQL Queries Using Amazon Athena</h1>
+          
+          
+
+
+
+	<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#architectural-diagram">Architectural Diagram</a></li>
+<li><a href="#setting-up-amazon-s3-and-athena-for-storing-query-results">Setting up Amazon S3 and Athena for Storing Query Results</a>
+<ul>
+<li><a href="#creating-an-amazon-s3-bucket">Creating an Amazon S3 Bucket</a></li>
+<li><a href="#setting-up-workgroups">Setting up Workgroups</a></li>
+<li><a href="#setting-up-amazon-athena">Setting up Amazon Athena</a></li>
+</ul>
+</li>
+<li><a href="#start-exploring-with-athena">Start Exploring with Athena</a></li>
+<li><a href="#amazon-athena-best-practices">Amazon Athena Best Practices</a></li>
+<li><a href="#joining-tables">Joining Tables</a>
+<ul>
+<li><a href="#create-a-new-table">Create a new Table</a></li>
+<li><a href="#sql-joins">SQL Joins</a></li>
+<li><a href="#storing-sql-join-results">Storing SQL Join Results</a></li>
+</ul>
+</li>
+<li><a href="#create-table-as-select-queries">&lsquo;Create Table as Select&rsquo; Queries</a></li>
+<li><a href="#creating-views">Creating Views</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to setup or manage, and you can start analyzing data immediately. You don’t even need to load your data into Athena, it works directly with data stored in S3.</p>
+<p>In this lab, we will use Athena to explore, analyze and prepare the data for visualization in QuickSight. This lab is divided into three sections; one mandatory and two optional:</p>
+<ul>
+<li>To start working with Athena, continue on this lab and follow through the different section. Next lab is <a href="#setting-up-amazon-s3-and-athena-for-storing-query-results">Setting up Amazon S3 and Athena for Storing Query Results</a></li>
+<li>[Optional] In <a href="../en/glue.html">lab 1</a>, we used Glue Crawlers to create our Database and Tables. To create your Database and tables using Athena, click <a href="../en/athena/optional.html">here</a></li>
+<li>[Optional] To review Athena best practices, click on <a href="#amazon-athena-best-practices">Amazon Athena Best Practices</a></li>
+</ul>
+<h2 id="architectural-diagram">Architectural Diagram</h2>
+<p>This is an example architecture, the raw data is stored in S3 in CSV format and the curated data is stored in another S3 bucket in Parquet. While you might have a different setup, this is only for illustrative purposes. Amazon Athena will be used to query both data sources if needed.</p>
+<p><img src="https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/architecture-overview-lab2.png" alt="architecture-overview-lab2.png"></p>
+<h2 id="setting-up-amazon-s3-and-athena-for-storing-query-results">Setting up Amazon S3 and Athena for Storing Query Results</h2>
+<p>If you’re a first time Athena user, you will have to configure an S3 bucket, where Athena will store the query results.</p>
+<h3 id="creating-an-amazon-s3-bucket">Creating an Amazon S3 Bucket</h3>
+<blockquote>
+<p>Note: If you have already had an S3 bucket in your AWS Account and can be used to store Athena Query results, <a href="#setting-up-amazon-athena">you can skip this section</a>.</p>
+</blockquote>
+<ol>
+<li>
+<p>Open the <a href="https://s3.console.aws.amazon.com/s3/home?region=eu-west-1" target="_blank">AWS Management console for Amazon S3</a></p>
+</li>
+<li>
+<p>On the S3 Dashboard, Click on <strong>Create Bucket</strong>.</p>
+</li>
+</ol>
+<p><img src="../athena_img/create-bucket.png" alt="image"></p>
+<ol start="3">
+<li>In the <strong>Create Bucket</strong> pop-up page, input a unique <strong>Bucket name</strong>. It is advised to choose a large bucket name, with many random characters and numbers (no spaces). Select the region and make sure you are using the same region used throughout the lab.</li>
+</ol>
+<p><img src="../athena_img/athena-s3.png" alt="image"></p>
+<h3 id="setting-up-workgroups">Setting up Workgroups</h3>
+<p>Workgroups are used to isolate queries for teams, applications, or different workloads. Workgroups offer some benefits such as:</p>
+<ul>
+<li>
+<p>Enforcing cost constraints - you can apply a limit for each workgroup or you can limit the data scanned by each query.</p>
+</li>
+<li>
+<p>Track query-related metrics for all workgroup queries in CloudWatch.</p>
+</li>
+</ul>
+<p>You may create separate workgroups for different teams in your organisation. In this lab, we will create a workgroup for our QuickSight Users</p>
+<ol>
+<li>
+<p>Open the <a href="https://console.aws.amazon.com/athena/home" target="_blank">AWS Management Console for Athena</a>.</p>
+</li>
+<li>
+<p>Make sure you are in the same region as the previous labs.</p>
+</li>
+<li>
+<p>If this is your first time visiting the AWS Management Console for Athena, you will get a Getting Started page. Choose <strong>Get Started</strong> to open the Query Editor.</p>
+</li>
+<li>
+<p>Click on <strong>Workgroup:Primary</strong>. In the Workgroup page, click on <strong>Create workgroup</strong></p>
+</li>
+</ol>
+<p><img src="../athena_img/athena_workgroup.png" alt="image"></p>
+<ol start="5">
+<li>In the new page, enter the <strong>Workgroup name</strong>, <strong>Description</strong>, the <strong>Query result location</strong> and click on <strong>Create workgroup</strong>.</li>
+</ol>
+<p><img src="../athena_img/athena_workgroup_general_1.png" alt="image"></p>
+<ol start="6">
+<li>In the Workgroup page, select the newly created workgroup and click on <strong>Switch workgroup</strong>.</li>
+</ol>
+<p><img src="../athena_img/athena_workgroup_switch.png" alt="image"></p>
+<ol start="7">
+<li>In the top bar, make sure you are currently on the new workgroup.</li>
+</ol>
+<blockquote>
+<p>Note: If the workgroup did not change, try clearing the browser cookies or change the browser.</p>
+</blockquote>
+<p><img src="../athena_img/athena_workgroup_validate.png" alt="image"></p>
+<h3 id="setting-up-amazon-athena">Setting up Amazon Athena</h3>
+<p>You can use an already existing bucket with a dedicated folder or you can create a new, dedicated bucket. Here, we will use the bucket we created earlier.</p>
+<ol>
+<li>
+<p>Navigate to Athena console</p>
+</li>
+<li>
+<!---Make sure you are on the right workgroup and--->Click on **Settings** on the top bar
+</li>
+<li>
+<p>Fill in the S3 path <strong>again</strong> (the bucket we created earlier) in <strong>Query result location</strong> field and click <strong>Save</strong></p>
+</li>
+</ol>
+<blockquote>
+<p>Note: Make sure you have forward slash at the end of the S3 path</p>
+</blockquote>
+<p><img src="../athena_img/athena-setup.png" alt="image"></p>
+<h2 id="start-exploring-with-athena">Start Exploring with Athena</h2>
+<p>After initial setup you can start exploring your data with Athena. You can run normal SQL queries using the <strong>Query Editor</strong> in Athena console. To run your first query, follow the below:</p>
+<blockquote>
+<p>Note: If you do not have a database created, you can follow <a href="../glue.html">Lab 1: Ingestion with Glue</a> to create your first database. Alternatively, you can follow this lab to <a href="../en/athena/optional.html#creating-amazon-athena-database-and-table">create your first database and table using Athena</a>.</p>
+</blockquote>
+<ol>
+<li>
+<p>Navigate to Athena console</p>
+</li>
+<li>
+<p>In the left pane, choose the curated database name we created in Glue before.</p>
+</li>
+</ol>
+<p><img src="../athena_img/athena-db-selec.png" alt="image"></p>
+<ol start="3">
+<li>After selecting the DB, browse the tables and explore the schema clicking on the table.</li>
+</ol>
+<p><img src="../athena_img/athena-table-selec.png" alt="image"></p>
+<ol start="4">
+<li>On the right pane, enter the first query and click on <strong>Run query</strong>.</li>
+</ol>
+<p>For example, the below query returns all records inside the table. Remove the curly braces - {} - and replace it with your table name.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
+
+<span style="color:#66d9ef">FROM</span> <span style="color:#960050;background-color:#1e0010">{</span>name_of_your_table<span style="color:#960050;background-color:#1e0010">}</span>
+
+</code></pre></div><p><img src="../athena_img/athena-first-query.png" alt="image"></p>
+<h2 id="amazon-athena-best-practices">Amazon Athena Best Practices</h2>
+<p><strong>[OPTIONAL]</strong></p>
+<p><em>Columnar Storage</em>, <em>Partitioning</em> and <em>Bucketing</em> are common best practices that should be used to store and structure the data to be analysed with Athena.</p>
+<p>In <a href="../glue.html">Lab 1: Ingestion with Glue</a> we converted the data format from <em>row-based</em> (csv, json, etc..) to columnar (parquet). To explore other optimisations that could be employed, check <a href="../en/athena/athena_best_practices.html">Athena Best Practices Lab</a>. In addition to this, see <a href="http://aws.amazon.com/blogs/big-data/top-10-performance-tuning-tips-for-amazon-athena/" target="_blank">Top Performance Tuning Tips for Amazon Athena</a> for general best practices that should be done when working with Athena.</p>
+<h2 id="joining-tables">Joining Tables</h2>
+<p>This section shows how to join two tables together.</p>
+<h3 id="create-a-new-table">Create a new Table</h3>
+<blockquote>
+<p>Note: If you already have <em>two</em> tables that could be joined together skip this step and proceed to <a href="#sql-joins">next sub-section</a></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>Before joining <em>two</em> tables, let&rsquo;s create a new table (with mocked data) and will refer to it in this lab as {table2}with a foreign key relationship with our <em>{curated_table_name}</em></p>
+<ol>
+<li>
+<p>Open the <a href="https://console.aws.amazon.com/athena/home" target="_blank">AWS Management Console for Athena</a> and make sure you are on the same AWS Region.</p>
+</li>
+<li>
+<p>Choose the <em>{curated database}</em> from the dropdown menu and execute <code>CREATE EXTRENAL TABLE</code> query. Replace any curly braces - {} - with your actual values:</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">CREATE</span>  <span style="color:#66d9ef">EXTERNAL</span>  <span style="color:#66d9ef">TABLE</span> <span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span> (
+
+  
+
+<span style="color:#960050;background-color:#1e0010">{</span>col1_name<span style="color:#960050;background-color:#1e0010">}</span> BIGINT,
+
+  
+
+<span style="color:#960050;background-color:#1e0010">{</span>col2_name<span style="color:#960050;background-color:#1e0010">}</span> STRING,
+
+  
+
+<span style="color:#960050;background-color:#1e0010">{</span>col3_name<span style="color:#960050;background-color:#1e0010">}</span> BIGINT,
+
+  
+
+...........
+
+  
+
+)
+
+  
+
+STORED <span style="color:#66d9ef">AS</span>  PARQUET
+
+  
+
+<span style="color:#66d9ef">LOCATION</span>  <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">s3://{athena-s3-bucket}/{table2_name}/</span><span style="color:#e6db74">&#39;</span>
+
+  
+
+</code></pre></div><p>Example query would look like the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">CREATE</span>  <span style="color:#66d9ef">EXTERNAL</span>  <span style="color:#66d9ef">TABLE</span> mocked_table_1 (
+
+vendor_id BIGINT,
+
+vendor_name STRING,
+
+CAR_COUNT BIGINT
+
+)
+
+STORED <span style="color:#66d9ef">AS</span>  PARQUET
+
+<span style="color:#66d9ef">LOCATION</span>  <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">s3://athena-query-results-byod/mocked_table_1/</span><span style="color:#e6db74">&#39;</span>
+
+
+</code></pre></div><blockquote>
+<p>Note: You not need to create the S3 folder before running the query; Athena will do it for you. Just choose the S3 path to store the data. However, the S3 bucket should exist before running the query. Feel free to use any path as long as you own the S3 bucket and it is in the same region you are using throughout this lab.</p>
+</blockquote>
+<ol start="3">
+<li>Now let&rsquo;s insert some mocked data to the new table. The data should have foreign key relationship with the original table.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">INSERT</span>  <span style="color:#66d9ef">INTO</span> <span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span> (<span style="color:#960050;background-color:#1e0010">{</span>col1_name<span style="color:#960050;background-color:#1e0010">}</span>,<span style="color:#960050;background-color:#1e0010">{</span>col2_name<span style="color:#960050;background-color:#1e0010">}</span>, <span style="color:#960050;background-color:#1e0010">{</span>col3_name<span style="color:#960050;background-color:#1e0010">}</span>, ...)
+
+<span style="color:#66d9ef">VALUES</span> (<span style="color:#960050;background-color:#1e0010">{</span>value1.<span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">}</span>, <span style="color:#960050;background-color:#1e0010">{</span>value2.<span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">}</span>, <span style="color:#960050;background-color:#1e0010">{</span>value3.<span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">}</span>, ...),
+
+(<span style="color:#960050;background-color:#1e0010">{</span>value1.<span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">}</span>, <span style="color:#960050;background-color:#1e0010">{</span>value2.<span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">}</span>, <span style="color:#960050;background-color:#1e0010">{</span>value3.<span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">}</span>, ...),
+
+(<span style="color:#960050;background-color:#1e0010">{</span>value1.<span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">}</span>, <span style="color:#960050;background-color:#1e0010">{</span>value2.<span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">}</span>, <span style="color:#960050;background-color:#1e0010">{</span>value3.<span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">}</span>, ...)
+
+............;
+
+</code></pre></div><pre><code>Example query would look like the following:
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">INSERT</span>  <span style="color:#66d9ef">INTO</span>  mocked_table_1 (vendor_id,vendor_name,car_count)  
+<span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">company1</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">30</span>),(<span style="color:#ae81ff">3</span>,<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">company3</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">511</span>)
+
+</code></pre></div><p><img src="../athena_img/athena_insert.png" alt="image"></p>
+<ol start="4">
+<li>Make sure the data is inserted by executing <code>SELECT * FROM {table2}</code></li>
+</ol>
+<h3 id="sql-joins">SQL Joins</h3>
+<p>Here are the different types of the JOINs in SQL:</p>
+<blockquote>
+<p>Note: The following are just examples to show you the syntax of each JOIN type. Feel free to include any columns that could be added, just replace the {col_name} with your actual column names. In addition to this replace {table1_name} with the actual table name</p>
+</blockquote>
+<ul>
+<li><em>Inner Join</em>:- Returns records that have matching values in both tables. Run the following query in the <strong>Query Editor</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">SELECT</span> <span style="color:#960050;background-color:#1e0010">{</span>table1_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span>col1_name<span style="color:#960050;background-color:#1e0010">}</span>, <span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span>col3_name<span style="color:#960050;background-color:#1e0010">}</span>, <span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span>col5_name<span style="color:#960050;background-color:#1e0010">}</span>
+
+<span style="color:#66d9ef">FROM</span> <span style="color:#960050;background-color:#1e0010">{</span>table1_name<span style="color:#960050;background-color:#1e0010">}</span>
+
+<span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> <span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span> <span style="color:#66d9ef">ON</span> <span style="color:#960050;background-color:#1e0010">{</span>table1_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span><span style="color:#66d9ef">key</span><span style="color:#960050;background-color:#1e0010">}</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span><span style="color:#66d9ef">key</span><span style="color:#960050;background-color:#1e0010">}</span>
+
+</code></pre></div><p>In the below example, we are counting the records that matched the join condition:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">SELECT</span>  mocked_table_1.vendor_name, <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> Total
+<span style="color:#66d9ef">FROM</span> mocked_table_1
+<span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> nyc_taxi_duration_curated <span style="color:#66d9ef">ON</span> nyc_taxi_duration_curated.vendor_id<span style="color:#f92672">=</span>mocked_table_1.vendor_id
+<span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> mocked_table_1.vendor_name
+
+</code></pre></div><ul>
+<li><em>Left Join</em>:- If you use the same query but replace <code>INNER</code> with <code>LEFT</code>. We will see records from left table and the matched records from the right table</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">SELECT</span> <span style="color:#960050;background-color:#1e0010">{</span>table1_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span>col1_name<span style="color:#960050;background-color:#1e0010">}</span>, <span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span>col3_name<span style="color:#960050;background-color:#1e0010">}</span>, <span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span>col5_name<span style="color:#960050;background-color:#1e0010">}</span>
+
+<span style="color:#66d9ef">FROM</span> <span style="color:#960050;background-color:#1e0010">{</span>table1_name<span style="color:#960050;background-color:#1e0010">}</span>
+
+<span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> <span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span> <span style="color:#66d9ef">ON</span> <span style="color:#960050;background-color:#1e0010">{</span>table1_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span><span style="color:#66d9ef">key</span><span style="color:#960050;background-color:#1e0010">}</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span><span style="color:#66d9ef">key</span><span style="color:#960050;background-color:#1e0010">}</span>
+
+</code></pre></div><ul>
+<li><em>Right Join</em>:- Returns all records from the right table, and the matched records from the left table</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">SELECT</span> <span style="color:#960050;background-color:#1e0010">{</span>table1_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span>col1_name<span style="color:#960050;background-color:#1e0010">}</span>, <span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span>col3_name<span style="color:#960050;background-color:#1e0010">}</span>, <span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span>col5_name<span style="color:#960050;background-color:#1e0010">}</span>
+
+<span style="color:#66d9ef">FROM</span> <span style="color:#960050;background-color:#1e0010">{</span>table1_name<span style="color:#960050;background-color:#1e0010">}</span>
+
+<span style="color:#66d9ef">RIGHT</span> <span style="color:#66d9ef">JOIN</span> <span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span> <span style="color:#66d9ef">ON</span> <span style="color:#960050;background-color:#1e0010">{</span>table1_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span><span style="color:#66d9ef">key</span><span style="color:#960050;background-color:#1e0010">}</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span><span style="color:#66d9ef">key</span><span style="color:#960050;background-color:#1e0010">}</span>
+
+</code></pre></div><ul>
+<li><em>Full Join</em>:- All records are returned</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">SELECT</span> <span style="color:#960050;background-color:#1e0010">{</span>table1_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span>col1_name<span style="color:#960050;background-color:#1e0010">}</span>, <span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span>col3_name<span style="color:#960050;background-color:#1e0010">}</span>, <span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span>col5_name<span style="color:#960050;background-color:#1e0010">}</span>
+
+<span style="color:#66d9ef">FROM</span> <span style="color:#960050;background-color:#1e0010">{</span>table1_name<span style="color:#960050;background-color:#1e0010">}</span>
+
+<span style="color:#66d9ef">FULL</span> <span style="color:#66d9ef">JOIN</span> <span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span> <span style="color:#66d9ef">ON</span> <span style="color:#960050;background-color:#1e0010">{</span>table1_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span><span style="color:#66d9ef">key</span><span style="color:#960050;background-color:#1e0010">}</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">{</span>table2_name<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span><span style="color:#66d9ef">key</span><span style="color:#960050;background-color:#1e0010">}</span>
+
+</code></pre></div><h3 id="storing-sql-join-results">Storing SQL Join Results</h3>
+<p>There are two options to store the results from a SQL join statement; <em>physically</em> and <em>virtually</em></p>
+<ul>
+<li>
+<p><em>Physically:</em> When the results are written to S3. Useful, if the data does not change frequently. This is useful when integrating QuickSight with Athena. To store the join results in S3, check <a href="#create-table-as-select-queries">Create Table as Select Queries</a></p>
+</li>
+<li>
+<p><em>Virtually</em>: A logical representation of the data is stored as View. Every time the view queried, the query that created the view runs again. To create a view from the join, check <a href="#creating-views">Creating Views</a></p>
+</li>
+</ul>
+<h2 id="create-table-as-select-queries">&lsquo;Create Table as Select&rsquo; Queries</h2>
+<p>A <code>CREATE TABLE AS SELECT</code> (CTAS) query creates a new table in Athena from the results of a <code>SELECT</code> statement from another query. Athena stores data files created by the CTAS statement in a specified location in Amazon S3.</p>
+<p>This is useful in joins because it creates tables from join query results in one step, without repeatedly querying raw data sets. In this section we walk through how create a table from join query (or any query) results and store it in S3.</p>
+<ol>
+<li>
+<p>Open the <a href="https://console.aws.amazon.com/athena/home" target="_blank">AWS Management Console for Athena</a> and make sure you are on the same AWS Region.</p>
+</li>
+<li>
+<p>Choose the <em>{curated database}</em> from the dropdown menu</p>
+</li>
+<li>
+<p>Use the following to create the CTAS query:</p>
+</li>
+</ol>
+<blockquote>
+<p>Note: Make sure that the S3 folder [used to store the files] is empty before running the query. If the folder contains any objects, the query will fail.</p>
+</blockquote>
+<blockquote>
+<p>There is no need to create the folder before running the query, Athena will create it for you.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">CREATE</span>  <span style="color:#66d9ef">Table</span> <span style="color:#960050;background-color:#1e0010">{</span>join_table_name<span style="color:#960050;background-color:#1e0010">}</span>
+
+<span style="color:#66d9ef">WITH</span> (
+
+format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">PARQUET</span><span style="color:#e6db74">&#39;</span>,
+
+external_location <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">s3://{athena-s3-bucket}/{join_table_folder}</span><span style="color:#e6db74">&#39;</span>,
+
+partitioned_by <span style="color:#f92672">=</span> ARRAY[<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{col1_name}</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{col2_name}</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">#</span>optional
+
+<span style="color:#66d9ef">AS</span> <span style="color:#960050;background-color:#1e0010">{</span>your_join_query<span style="color:#960050;background-color:#1e0010">}</span>
+
+</code></pre></div><p>The above query creates a new table, stores the results in parquet format, in this s3://{athena-s3-bucket}/{join_table_folder} location.</p>
+<p>In the below example, we are creating a table from a <code>FULL JOIN</code> and storing the results in Parquet format in the specified S3 path:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> join_table
+<span style="color:#66d9ef">WITH</span> (
+      format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">PARQUET</span><span style="color:#e6db74">&#39;</span>, 
+      external_location <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">s3://athena-query-results-byod/join_table/</span><span style="color:#e6db74">&#39;</span>
+  )
+<span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">SELECT</span>  mocked_table_1.vendor_name, <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> Total
+<span style="color:#66d9ef">FROM</span> mocked_table_1
+<span style="color:#66d9ef">FULL</span> <span style="color:#66d9ef">JOIN</span> nyc_taxi_duration_curated <span style="color:#66d9ef">ON</span> nyc_taxi_duration_curated.vendor_id<span style="color:#f92672">=</span>mocked_table_1.vendor_id
+<span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> mocked_table_1.vendor_name
+</code></pre></div><ol start="4">
+<li>Wait for the query to execute. After it finishes you can see the newly created view under <strong>Tables</strong> on the left pane.</li>
+</ol>
+<p><img src="../athena_img/athena-join-table.png" alt="image"></p>
+<h2 id="creating-views">Creating Views</h2>
+<p><strong>[OPTIONAL]</strong></p>
+<p>A view in Amazon Athena is a logical, not a physical table. The query that defines a view runs each time the view is referenced in a query. In this section, we walk through how to create a view:</p>
+<ol>
+<li>
+<p>Open the <a href="https://console.aws.amazon.com/athena/home" target="_blank">AWS Management Console for Athena</a> and make sure you are on the same AWS Region.</p>
+</li>
+<li>
+<p>Choose the <em>{curated database}</em> from the dropdown menu and execute the following query:</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">VIEW</span> <span style="color:#960050;background-color:#1e0010">{</span>view_name<span style="color:#960050;background-color:#1e0010">}</span> <span style="color:#66d9ef">AS</span> <span style="color:#960050;background-color:#1e0010">{</span>your_query<span style="color:#960050;background-color:#1e0010">}</span>
+
+</code></pre></div><p>In the below example, we are creating a view from a <code>FULL JOIN</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">VIEW</span> join_view
+<span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">SELECT</span>  mocked_table_1.vendor_name, <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> Total
+<span style="color:#66d9ef">FROM</span> mocked_table_1
+<span style="color:#66d9ef">FULL</span> <span style="color:#66d9ef">JOIN</span> nyc_taxi_duration_curated <span style="color:#66d9ef">ON</span> nyc_taxi_duration_curated.vendor_id<span style="color:#f92672">=</span>mocked_table_1.vendor_id
+<span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> mocked_table_1.vendor_name
+</code></pre></div><ol start="3">
+<li>Wait for the query to execute. After it finishes you can see the newly created view under <strong>Views</strong> on the left pane.</li>
+</ol>
+<p><img src="../athena_img/athena-view-create.png" alt="image"></p>
+<ol start="4">
+<li>To query a view, run the following:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#960050;background-color:#1e0010">{</span>view_name<span style="color:#960050;background-color:#1e0010">}</span>
+
+</code></pre></div><ol start="5">
+<li>To update a view, run the following</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">CREATE</span> [ <span style="color:#66d9ef">OR</span> <span style="color:#66d9ef">REPLACE</span> ] <span style="color:#66d9ef">VIEW</span> <span style="color:#960050;background-color:#1e0010">{</span>view_name<span style="color:#960050;background-color:#1e0010">}</span> <span style="color:#66d9ef">AS</span> <span style="color:#960050;background-color:#1e0010">{</span>your_query<span style="color:#960050;background-color:#1e0010">}</span>
+
+</code></pre></div>
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+            </div> 
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../en/orchestration.html" title="Orchestrating the data pipeline"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="../en/athena/athena_best_practices.html" title="Optional - Amazon Athena Best Practices" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../js/clipboard.min.js"></script>
+    <script src="../js/perfect-scrollbar.min.js"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../js/jquery.sticky.js"></script>
+    <script src="../js/featherlight.min.js"></script>
+    <script src="../js/html5shiv-printshiv.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../js/modernizr.custom-3.6.0.js"></script>
+    <script src="../js/learn.js"></script>
+    <script src="../js/hugo-learn.js"></script>
+
+    <link href="../mermaid/mermaid.css" rel="stylesheet" />
+    <script src="../mermaid/mermaid.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <div id = 'kinesisStreamName' title = ""/></div>
+<div id = 'cognitoPoolId' title = ""/></div>
+<div id = 'awsRegion' title = ""/></div>
+<div id = 'contentId' title = ""/></div>
+<div id = 'language' title = "en"/></div>
+<div id = 'versions' title = ""/></div>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+<script src="../js/kinesis.js"></script>
+  </body>
+</html>

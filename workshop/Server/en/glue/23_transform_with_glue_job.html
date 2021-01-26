@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html lang="en" class="js csstransforms3d">
+<head>
+  <meta charset="utf-8">
+  <meta property="og:title" content="Bring Your Own Data Labs (BYOD)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="generator" content="Hugo 0.63.1" />
+  <meta name="description" content="Bring Your Own Data Labs (BYOD)">
+<meta name="author" content="Ahmed Hany Architect">
+
+  <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+<link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+
+  <title>Transform the data to Parquet format :: Bring Your Own Data Labs (BYOD)</title>
+
+  
+  <link href="../../css/nucleus.css" rel="stylesheet">
+  <link href="../../css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="../../css/hybrid.css" rel="stylesheet">
+  <link href="../../css/featherlight.min.css" rel="stylesheet">
+  <link href="../../css/perfect-scrollbar.min.css" rel="stylesheet">
+  <link href="../../css/auto-complete.css" rel="stylesheet">
+  <link href="../../css/atom-one-dark-reasonable.css" rel="stylesheet">
+  <link href="../../css/theme.css" rel="stylesheet">
+  <link href="../../css/hugo-theme.css" rel="stylesheet">
+  
+  <link href="../../css/theme-aws.css" rel="stylesheet">
+  
+
+  <script src="../../js/jquery-3.3.1.min.js"></script>
+
+  <style>
+    :root #header + #content > #left > #rlblock_left{
+        display:none !important;
+    }
+    
+      :not(pre) > code + span.copy-to-clipboard {
+          display: none;
+      }
+    
+  </style>
+  
+</head>
+
+<body class="" data-url="/en/glue/23_transform_with_glue_job.html">
+  <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+    <a href="../../" title="Go home">
+        <img style="vertical-align:middle" src="../../images/logo.png" height="70px" />
+    </a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../../js/lunr.min.js"></script>
+<script type="text/javascript" src="../../js/auto-complete.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/en";
+    
+</script>
+<script type="text/javascript" src="../../js/search.js"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements.html" title="Requirements" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../en/requirements.html">
+          <b>1. </b>Requirements
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements/knowledge.html" title="Required Knowledge" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../en/requirements/knowledge.html">
+          Required Knowledge
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/requirements/prerequisites.html" title="Required Prerequisites" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../en/requirements/prerequisites.html">
+          Required Prerequisites
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/glue.html" title="Ingestion with Glue" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="../../en/glue.html">
+          <b>2. </b>Ingestion with Glue
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/21_permissions.html" title="Configure Permissions" class="dd-item ">
+        <a href="../../en/glue/21_permissions.html">
+        <b>2.1. </b>Configure Permissions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/22_raw_crawler.html" title="Create data catalog from S3 files" class="dd-item ">
+        <a href="../../en/glue/22_raw_crawler.html">
+        <b>2.2. </b>Create data catalog from S3 files
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/23_transform_with_glue_job.html" title="Transform the data to Parquet format" class="dd-item active">
+        <a href="../../en/glue/23_transform_with_glue_job.html">
+        <b>2.3. </b>Transform the data to Parquet format
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/24_curated_crawler.html" title="Add a crawler for curated data" class="dd-item ">
+        <a href="../../en/glue/24_curated_crawler.html">
+        <b>2.4. </b>Add a crawler for curated data
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/25_schema_validation.html" title="Schema Validation" class="dd-item ">
+        <a href="../../en/glue/25_schema_validation.html">
+        <b>2.5. </b>Schema Validation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/26_testing_pyspark_locally.html" title="Testing Pyspark Locally with Docker" class="dd-item ">
+        <a href="../../en/glue/26_testing_pyspark_locally.html">
+        <b>2.6. </b>Testing Pyspark Locally with Docker
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/glue/27_optional_dev_endpoint.html" title="Optional: Creating a Development Endpoint for Glue" class="dd-item ">
+        <a href="../../en/glue/27_optional_dev_endpoint.html">
+        <b>2.7 </b>Optional: Creating a Development Endpoint for Glue
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/orchestration.html" title="Orchestrating the data pipeline" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../en/orchestration.html">
+          <b>3. </b>Orchestrating the data pipeline
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/athena.html" title="Interactive SQL Queries Using Amazon Athena" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../en/athena.html">
+          <b>4. </b>Interactive SQL Queries Using Amazon Athena
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/athena/athena_best_practices.html" title="Optional - Amazon Athena Best Practices" class="dd-item ">
+        <a href="../../en/athena/athena_best_practices.html">
+        Optional - Amazon Athena Best Practices
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/athena/optional.html" title="Interactive SQL - Optional Labs" class="dd-item ">
+        <a href="../../en/athena/optional.html">
+        Interactive SQL - Optional Labs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/visualization.html" title="Visualization using Amazon QuickSight" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../en/visualization.html">
+          <b>5. </b>Visualization using Amazon QuickSight
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/transformations.html" title="Transformations" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../en/transformations.html">
+          <b>6. </b>Transformations
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/wrapup.html" title="Wrap up and cleaning existing resources" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../en/wrapup.html">
+          <b>7. </b>Wrap up and cleaning existing resources
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/en/glue/23_transform_with_glue_job.html" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+
+    <a href="https://aws.amazon.com/privacy/?nc1=f_pr">Privacy</a> | <a href="https://aws.amazon.com/terms/?nc1=f_pr">Site Terms</a> | © 2020, Amazon Web Services, Inc. or its affiliates. All rights reserved. 
+
+</left>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+  <section id="body">
+    <div id="overlay"></div>
+    <div class="padding highlightable">
+      
+      <div>
+        <div id="top-bar">
+          
+          
+          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fa fa-bars"></i>
+              </a>
+            </span>
+            
+            <span class="links">
+              
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href='../../en/'>Bring Your Own Data Labs (BYOD)</a> > <a href='../../en/glue.html'>Ingestion with Glue</a> > Transform the data to Parquet format
+          
+          
+          
+          
+          
+          
+            </span>
+          </div>
+          
+        </div>
+      </div>
+      
+
+      
+      <div id="chapter">
+        
+        <div id="body-inner">
+          <h1>Transform the data to Parquet format</h1>
+          
+          
+
+
+<p>In the following section, we will create one job per each file to transform the data from csv, tsv, xls (typical input formats) to parquet.</p>
+<p><img src="../../glue_images/ingestion/csv_parquet.png" alt="parquet vs csv"></p>
+<p>We will place this data under the folder named &ldquo;<em>curated</em>&rdquo; in the data lake.</p>
+<ul>
+<li>In the Glue Console select the <strong>Jobs</strong> section in the left navigation panel&rsquo;</li>
+<li>Click on the <em>Add job</em> button;</li>
+<li>specify a name (preferably <strong>byod-YOUR-TABLE-NAME-job</strong>) in the name field, then select the <em>&ldquo;glue-processor-role&rdquo;</em>;</li>
+<li>select Type: <strong>Spark</strong></li>
+<li>make sure Glue version 2 is selected: &ldquo;Spark 2.4, Python 3 with improved job startup times (Glue Version 2.0)&rdquo; (If you want to read more about version 2: <a href="https://aws.amazon.com/blogs/aws/aws-glue-version-2-0-featuring-10x-faster-job-start-times-and-1-minute-minimum-billing-duration/" target="_blank">Glue version 2 announced</a>)</li>
+<li>select the option &ldquo;<em>A new script to be authored by you</em>&quot;;</li>
+<li>Provide a script name (preferably <strong>byod-YOUR-TABLE-NAME-job-script.py</strong>)</li>
+<li>Tick the checkbox for &ldquo;<em>Job Metrics</em>&quot;, under <strong>Monitoring Options</strong> and DO NOT hit <strong>Next</strong> yet;</li>
+<li>Under &ldquo;Security configuration, script libraries, and job parameters (optional)&quot;, check that <strong>Worker type</strong> is &ldquo;Standard&rdquo; and <strong>Maximum capacity</strong> is &ldquo;10&rdquo;. This determines the worker type and the number of processing units to be used for the job. Higher numbers result in faster processing times but may incur higher costs. Worker type and capacity should be determined according to data size, data type etc. (further info can be found in <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html" target="_blank">Glue documentation</a>.) - hit <strong>Next</strong></li>
+<li>click <strong>Next</strong>, then <strong>Save job and edit script</strong>. You will be redirected to script editor.</li>
+<li>Paste the following code to the editor. <strong>PLEASE UPDATE THE SCRIPT WITH YOUR INPUT AND OUTPUT FOLDER LOCATIONS.</strong></li>
+</ul>
+<p>This step needs to be done per each file you have.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
+<span style="color:#f92672">import</span> datetime
+<span style="color:#f92672">import</span> re
+<span style="color:#f92672">from</span> awsglue.transforms <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">from</span> awsglue.utils <span style="color:#f92672">import</span> getResolvedOptions
+<span style="color:#f92672">from</span> pyspark.context <span style="color:#f92672">import</span> SparkContext
+<span style="color:#f92672">from</span> awsglue.context <span style="color:#f92672">import</span> GlueContext
+<span style="color:#f92672">from</span> awsglue.job <span style="color:#f92672">import</span> Job
+glueContext <span style="color:#f92672">=</span> GlueContext(SparkContext<span style="color:#f92672">.</span>getOrCreate())
+job <span style="color:#f92672">=</span> Job(glueContext)
+
+<span style="color:#75715e">## DONT FORGET TO PUT IN YOUR INPUT AND OUTPUT LOCATIONS BELOW.</span>
+your_database_name <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">YOUR-DATABASE-NAME</span><span style="color:#e6db74">&#34;</span>
+your_table_name <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">YOUR-TABLE-NAME</span><span style="color:#e6db74">&#34;</span>
+output_location <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">s3://YOUR-BUCKET-NAME/curated/YOUR-TABLE-NAME</span><span style="color:#e6db74">&#34;</span>
+
+job<span style="color:#f92672">.</span>init(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">byod-workshop</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> str(datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now()<span style="color:#f92672">.</span>timestamp()))
+
+<span style="color:#75715e">#load our data from the catalog that we created with a crawler</span>
+dynamicF <span style="color:#f92672">=</span> glueContext<span style="color:#f92672">.</span>create_dynamic_frame<span style="color:#f92672">.</span>from_catalog(
+    database <span style="color:#f92672">=</span> your_database_name,
+    table_name <span style="color:#f92672">=</span> your_table_name,
+    transformation_ctx <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">dynamicF</span><span style="color:#e6db74">&#34;</span>)
+
+<span style="color:#75715e"># invalid characters in column names are replaced by _</span>
+df <span style="color:#f92672">=</span> dynamicF<span style="color:#f92672">.</span>toDF()
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">canonical</span>(x): <span style="color:#66d9ef">return</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">[ ,;{}()</span><span style="color:#ae81ff">\n</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">=]+</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">_</span><span style="color:#e6db74">&#39;</span>, x<span style="color:#f92672">.</span>lower())
+renamed_cols <span style="color:#f92672">=</span> [canonical(c) <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> df<span style="color:#f92672">.</span>columns]
+df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>toDF(<span style="color:#f92672">*</span>renamed_cols)
+
+<span style="color:#75715e"># write our dataframe in parquet format to an output s3 bucket</span>
+df<span style="color:#f92672">.</span>write<span style="color:#f92672">.</span>mode(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">overwrite</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">.</span>format(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">parquet</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">.</span>save(output_location)
+
+job<span style="color:#f92672">.</span>commit()
+</code></pre></div><p>Notice that we have a section in this script where we are replacing invalid characters that you may have in your column headers. Spark doesn&rsquo;t accept certain characters in field names including spaces.</p>
+<p>Click * <strong>Save</strong>, then <strong>Run Job</strong></p>
+<p>Check the status of the job by selecting the job and go to history tab in the lower panel. In order to continue we need to wait until this job is done, this can take around 5 minutes (and up to 10 minutes to start), depending on the size of your dataset.</p>
+<p><img src="../../glue_images/ingestion/seejob.png" alt="add a glue job"></p>
+<p>To make sure the job transformed the data:</p>
+<ol>
+<li>Open your S3 console (<a href="https://s3.console.aws.amazon.com/">https://s3.console.aws.amazon.com/</a>)</li>
+<li>Select the bucket you are using for this workshop</li>
+<li>You should see a new sub-folder called <strong>&ldquo;curated&rdquo;</strong> filled with parqut files. You might need to refresh this page from the top-right corner of the page.</li>
+</ol>
+
+<div class="notices info" ><p>You will need to create a similar job for each table you have.</p>
+</div>
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+            </div> 
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../../en/glue/22_raw_crawler.html" title="Create data catalog from S3 files"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="../../en/glue/24_curated_crawler.html" title="Add a crawler for curated data" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../../js/clipboard.min.js"></script>
+    <script src="../../js/perfect-scrollbar.min.js"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../../js/jquery.sticky.js"></script>
+    <script src="../../js/featherlight.min.js"></script>
+    <script src="../../js/html5shiv-printshiv.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../js/modernizr.custom-3.6.0.js"></script>
+    <script src="../../js/learn.js"></script>
+    <script src="../../js/hugo-learn.js"></script>
+
+    <link href="../../mermaid/mermaid.css" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <div id = 'kinesisStreamName' title = ""/></div>
+<div id = 'cognitoPoolId' title = ""/></div>
+<div id = 'awsRegion' title = ""/></div>
+<div id = 'contentId' title = ""/></div>
+<div id = 'language' title = "en"/></div>
+<div id = 'versions' title = ""/></div>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+<script src="../../js/kinesis.js"></script>
+  </body>
+</html>
+

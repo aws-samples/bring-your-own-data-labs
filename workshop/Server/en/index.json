@@ -1,0 +1,76 @@
+[
+	{	"pageTitle": "Index",
+		"relativePagePath": "/en/"
+	},
+	{
+		"pageTitle": "Requirements",
+		"relativePagePath": "/en/requirements.html"
+	},
+	{
+		"pageTitle": "Required Knowledge",
+		"relativePagePath": "/en/requirements/knowledge.html"
+	},
+	{
+		"pageTitle": "Required Prerequisites",
+		"relativePagePath": "/en/requirements/prerequisites.html"
+	},
+	{
+		"pageTitle": "Ingestion with Glue",
+		"relativePagePath": "/en/glue.html"
+	},
+	{
+		"pageTitle": "Configure Permissions",
+		"relativePagePath": "/en/glue/21_permissions.html"
+	},
+	{
+		"pageTitle": "Create data catalog from S3 files",
+		"relativePagePath": "/en/glue/22_raw_crawler.html"
+	},
+	{
+		"pageTitle": "Transform the data to Parquet format",
+		"relativePagePath": "/en/glue/23_transform_with_glue_job.html"
+	},
+	{
+		"pageTitle": "Add a crawler for curated data",
+		"relativePagePath": "/en/glue/24_curated_crawler.html"
+	},
+	{
+		"pageTitle": "Schema Validation",
+		"relativePagePath": "/en/glue/25_schema_validation.html"
+	},
+	{
+		"pageTitle": "Testing Pyspark Locally with Docker",
+		"relativePagePath": "/en/glue/26_testing_pyspark_locally.html"
+	},
+	{
+		"pageTitle": "Optional: Creating a Development Endpoint for Glue",
+		"relativePagePath": "/en/glue/27_optional_dev_endpoint.html"
+	},
+	{
+		"pageTitle": "Orchestrating the data pipeline",
+		"relativePagePath": "/en/orchestration.html"
+	},
+	{
+		"pageTitle": "Interactive SQL Queries Using Amazon Athena",
+		"relativePagePath": "/en/athena.html"
+	},
+	{
+		"pageTitle": "Optional - Amazon Athena Best Practices",
+		"relativePagePath": "/en/athena/athena_best_practices.html"
+	},
+	{
+		"pageTitle": "Interactive SQL - Optional Labs",
+		"relativePagePath": "/en/athena/optional.html"
+	},
+	{
+		"pageTitle": "Visualization using Amazon QuickSight",
+		"relativePagePath": "/en/visualization.html"
+	},
+	{
+		"pageTitle": "Transformations",
+		"relativePagePath": "/en/transformations.html"
+	},
+	{
+		"pageTitle": "Wrap up and cleaning existing resources",
+		"relativePagePath": "/en/wrapup.html"
+	}]

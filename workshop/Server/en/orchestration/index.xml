@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Orchestrating the data pipeline on Bring Your Own Data Labs (BYOD)</title>
+    <link>/en/orchestration.html</link>
+    <description>Recent content in Orchestrating the data pipeline on Bring Your Own Data Labs (BYOD)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 20 Oct 2020 20:12:26 +0100</lastBuildDate>
+    
+	<atom:link href="/en/orchestration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

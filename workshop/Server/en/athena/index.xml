@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interactive SQL Queries Using Amazon Athena on Bring Your Own Data Labs (BYOD)</title>
+    <link>/en/athena.html</link>
+    <description>Recent content in Interactive SQL Queries Using Amazon Athena on Bring Your Own Data Labs (BYOD)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 20 Oct 2020 20:12:40 +0100</lastBuildDate>
+    
+	<atom:link href="/en/athena/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Optional - Amazon Athena Best Practices</title>
+      <link>/en/athena/athena_best_practices.html</link>
+      <pubDate>Thu, 22 Oct 2020 16:16:22 +0100</pubDate>
+      
+      <guid>/en/athena/athena_best_practices.html</guid>
+      <description>Introduction Using Columnar Storage Partitioning your Data Bucketing your Data  What is &amp;lsquo;CREATE TABLE AS SELECT&amp;rsquo; Using CTAS to create Partitioned Subset Using CTAS to create Partitioned and Bucketed Subset Comparing Results    Introduction In the first Lab (Lab 1: Ingestion with Glue) we did one transformation to the data; changed the format to parquet. Partitioning and bucketing are other common best practices. Partitioning, is a way to organizes tables into partitions by dividing tables into different parts based on partition keys.</description>
+    </item>
+    
+    <item>
+      <title>Interactive SQL - Optional Labs</title>
+      <link>/en/athena/optional.html</link>
+      <pubDate>Thu, 22 Oct 2020 16:16:01 +0100</pubDate>
+      
+      <guid>/en/athena/optional.html</guid>
+      <description>Introduction Creating Amazon Athena Database and Table  Create a Database Create a Table  Adding Partition Meta-data     Detecting New Partitions  Introduction These are optional labs:
+ Creating Amazon Athena Database and Table: Should be completed if you want Athena to create the database and table and not Glue Crawlers Detecting New Partitions: Should be completed if you manually added a partition that conforms with Hive format, and do not want want to use Glue crawlers to add the partitions to the table.</description>
+    </item>
+    
+  </channel>
+</rss>
