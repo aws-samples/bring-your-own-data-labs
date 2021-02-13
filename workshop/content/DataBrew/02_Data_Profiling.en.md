@@ -8,7 +8,7 @@ pre = "<b>0.2. </b>"
 
 New session will open automatically displaying a sample of your dataset. The default sample is 500 records and this could be changed when creating the project. 
 
-When you work with on a project, DataBrew displays statistics such as the number of rows in the sample and the distribution of unique values in each column. These statistics, and many more, represent a profile of the sample. When you profile your data, DataBrew creates a report called a data profile. You can make a data profile for any dataset by running a data profile job.
+When you work on a project, DataBrew displays statistics such as the number of rows in the sample and the distribution of unique values in each column. These statistics, and many more, represent a profile of the sample. When you profile your data, DataBrew creates a report called a data profile. You can make a data profile for any dataset by running a data profile job.
 
 
 
@@ -20,18 +20,18 @@ When you work with on a project, DataBrew displays statistics such as the number
    ![image](/databrew_img/databrew_profile.png)
 2. Click on **Run data Profile**
    ![image](/databrew_img/databrew_profile1.png)
-3. This will take you to ***Create job* page. Enter a name for the job
+3. This will take you to ***Create job** page. Enter a name for the job.
    ![image](/databrew_img/databrew_profile2.png)
-4. In the **Job output settings** section choose the S3 location to store the output of the job.\
+4. In the **Job output settings** section, choose the S3 location to store the output of the job.
    ![image](/databrew_img/databrew_profile3.png)
-5. Leave **Advanced job settings**, **Associated schedules** and **Tags** as default. In the **Permission** section choose the role created in the [previous section](/en/databrew/01_setting_up.html#creating-a-databrew-project).
+5. Leave **Advanced job settings**, **Associated schedules** and **Tags** as default. In the **Permission** section choose the role created in the [previous section]({{< relref "01_Setting_up#creating-a-databrew-project" >}}).
    ![image](/databrew_img/databrew_profile4.png)
 6. Click **Create and run job**.
 
 Depending on the size of the dataset the job will take 2-10 minutes to complete.
-> Note: Data profile is limited to the first 20,000 rows of a dataset.Request a limit increase for larger datasets.
+> Note: Data profile is limited to the first 20,000 rows of a dataset. Request a limit increase for larger datasets.
 
-
+You don't need to wait for the job to finish. You can, now, go back to "Grid" view, by using the button on the top-right, and continue to work on your data as explained in the [next section]({{< relref "03_Data_Cleaning" >}}). 10 minutes later, you can come back to this page and continue viewing your profile, as explained below.
 ### Viewing Profile
 
 
