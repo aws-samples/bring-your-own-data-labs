@@ -15,10 +15,7 @@ This should open list of data sets in this analysis. Choose the data set to edit
 
 <!---You can duplicate an existing data set to save a copy of it with a new name. The new data set is a completely separate copy.  Choose **Duplicate** data set, and enter a name for the copy.--->
 
-2. Select the fields that you will use for the visualization.
-![image](/visualization_images/Select_Fields.png)
-
-3. We suggest that you pick two - three columns from your data set that meet the following criteria:
+2. We suggest that you pick two - three columns from your data set that meet the following criteria:
   * The first column is a date column (can be year, month or day. Usually marked by **calendar icon**
 in **Fields list** on the left)
   * The second column is a quantifiable number (revenue, count, distance, etc. Usually
@@ -26,7 +23,7 @@ marked by a **green hash #**)
   * The third column has categorical value, which means it has specific limited set of values (type,
 category, etc. Usually marked by **ticket icon**)
 
-4. Optional - Change the data type. You can change the field's data type in one of the available data types.
+3. Optional - Change the data type. You can change the field's data type in one of the available data types.
 <!---  
   * Go to the datasets page
 ![image](img/manage-data.png)

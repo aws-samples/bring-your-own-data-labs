@@ -45,9 +45,9 @@ CREATE  Table {join_table_name}
 WITH (
 format = 'PARQUET',
 external_location = 's3://{datalake-s3-bucket}/curated/{join_table_folder}',
-partitioned_by = ARRAY['{col1_name}','{col2_name}']#optional
+partitioned_by = ARRAY['{col1_name}','{col2_name}']
+) #optional
 AS {your_join_query}
-)
 ```
 
 The above query creates a new table, stores the results in parquet format, in this s3://{datalake-s3-bucket}/curated/{join_table_folder} location.
