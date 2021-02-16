@@ -3,7 +3,7 @@ title = "Ingestion with AWS Glue"
 date = 2020-10-20T20:12:11+01:00
 weight = 20
 chapter = true
-pre = "<b>2. </b>"
+pre = "<b>3. </b>"
 +++
 
 In this Lab we will:

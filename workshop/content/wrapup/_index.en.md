@@ -3,13 +3,14 @@ title = "Wrap up and cleaning existing resources"
 date = 2020-10-22T15:26:43+01:00
 weight = 70
 chapter = true
-pre = "<b>7. </b>"
+pre = "<b>8. </b>"
 +++
 
 - [Terminate your resources](#terminate-your-resources)
 - [Clean other resources:](#clean-other-resources)
   - [AWS Glue Crawlers and Jobs](#aws-glue-crawlers-and-jobs)
   - [Quicksight](#quicksight)
+- Next Steps
 
 {{% notice warning %}}
 Before wrapping up, we strongly recommend you go through these steps to clean the recurrent resources incurred by the workshop.
@@ -50,3 +51,6 @@ Make sure you haven't put any recurrence on jobs and triggers:
 
 If you want to cancel your subscription to Quicksight you can follow these procedure: (https://docs.aws.amazon.com/quicksight/latest/user/closing-account.html)
 
+## Next Steps
+
+[Check BYOD Graduates Path here](/pdf/byod-graduate-path.pdf)
