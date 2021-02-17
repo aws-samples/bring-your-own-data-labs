@@ -3,7 +3,7 @@ title = "Optional - Creating Amazon Athena Database and Table "
 date = 2020-10-22T16:16:01+01:00
 weight = 46
 chapter = true
-pre = "<b>4.6. </b>"
+pre = "<b>5.6. </b>"
 +++
 
 
@@ -12,7 +12,7 @@ pre = "<b>4.6. </b>"
 These are optional labs:
 
  - *Creating Amazon Athena Database and Table* (this one): Should be completed if you want Athena to create the database and table and not AWS Glue Crawlers
- - [Detecting New Partitions]({{< ref "47_optional_partitions.md" >}} "Detecting New Partitions"): Should be completed if you manually added a partition that conforms with Hive format, and do not want want to use AWS Glue crawlers to add the partitions to the table.
+ - [Detecting New Partitions]({{< ref "57_optional_partitions.md" >}} "Detecting New Partitions"): Should be completed if you manually added a partition that conforms with Hive format, and do not want want to use AWS Glue crawlers to add the partitions to the table.
 
 ## Creating Amazon Athena Database and Table
   

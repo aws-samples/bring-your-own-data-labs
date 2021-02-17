@@ -3,7 +3,7 @@ title = "OPTIONAL: Testing Pyspark Locally with Docker"
 date = 2020-10-20T20:12:11+01:00
 weight = 27
 chapter = true
-pre = "<b>2.7. </b>"
+pre = "<b>3.7. </b>"
 +++
 
 {{% notice info %}}

@@ -3,7 +3,7 @@ title = "Creating a Development Endpoint for AWS Glue"
 date = 2020-10-20T20:12:11+01:00
 weight = 26
 chapter = true
-pre = "<b>2.6 </b>"
+pre = "<b>3.6 </b>"
 +++
 
 {{% notice info %}}

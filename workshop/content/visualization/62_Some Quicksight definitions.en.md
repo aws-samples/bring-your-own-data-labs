@@ -3,7 +3,7 @@ title = "Some Quicksight definitions"
 date = 2021-01-18T12:36:11+01:00
 weight = 52
 chapter = true
-pre = "<b>5.2. </b>"
+pre = "<b>6.2. </b>"
 +++
 
 ### Some Quicksight definitions
