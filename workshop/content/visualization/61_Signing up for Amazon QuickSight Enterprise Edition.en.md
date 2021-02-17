@@ -3,7 +3,7 @@ title = "Signing up for Amazon QuickSight Enterprise Edition"
 date = 2021-01-18T12:36:11+01:00
 weight = 51
 chapter = true
-pre = "<b>5.1. </b>"
+pre = "<b>6.1. </b>"
 +++
 
 ### Signing up for Amazon QuickSight Enterprise Edition

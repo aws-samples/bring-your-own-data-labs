@@ -3,7 +3,7 @@ title = "Transformations Using Local Docker Environment"
 date = 2020-10-20T20:13:10+01:00
 weight = 62
 chapter = true
-pre = "<b>6.2. </b>"
+pre = "<b>7.2. </b>"
 +++
 
 This lab covers a few examples for cleaning, transforming and partitioning yoour data before putting the final results to your data lake. You may or may not need them depending on your data structure.
@@ -106,7 +106,7 @@ df.show()
 ```
 
 {{% notice info %}}
-Check the [previous part]({{< relref "61_transformations_dev_endpoint.en.md" >}}) of the workshop to see how to do those transformations with dynamicFrames instead of dataFrames in a Glue environment.
+Check the [previous part]({{< relref "71_transformations_dev_endpoint.en.md" >}}) of the workshop to see how to do those transformations with dynamicFrames instead of dataFrames in a Glue environment.
 {{% /notice %}}
 
 

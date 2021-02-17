@@ -3,7 +3,7 @@ title = "Optional - Amazon Athena Best Practices"
 date = 2020-10-22T16:16:22+01:00
 weight = 45
 chapter = true
-pre = "<b>4.5. </b>"
+pre = "<b>5.5. </b>"
 +++
 
 - [Introduction](#introduction)

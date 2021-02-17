@@ -3,7 +3,7 @@ title = "Preparing your data"
 date = 2021-01-18T12:36:11+01:00
 weight = 54
 chapter = true
-pre = "<b>5.4. </b>"
+pre = "<b>6.4. </b>"
 +++
 
 ### Preparing your data
