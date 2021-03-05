@@ -3,7 +3,7 @@ title = "Configure Permissions"
 date = 2020-10-20T20:12:11+01:00
 weight = 21
 chapter = true
-pre = "<b>2.1. </b>"
+pre = "<b>3.1. </b>"
 +++
 
 ### Create a Policy for Amazon S3 Bucket (Console)

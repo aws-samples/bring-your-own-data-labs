@@ -3,7 +3,7 @@ title = "Transform the data to Parquet format"
 date = 2020-10-20T20:12:11+01:00
 weight = 23
 chapter = true
-pre = "<b>2.3. </b>"
+pre = "<b>3.3. </b>"
 +++
 
 In the following section, we will create one job per each file to transform the data from csv, tsv, xls (typical input formats) to parquet.

@@ -3,7 +3,7 @@ title = "Setting up Amazon S3 and Athena for Storing Query Results"
 date = 2020-10-20T20:12:40+01:00
 weight = 41
 chapter = true
-pre = "<b>4.1. </b>"
+pre = "<b>5.1. </b>"
 +++
 
   

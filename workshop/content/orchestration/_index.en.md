@@ -3,7 +3,7 @@ title = "Orchestrating the data pipeline"
 date = 2020-10-20T20:12:26+01:00
 weight = 30
 chapter = true
-pre = "<b>3. </b>"
+pre = "<b>4. </b>"
 +++
 
 In this lab we will continue to work with [AWS Glue](https://aws.amazon.com/glue/) and convert the raw data we have extracted in [the previous lab](https://bringyourowndatalabs.workshop.aws/en/glue.html) into a curated data set by using AWS Glue Workflows. We will follow these steps:

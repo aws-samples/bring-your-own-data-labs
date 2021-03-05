@@ -3,7 +3,7 @@ title = "Setting up DataBrew"
 date = 2020-01-30T20:12:40+01:00
 weight = 01
 chapter = true
-pre = "<b>0.1. </b>"
+pre = "<b>2.1. </b>"
 +++
 
 In this section we will setup an AWS Glue DataBrew project which is an interactive data preparation workspace in DataBrew. During this process we will create the following:

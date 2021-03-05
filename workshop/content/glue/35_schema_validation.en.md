@@ -3,7 +3,7 @@ title = "Schema Validation"
 date = 2020-10-20T20:12:11+01:00
 weight = 25
 chapter = true
-pre = "<b>2.5. </b>"
+pre = "<b>3.5. </b>"
 +++
 
 In the AWS Glue navigation pane, click Databases > Tables. You can also click the database name (e.g., "ticketdata" to browse the tables).

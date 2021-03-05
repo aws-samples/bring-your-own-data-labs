@@ -3,7 +3,7 @@ title = "Data Cleaning and Transformation"
 date = 2020-01-30T20:12:40+01:00
 weight = 03
 chapter = true
-pre = "<b>0.3. </b>"
+pre = "<b>2.3. </b>"
 +++
 
 ### Clean and Transform Data
@@ -50,7 +50,7 @@ For BYOD labs, make sure the column names do not have space, or any character ot
 
 ### Creating a Job 
 
-To apply the recipe transformations to the dataset in S3, we will create a job from this recipe. This is the same as the one created in [Data Profiling Section]({{< relref "02_Data_Profiling" >}}).
+To apply the recipe transformations to the dataset in S3, we will create a job from this recipe. This is the same as the one created in [Data Profiling Section]({{< relref "22_Data_Profiling" >}}).
 
 1. First create a new folder in your S3 BYOD bucket. This folder will be the input for our BYOD workshop.
 2. On the DataBrew console, click on **Projects** and choose the Project you created earlier.

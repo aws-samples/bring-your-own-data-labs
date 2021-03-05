@@ -3,7 +3,7 @@ title = "Signing up for Amazon QuickSight Enterprise Edition"
 date = 2021-01-18T12:36:11+01:00
 weight = 51
 chapter = true
-pre = "<b>5.1. </b>"
+pre = "<b>6.1. </b>"
 +++
 
 ### Signing up for Amazon QuickSight Enterprise Edition
@@ -27,7 +27,7 @@ pre = "<b>5.1. </b>"
 
    ii. Enter a valid email for **Notification email address**.
 
-   iii. Just for this step, leave the **QuickSight capacity region** as **N.Virginia**. 
+   iii. Choose **QuickSight region** where your data resides. 
 
    iv. Ensure that **Enable autodiscovery of your data and users in your Amazon Redshift, Amazon RDS and AWS IAM Services** and **Amazon Athena** boxes are checked. 
 
@@ -35,8 +35,6 @@ pre = "<b>5.1. </b>"
 
    ![image](/visualization_images/new-account-fields.png)
    vi. You will be presented with a message **Congratulations**! **You are signed up for Amazon QuickSight!** on successful sign up. Click on **Go to Amazon QuickSight**. 
-
-6. **Before continuing with the following steps, make sure you are in the N. Virginia Region to edit permissions.**
 
 Now, on the Amazon QuickSight dashboard, navigate to User Settings page by clicking on the Top-Right section - see image below - and click **Manage QuickSight**.
 

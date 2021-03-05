@@ -3,7 +3,7 @@ title = "Create data catalog from Amazon S3 files"
 date = 2020-10-20T20:12:11+01:00
 weight = 22
 chapter = true
-pre = "<b>2.2. </b>"
+pre = "<b>3.2. </b>"
 +++
 
 We will be using AWS Glue Crawlers to infer the schema of the files and create data catalog. Without a crawler, you can still read data from the Amazon S3 by a AWS Glue job, but it will not be able to determine data types (string, int, etc) for each column.

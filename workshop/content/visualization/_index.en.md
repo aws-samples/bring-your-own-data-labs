@@ -3,7 +3,7 @@ title = "Visualization using Amazon QuickSight"
 date = 2020-10-20T20:12:54+01:00
 weight = 50
 chapter = true
-pre = "<b>5. </b>"
+pre = "<b>6. </b>"
 +++
 
 

@@ -3,7 +3,7 @@ title = "Configuring Amazon QuickSight to use Amazon Athena as data source"
 date = 2021-01-18T12:36:11+01:00
 weight = 53
 chapter = true
-pre = "<b>5.3. </b>"
+pre = "<b>6.3. </b>"
 +++
 
 

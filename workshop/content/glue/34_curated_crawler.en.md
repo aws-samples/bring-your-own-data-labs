@@ -3,7 +3,7 @@ title = "Add a crawler for curated data"
 date = 2020-10-20T20:12:11+01:00
 weight = 24
 chapter = true
-pre = "<b>2.4. </b>"
+pre = "<b>3.4. </b>"
 +++
 
 {{% notice warning %}}
