@@ -9,11 +9,12 @@ pre = "<b>5. </b>"
 
 Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to setup or manage, and you can start analyzing data immediately. You don’t even need to load your data into Athena, it works directly with data stored in Amazon S3.
 
-In this lab, we will use Athena to explore, analyze and prepare the data for visualization in QuickSight. This lab is divided into three sections; one mandatory and two optional:
+In this lab, we will use Athena to explore, analyze and prepare the data for visualization in QuickSight. This lab is divided into four sections; one mandatory and three optional:
 
 *  To start working with Athena, continue on this lab and follow through the different section. Next lab is [Setting up Amazon S3 and Athena for Storing Query Results](#setting-up-amazon-s3-and-athena-for-storing-query-results)
-*  [Optional] In [lab 1](/en/glue.html), we used AWS Glue Crawlers to create our Database and Tables. To create your Database and tables using Athena, click [here](/en/athena/46_optional.html)
-*  [Optional] To review Athena best practices, click on [Amazon Athena Best Practices](/en/athena/45_athena_best_practices.html)
+*  [Optional] In [lab 1](/en/glue.html), we used AWS Glue Crawlers to create our Database and Tables. To create your Database and tables using Athena, click [here](/en/athena/56_optional_db_table.html)
+*  [Optional] To review Athena best practices, click on [Amazon Athena Best Practices](/en/athena/55_athena_best_practices.html)
+*  [Optional] If your dataset has text fields (eg customer reviews), you can use Athena detect the language, sentiement and extract entities from the text fields. Check [Text Analytics using Athena UDFs](/en/athena/58_text_analytics_udf.html)
 
 
 ## Architectural Diagram
