@@ -34,14 +34,14 @@ category, etc. Usually marked by **ticket icon**)
   * Choose to Edit your Dataset
 ![image](img/Edit-dataset.png)
 --->
-  * Press over the arrow on the right side of the field you want to modify
+  * Press over the three dots on the right side of the field you want to modify
+  * Choose one of the available data types
+
 ![image](/visualization_images/arrow-edit-dataset-type.png)
 
-  * Choose one of the available data types
-![image](/visualization_images/Field_DataTypes.png)
 
   * You can also modify the **format of your date field(s)** into one of the supported formats.
     ![image](/visualization_images/DateFormat.png)
 
-  * Once you finish your edit, press the **Save and Visualize** button on top of the screen.
+  * Once you finish your edit, press the **Publish and Visualize** button on top of the screen.
 ![image](/visualization_images/save-visualize.png)

@@ -31,7 +31,7 @@ You can also use the slider on the X-axis to select the range of values to appea
 
 ![image](/visualization_images/prepare-forecast.png)
 
-6. Click arrow in top right corner of the visual and select **Add forecast**.
+6. Click arrow in top right corner of the visual to expand graph options. Press over the three dots to select **Add forecast**.
 
 ![image](/visualization_images/forecast.png)
 
@@ -63,9 +63,10 @@ Let's apply a date filter:
 
 ### Visualize Month over Month Quantity
 
-1. Add a new visual by duplicating the previous visual. Click on visual top right arrow and select **Duplicate visual**.
+1. Add a new visual by duplicating the previous visual. Click on visual top right arrow, press over the three dots and select **Duplicate visual**.
 2. Select **KPI** as the Visual Type (bottom left of the screen).
-3. In the field wells, click arrow in **Date** column to change the aggregation level to Month or as needed.
+3. Choose a quantity field by clicking on a column from the left menu.
+4. In the field wells, click arrow in **Date** column to change the aggregation level to Month or as needed.
 
 ![image](/visualization_images/kpi.png)
 
