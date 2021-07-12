@@ -11,7 +11,7 @@ In this lab you will be using the Amazon S3 bucket with your data and the Athena
 
 
 ## Architectural Diagram
-![architecture-overview-lab2.png](https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/architecture-overview-lab2.png)
+![image](/visualization_images/architecture-overview-lab2.png)
 
 
 

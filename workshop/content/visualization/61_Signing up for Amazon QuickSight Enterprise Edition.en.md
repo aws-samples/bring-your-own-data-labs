@@ -42,7 +42,7 @@ Now, on the Amazon QuickSight dashboard, navigate to User Settings page by click
 
 7. In this section, click on **Security & permissions** and then click **Add or remove**.
 
-<p align="center"><img src="img/updated1.png" /></p> 
+![image](/visualization_images/updated1.png)
 
 8. Click on **Amazon S3** and on the tab that says **Amazon S3 buckets linked to QuickSight account**.
 9. You have two options depending on the permissions of your account:
@@ -53,7 +53,7 @@ Now, on the Amazon QuickSight dashboard, navigate to User Settings page by click
   
 NOTE: Make sure to tick the boxes for "Write permission for Athena Workgroup" as well.  
 
-10. Click on **Select buckets**.
+10. Click on **Finish**.
 
 ![image](/visualization_images/qs-workgroup-permission.png)
 
