@@ -14,8 +14,8 @@ start by forecasting values in future dates based on your sample data.
 
 ### Forecast Monthly Trend for your Quantity Column
 
-2. Under the **Fields list**, select your **Date** column for x-axis by clicking on the field name.
-3. Change the visual type to a line chart by selecting the line chart icon highlighted in the screenshot below under **Visual types**.
+1. Under the **Fields list**, select your **Date** column for x-axis by clicking on the field name.
+2. Change the visual type to a line chart by selecting the line chart icon highlighted in the screenshot below under **Visual types**.
 
 At this point, the Y-axis of the visual will be populated automatically with count of records
 that match each date individually. You can keep it that way and do forecasting for
@@ -24,8 +24,9 @@ that match each date individually. You can keep it that way and do forecasting f
 
 Before viewing the forecast, you can choose the level of aggregation you want for your **date**
 column to populate X-axis by year, month or day. 
-4. Click on the **date** field name in top **Field Wells** bar to reveal a sub-menu.
-5. Select **Aggregate:Month** to aggregate by month.
+
+3. Click on the **date** field name in top **Field Wells** bar to reveal a sub-menu.
+4. Select **Aggregate:Month** to aggregate by month.
 
 You can also use the slider on the X-axis to select the range of values to appear in the graph.
 
