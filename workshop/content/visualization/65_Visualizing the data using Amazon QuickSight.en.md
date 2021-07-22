@@ -71,8 +71,8 @@ Let's apply a date filter:
 
 ![image](/visualization_images/kpi.png)
 
-1. Now select format visual by clicking on arrow on top right corner of the KPI graph.
-2. Select **Different as percent(%)** under **comparison method** on the left.
+5. Now select format visual by clicking on arrow on top right corner of the KPI graph.
+6. Select **Different as percent(%)** under **comparison method** on the left.
 
 ![image](/visualization_images/kpi-percent.png)
 
