@@ -14,8 +14,8 @@ start by forecasting values in future dates based on your sample data.
 
 ### Forecast Monthly Trend for your Quantity Column
 
-2. Under the **Fields list**, select your **Date** column for x-axis by clicking on the field name.
-3. Change the visual type to a line chart by selecting the line chart icon highlighted in the screenshot below under **Visual types**.
+1. Under the **Fields list**, select your **Date** column for x-axis by clicking on the field name.
+2. Change the visual type to a line chart by selecting the line chart icon highlighted in the screenshot below under **Visual types**.
 
 At this point, the Y-axis of the visual will be populated automatically with count of records
 that match each date individually. You can keep it that way and do forecasting for
@@ -24,14 +24,15 @@ that match each date individually. You can keep it that way and do forecasting f
 
 Before viewing the forecast, you can choose the level of aggregation you want for your **date**
 column to populate X-axis by year, month or day. 
-4. Click on the **date** field name in top **Field Wells** bar to reveal a sub-menu.
-5. Select **Aggregate:Month** to aggregate by month.
+
+3. Click on the **date** field name in top **Field Wells** bar to reveal a sub-menu.
+4. Select **Aggregate:Month** to aggregate by month.
 
 You can also use the slider on the X-axis to select the range of values to appear in the graph.
 
 ![image](/visualization_images/prepare-forecast.png)
 
-6. Click arrow in top right corner of the visual and select **Add forecast**.
+6. Click arrow in top right corner of the visual to expand graph options. Press over the three dots to select **Add forecast**.
 
 ![image](/visualization_images/forecast.png)
 
@@ -63,14 +64,15 @@ Let's apply a date filter:
 
 ### Visualize Month over Month Quantity
 
-1. Add a new visual by duplicating the previous visual. Click on visual top right arrow and select **Duplicate visual**.
+1. Add a new visual by duplicating the previous visual. Click on visual top right arrow, press over the three dots and select **Duplicate visual**.
 2. Select **KPI** as the Visual Type (bottom left of the screen).
-3. In the field wells, click arrow in **Date** column to change the aggregation level to Month or as needed.
+3. Choose a quantity field by clicking on a column from the left menu.
+4. In the field wells, click arrow in **Date** column to change the aggregation level to Month or as needed.
 
 ![image](/visualization_images/kpi.png)
 
-1. Now select format visual by clicking on arrow on top right corner of the KPI graph.
-2. Select **Different as percent(%)** under **comparison method** on the left.
+5. Now select format visual by clicking on arrow on top right corner of the KPI graph.
+6. Select **Different as percent(%)** under **comparison method** on the left.
 
 ![image](/visualization_images/kpi-percent.png)
 

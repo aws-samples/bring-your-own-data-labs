@@ -9,6 +9,7 @@ Before getting straight into the lab, you need to follow these preparation steps
 - Choose your preferred dataset.
   - The best way is to bring your data, but if you just want to trial the workshop, you can use sample public datasets:
   - You can download free samples from different websites. https://www.kaggle.com/ is a good example that we used before. Most probably the dataset will include date column(s), which will be used a lot in the labs.
+  - If you want to start with a data sample right away, you can use the one [here](https://console.aws.amazon.com/s3/buckets/serverless-analytics?region=us-east-1&prefix=NYC-Pub/singleyellow/&showversions=false).
 - Your dataset size should not exceed **2 – 3 GB max**.
 - Data row size should not exceed **1MB**
 - Data with multiple related tables via foreign keys are supported in the context of this workshop.
