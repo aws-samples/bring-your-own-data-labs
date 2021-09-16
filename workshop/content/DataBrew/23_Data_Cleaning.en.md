@@ -1,7 +1,7 @@
 +++
 title = "Data Cleaning and Transformation"
 date = 2020-01-30T20:12:40+01:00
-weight = 03
+weight = 3
 chapter = true
 pre = "<b>2.3. </b>"
 +++

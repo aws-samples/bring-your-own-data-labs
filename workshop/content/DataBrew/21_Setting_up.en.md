@@ -1,7 +1,7 @@
 +++
 title = "Setting up DataBrew"
 date = 2020-01-30T20:12:40+01:00
-weight = 01
+weight = 1
 chapter = true
 pre = "<b>2.1. </b>"
 +++
