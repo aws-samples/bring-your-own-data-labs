@@ -1,7 +1,7 @@
 +++
 title = "Data Profiling"
 date = 2020-01-30T20:12:40+01:00
-weight = 02
+weight = 2
 chapter = true
 pre = "<b>2.2. </b>"
 +++
